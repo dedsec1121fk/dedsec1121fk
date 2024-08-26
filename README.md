@@ -1,27 +1,24 @@
-### Hello, I'm Loukas 👋
-
+### Hi there 👋, My name is Loukas.
+#### I am a Termux programs creator.
 I am a developer with a strong focus on creating sophisticated Python scripts tailored for the Termux environment. My work revolves around the intersection of file management, database operations, and cryptographic security, all within a terminal-based ecosystem.
 
-#### What I Do:
-- **Advanced Python Development for Termux**: My primary focus is on developing complex, multifunctional Python applications that cater to the specific needs of terminal users. These applications often blend file handling, secure data management, and encryption techniques to provide comprehensive utility packages.
-  
-- **File Management via Flask**: 
-   - I design and implement local servers using Flask, enabling seamless file management directly from the terminal. These servers handle everything from file uploads and downloads to secure file deletion, supporting various file types like `.txt`, `.pdf`, `.png`, `.jpg`, and more.
-   - The server setup is engineered for efficiency, allowing users to manage files with minimal overhead while maintaining security through features like controlled access and robust error handling.
+Skills: Advanced Python Development for Termux/File Management via Flask/Integrated Database Solutions (SQLite)/Cryptographic Security (AES Encryption, CBC Mode, Password-based Key Derivation)/Automation and Utility Tools (Dependency Management, Server Control Functions)
 
-- **Integrated Database Solutions**:
-   - Leveraging SQLite, I develop scripts that provide powerful yet lightweight database solutions. These databases are tightly integrated with the application's core functionalities, allowing users to perform CRUD (Create, Read, Update, Delete) operations through an intuitive, text-based interface.
-   - My work often includes creating automated data handling pipelines that ensure consistency and integrity across various data operations, all while remaining optimized for resource-constrained environments like Termux.
 
-- **Cryptographic Security**:
-   - Security is a cornerstone of my development process. I implement AES encryption with advanced techniques such as CBC mode, password-based key derivation, and proper padding mechanisms to ensure data is securely encrypted and decrypted.
-   - Additionally, my scripts feature password generation tools that produce cryptographically secure random passwords, further enhancing the security of the applications.
 
-- **Automation and Utility Tools**:
-   - To simplify the user experience, I integrate automatic dependency management within my scripts. This includes on-the-fly installation of necessary Python packages like Flask, bcrypt, and cryptography, ensuring that the application is ready to run with minimal setup.
-   - My tools also include server control functions, offering users the ability to start, stop, or restart their local servers gracefully or forcefully, depending on the situation.
+[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/dedsec1121fk)  [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg' alt='instagram' height='40'>](https://www.instagram.com/loukas.floros/)  
 
-#### Explore My Work:
-I invite you to dive into my repositories, where you’ll find a collection of these projects. Each script is a result of rigorous development and testing, aimed at providing utility and enhancing the efficiency of terminal operations. 
+<a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> <a href='https://docs.github.com/en/developers'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' width='40' height='40'></a> <a href='https://github.com/pricing'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' width='40' height='40'></a> <a href='https://stars.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/starbadge.gif' width='35' height='35'></a> <a href='https://docs.github.com/en/github/supporting-the-open-source-community-with-github-sponsors'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/sponsorbadge.gif' width='35' height='35'></a> 
 
-Your feedback, contributions, and suggestions are invaluable to me. If you appreciate the work I’m doing, consider giving me a follow to stay updated on my latest developments.
+[![trophy](https://github-profile-trophy.vercel.app/?username=dedsec1121fk)](https://github.com/ryo-ma/github-profile-trophy)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk)](https://github.com/anuraghazra/github-readme-stats)
+
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true)  
+
+![Vaunt Badge](https://api.vaunt.dev/v1/github/entities/dedsec1121fk/contributions?format=svg&private=false)  
+
+![GitHub metrics](https://metrics.lecoq.io/dedsec1121fk)  
+
+![GitHub streak stats](https://streak-stats.demolab.com/?user=dedsec1121fk)  
+
