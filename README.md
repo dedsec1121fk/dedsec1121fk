@@ -10,7 +10,7 @@ I am a developer with a strong focus on creating sophisticated Python scripts ta
   - 🤖 Automation (Dependency Management, Server Control)
 
 **Connect with me:**
-[![GitHub](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg)](https://github.com/dedsec1121fk)  
-[![Instagram](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg)](https://www.instagram.com/loukas.floros/)
+[![GitHub](https://cdn.jsdelivr.net/npm/simple-icons@1.0.1/icons/github.svg)](https://github.com/dedsec1121fk)  
+[![Instagram](https://cdn.jsdelivr.net/npm/simple-icons@1.0.1/icons/instagram.svg)](https://www.instagram.com/loukas.floros/)
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true) 🌟
