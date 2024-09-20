@@ -1,5 +1,5 @@
 ### Hi there, my name is dedsec1121fk.
-![](https://arturssmirnovs.github.io/github-profile-readme-generator/images/banner.png)
+!
 
 I'm a Termux python developer with a strong focus on building applications for Termux. My journey in programming has been driven by a passion for creating efficient, user-friendly solutions that leverage the power of mobile environments.
 I specialize in:
