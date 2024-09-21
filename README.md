@@ -8,10 +8,9 @@ I specialize in:
 - OSINT Tools: I explore the world of open-source intelligence, creating tools that facilitate information gathering and enhance users' capabilities in research and data analysis.
 - Problem Solving: I thrive on challenges and continually seek to improve my skills in Python and other technologies, always looking for innovative solutions to complex problems.
 
-```markdown
-# GitHub Repository Cloner
+# Download My Repositories
 
-This Python script downloads all repositories of a specified GitHub user at once.
+This Python script downloads all my repositories at once.
 
 ## Installation
 
