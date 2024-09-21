@@ -10,7 +10,7 @@ I specialize in:
 
 # Download My Repositories
 
-This Python script downloads all my repositories at once.
+This Python script downloads all my repositories at once and update them.
 
 ## Installation
 
@@ -21,27 +21,34 @@ This Python script downloads all my repositories at once.
 
 2. Copy and paste the following code into `clone.py`:
 
-   ```python
-   import os
-   import requests
+   ```import os
+import requests
 
-   # GitHub username
-   username = 'dedsec1121fk'  # Change this to the desired GitHub username
+# GitHub username
+username = 'dedsec1121fk'  # Change this to the desired GitHub username
 
-   # GitHub API URL to get the repositories
-   url = f'https://api.github.com/users/{username}/repos'
+# GitHub API URL to get the repositories
+url = f'https://api.github.com/users/{username}/repos'
 
-   # Get the list of repositories
-   response = requests.get(url)
-   repos = response.json()
+# Get the list of repositories
+response = requests.get(url)
+repos = response.json()
 
-   # Clone each repository
-   for repo in repos:
-       repo_name = repo['name']
-       clone_url = repo['clone_url']
-       os.system(f'git clone {clone_url}')
-       print(f'Cloned: {repo_name}')
-   ```
+# Clone or update each repository
+for repo in repos:
+    repo_name = repo['name']
+    clone_url = repo['clone_url']
+    
+    if os.path.isdir(repo_name):
+        # If the repo already exists, pull the latest changes
+        os.chdir(repo_name)
+        os.system('git pull')
+        os.chdir('..')
+        print(f'Updated: {repo_name}')
+    else:
+        # Clone the repository if it doesn't exist
+        os.system(f'git clone {clone_url}')
+        print(f'Cloned: {repo_name}')```
 
 3. Save and exit the editor.
 
@@ -51,8 +58,6 @@ Run the script with the following command:
 ```bash
 python clone.py
 ```
-
-This will clone all repositories of my profile into your current directory.
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk)](https://github.com/anuraghazra/github-readme-stats)
 
