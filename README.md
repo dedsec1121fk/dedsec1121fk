@@ -2,16 +2,6 @@
 
 I'm a Termux Python developer with a strong focus on building applications for Termux. My journey in programming has been driven by a passion for creating efficient, user-friendly solutions that leverage the power of mobile environments.
 
-I specialize in:
-
-- **Application Development**: Designing and implementing versatile applications that streamline tasks and enhance functionality, with an emphasis on user experience and accessibility.
-  
-- **File Management**: Developing robust systems for managing files securely and efficiently, ensuring seamless interactions with user data.
-
-- **OSINT Tools**: Creating tools for open-source intelligence that facilitate information gathering and enhance research and data analysis capabilities.
-
-- **Problem Solving**: Thriving on challenges and continually seeking to improve my skills in Python and other technologies, always looking for innovative solutions to complex problems.
-
 # Download My Repositories
 
 This Python script downloads all my repositories at once and updates them.
