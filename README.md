@@ -7,5 +7,6 @@ I started creating programs because i liked the Ubisoft's Watch Dogs game.
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true)  
 
+[![Visit ded-sec.space](https://img.shields.io/badge/🌐%20Website-ded--sec.space-007EC6?style=for-the-badge)](https://www.ded-sec.space)
 [![Become a Patron](https://img.shields.io/badge/Patreon-Become%20a%20Patron-orange?logo=patreon)](https://www.patreon.com/c/dedsec1121fk/membership?redirect=true)
-[![Follow on Instagram](https://img.shields.io/badge/Instagram-Follow%20on%20Instagram-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/loukas_floros?igsh=MnR2eTdxaTN5ZHZi)
+[![Instagram](https://img.shields.io/badge/Instagram-Follow%20Me-purple?logo=instagram)](https://www.instagram.com/username112104?igsh=MnR2eTdxaTN5ZHZi)
