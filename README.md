@@ -2,10 +2,6 @@
 
 # dedsec1121fk
 
-<img src="https://github.com/dedsec1121fk/DedSec/blob/8b90a76a58dca48f8feac0ff466024f4ae6bf845/Extra%20Content/Images/dedsec1121fk.jpg?raw=true" alt="dedsec1121fk Logo" width="150" height="150"/>
-
-</div>
-
 ---
 
 ### Most Used Languages
