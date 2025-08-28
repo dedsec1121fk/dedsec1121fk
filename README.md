@@ -15,10 +15,10 @@
 <div align="center">
 
 <a href="https://www.ded-sec.space" target="_blank">
-  <img alt="Website - ded-sec.space" src="https://img.shields.io/badge/Website-Visit%20Portfolio-red?logo=internetexplorer"/>
+  <img alt="Website - ded-sec.space" src="https://img.shields.io/badge/Website-DedSec%20Project-red?logo=internetexplorer"/>
 </a>
 
-<a href="https://instagram.com/username112104" target="_blank">
+<a href="https://instagram.com/dedsec_project_official" target="_blank">
   <img alt="Instagram - dedsec1121fk" src="https://img.shields.io/badge/Instagram-Follow%20Me-purple?logo=instagram"/>
 </a>
 
