@@ -19,7 +19,7 @@
 </a>
 
 <a href="https://instagram.com/dedsec_project_official" target="_blank">
-  <img alt="Instagram - dedsec1121fk" src="https://img.shields.io/badge/Instagram-Follow%20Me-purple?logo=instagram"/>
+  <img alt="Instagram - dedsec1121fk" src="https://img.shields.io/badge/Instagram-Follow-purple?logo=instagram"/>
 </a>
 
 </div>
