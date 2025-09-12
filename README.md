@@ -25,8 +25,3 @@
 </div>
 
 ---
-
-## Donate with Crypto
-
-**POL (Polygon) Address:**  
-0x8a88c8bCCc1cCD1bB02622465EA9051051eB06Ff
