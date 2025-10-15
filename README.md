@@ -9,19 +9,3 @@
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=dracula)
 
 ---
-
-## Contact & Links
-
-<div align="center">
-
-<a href="https://www.ded-sec.space" target="_blank">
-  <img alt="Website - ded-sec.space" src="https://img.shields.io/badge/Website-DedSec%20Project-red?logo=internetexplorer"/>
-</a>
-
-<a href="https://instagram.com/dedsec_project_official" target="_blank">
-  <img alt="Instagram - dedsec1121fk" src="https://img.shields.io/badge/Instagram-Follow-purple?logo=instagram"/>
-</a>
-
-</div>
-
----
