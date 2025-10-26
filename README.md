@@ -1,7 +1,7 @@
 <div align="center">
 
   ## Repositories
-  <a href="https://github.com/dedsec1121fk/YOUR-REPO-NAME">
+  <a href="https://github.com/dedsec1121fk/DedSec">
     <img src="https://img.shields.io/badge/DedSec-The%20Official%20Project-blue?style=for-the-badge&logo=github" alt="DedSec Project Repository"/>
   </a>
 
@@ -14,7 +14,7 @@
   </p>
   
   <p>
-    <img src="https://github-readme-streak-stats.vercel.app/?user=dedsec1121fk&theme=dracula" alt="dedsec1121fk's Contribution Streak" />
+    <img src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=dracula" alt="dedsec1121fk's Contribution Streak" />
   </p>
 
   ---
