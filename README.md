@@ -3,7 +3,7 @@
   ## Repositories
 
   <a href="https://github.com/dedsec1121fk/DedSec">
-    <img src="https://img.shields.io/badge/DedSec-The%20Official%20Project-blue?style=for-the-badge&logo=github" alt="DedSec Project Repository"/>
+    <img src="https://img.shields.io/badge/DedSec-The%20UNOfficial%20Project-blue?style=for-the-badge&logo=github" alt="DedSec Project Repository"/>
   </a>
 
   <br />
