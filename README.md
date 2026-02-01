@@ -1,18 +1,15 @@
 <div align="center">
 
-  <!-- Logo / Avatar -->
   <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk.github.io/47ad8e5cbaaee04af552ae6b90edc49cd75b324b/Assets/Images/Logos/Black%20Purple%20Butterfly%20Logo.jpeg" width="140" alt="DedSec Logo"/>
 
   <h1>dedsec1121fk</h1>
 
-  <!-- Typing header -->
   <a href="https://github.com/dedsec1121fk">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2800&pause=700&center=true&vCenter=true&width=520&lines=Termux+%E2%80%A2+Python+%E2%80%A2+Automation;Educational+Cybersecurity+Tooling;CLI+projects+%E2%80%A2+Utilities+%E2%80%A2+Experiments;Made+in+Greece+%F0%9F%87%AC%F0%9F%87%B7" alt="Typing SVG" />
   </a>
 
-  <br/>
+  <br/><br/>
 
-  <!-- Quick badges -->
   <a href="https://ded-sec.space/">
     <img src="https://img.shields.io/badge/Website-ded--sec.space-6d28d9?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"/>
   </a>
@@ -25,36 +22,44 @@
 
   <br/><br/>
 
-  <!-- Summary badges -->
-  <img src="https://img.shields.io/badge/Focus-Termux%20%7C%20Automation%20%7C%20CLI-0ea5e9?style=flat-square" />
-  <img src="https://img.shields.io/badge/Languages-Python%20%7C%20Shell%20%7C%20JavaScript-f59e0b?style=flat-square" />
-  <img src="https://img.shields.io/badge/UI-EN%20%7C%20GR-22c55e?style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=6d28d9" alt="Profile views"/>
 
 </div>
 
 ---
 
 ## 🧩 About me
-I build **Termux-first tools** and automation-focused CLI projects — from productivity utilities and mini-games to educational cybersecurity tooling.
+I build **Termux-first tools** and automation-focused CLI projects — from productivity utilities and mini-games to educational cybersecurity tooling.  
 Everything is designed to be **fast, practical, and beginner-friendly**, with a strong focus on **ethical & educational use**.
 
 ---
 
-## ⭐ Featured project
+## ⭐ Featured project: DedSec
 <div align="center">
 
   <a href="https://github.com/dedsec1121fk/DedSec">
-    <img src="https://img.shields.io/badge/DedSec-The%20UNOfficial%20Project-2563eb?style=for-the-badge&logo=github&logoColor=white" alt="DedSec Repo"/>
+    <img src="https://img.shields.io/badge/DedSec-THE%20UNOFFICIAL%20PROJECT-2563eb?style=for-the-badge&logo=github&logoColor=white" alt="DedSec Repo"/>
   </a>
 
   <br/><br/>
 
-  <!-- Repo card -->
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=dedsec1121fk&repo=DedSec&theme=dracula" />
+  <!-- These are very reliable on GitHub mobile (Shields.io) -->
+  <a href="https://github.com/dedsec1121fk/DedSec/stargazers">
+    <img src="https://img.shields.io/github/stars/dedsec1121fk/DedSec?style=for-the-badge&label=Stars&color=111827" alt="Stars"/>
+  </a>
+  <a href="https://github.com/dedsec1121fk/DedSec/network/members">
+    <img src="https://img.shields.io/github/forks/dedsec1121fk/DedSec?style=for-the-badge&label=Forks&color=111827" alt="Forks"/>
+  </a>
+  <a href="https://github.com/dedsec1121fk/DedSec/issues">
+    <img src="https://img.shields.io/github/issues/dedsec1121fk/DedSec?style=for-the-badge&label=Issues&color=111827" alt="Issues"/>
+  </a>
+  <a href="https://github.com/dedsec1121fk/DedSec/commits/main">
+    <img src="https://img.shields.io/github/last-commit/dedsec1121fk/DedSec?style=for-the-badge&label=Last%20commit&color=111827" alt="Last commit"/>
+  </a>
 
 </div>
 
-**DedSec Project** is an **educational toolkit** built for **Android (Termux)** that brings together a large collection of scripts and utilities (network, automation, developer tools, and more).  
+**DedSec Project** is an **educational toolkit** built for **Android (Termux)** that brings together a collection of scripts and utilities (network, automation, developer tools, and more).  
 > ⚠️ Reminder: Use responsibly, legally, and only in environments where you have explicit permission.
 
 ---
@@ -62,7 +67,6 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 ## 🧰 Toolbox (what I use)
 <div align="center">
 
-  <!-- Languages -->
   <img src="https://img.shields.io/badge/Python-111827?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Shell-111827?style=for-the-badge&logo=gnu-bash&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-111827?style=for-the-badge&logo=javascript&logoColor=white" />
@@ -71,7 +75,6 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 
   <br/>
 
-  <!-- Platforms / Tools -->
   <img src="https://img.shields.io/badge/Termux-0b0f19?style=for-the-badge&logo=android&logoColor=white" />
   <img src="https://img.shields.io/badge/Linux-0b0f19?style=for-the-badge&logo=linux&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-0b0f19?style=for-the-badge&logo=git&logoColor=white" />
@@ -91,11 +94,17 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 
 ## 📊 GitHub stats
 <div align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=dracula" alt="GitHub Stats" />
+
+  <!-- If these ever show as broken images, GitHub (or the host) is rate-limiting.
+       The README still looks great because the important parts above are Shields-based. -->
+  <img height="180" src="https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=dracula&cache_seconds=86400" alt="GitHub Stats" />
   &nbsp;
   <img height="180" src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=dracula" alt="Streak Stats" />
+
   <br/><br/>
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&theme=dracula&layout=compact" alt="Top Languages" />
+
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&theme=dracula&layout=compact&cache_seconds=86400" alt="Top Languages" />
+
 </div>
 
 ---
@@ -115,16 +124,3 @@ If you like what I build and want to support updates, tools, and new drops:
 - 🌍 Website: https://ded-sec.space/
 - ⭐ Repos: https://github.com/dedsec1121fk?tab=repositories
 
-<!-- Optional: add your socials
-- 🧠 Discord:
-- 📸 Instagram:
-- 🧵 X (Twitter):
--->
-
----
-
-<div align="center">
-
-  <img src="https://visitcount.itsvg.in/api?id=dedsec1121fk&icon=0&color=6d28d9" alt="Profile Views" />
-
-</div>
