@@ -30,11 +30,6 @@
 I build **Termux-first tools** and automation-focused CLI projects — from productivity utilities and mini-games to educational cybersecurity tooling.  
 Everything is designed to be **fast, practical, and beginner-friendly**, with a strong focus on **ethical & educational use**.
 
-### Σχετικά με εμένα (GR)
-
-Φτιάχνω **εργαλεία με βάση το Termux** και CLI projects με έμφαση στην αυτοματοποίηση — από εργαλεία παραγωγικότητας και mini-games μέχρι εκπαιδευτικά εργαλεία κυβερνοασφάλειας.  
-Όλα είναι σχεδιασμένα να είναι **γρήγορα, πρακτικά και φιλικά για αρχάριους**, με ξεκάθαρη έμφαση στη **νόμιμη, ηθική και εκπαιδευτική χρήση**.
-
 ---
 
 ## Toolbox (what I use)
@@ -91,8 +86,6 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff" alt="Top Languages" />
 </p>
 
-> Tip: If your GitHub profile uses light theme sometimes, you can duplicate these images with light-theme colors too.
-
 ---
 
 ## Support the work
@@ -105,14 +98,4 @@ If you like what I build and want to support updates, tools, and new drops:
 
 ---
 
-## Ethical use
-
-This project and related tools are intended for **legal, ethical, and educational purposes only**.  
-Do **not** use any code or techniques to harm systems, violate privacy, or break laws.
-
 ---
-
-## Credits
-
-© 2026 DedSec Project. All rights reserved.  
-Made by **dedsec1121fk**.
