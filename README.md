@@ -1,4 +1,3 @@
-# DedSec Project
 <p align="center">
   <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/3ef961b8bc86fdb9e474d0cdbed73a22fb7f137d/dedsec1121fk.webp" width="140" height="140" alt="DedSec Logo" style="border-radius:18px;" />
 </p>
@@ -94,7 +93,5 @@ If you like what I build and want to support updates, tools, and new drops:
 <a href="https://github.com/sponsors/dedsec1121fk">
   <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-9333ea?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="GitHub Sponsors" />
 </a>
-
----
 
 ---
