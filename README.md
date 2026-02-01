@@ -1,5 +1,4 @@
-Portfolio
-
+# DedSec Project
 <p align="center">
   <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/3ef961b8bc86fdb9e474d0cdbed73a22fb7f137d/dedsec1121fk.webp" width="140" height="140" alt="DedSec Logo" style="border-radius:18px;" />
 </p>
