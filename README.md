@@ -1,13 +1,11 @@
 <p align="center">
-  <img src="dedsec1121fk.webp" width="140" height="140" alt="DedSec Logo" style="border-radius:18px;" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/3ef961b8bc86fdb9e474d0cdbed73a22fb7f137d/dedsec1121fk.webp" width="140" height="140" alt="DedSec Logo" style="border-radius:18px;" />
 </p>
 
-<h1 align="center">dedsec1121fk</h1>
-
 <p align="center">
-  Termux • Python • Automation<br/>
-  Educational cybersecurity tooling • CLI utilities • experiments<br/>
-  Made in Greece 🇬🇷
+  <a href="https://github.com/dedsec1121fk">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2800&pause=700&center=true&vCenter=true&width=520&lines=Termux+%E2%80%A2+Python+%E2%80%A2+Automation;Educational+Cybersecurity+Tooling;CLI+projects+%E2%80%A2+Utilities+%E2%80%A2+Experiments;Made+in+Greece+%F0%9F%87%AC%F0%9F%87%B7" alt="Typing SVG" />
+  </a>
 </p>
 
 <p align="center">
@@ -17,9 +15,10 @@
   <a href="https://github.com/dedsec1121fk?tab=repositories">
     <img src="https://img.shields.io/badge/Repos-Explore-111827?style=for-the-badge&logo=github&logoColor=white" alt="Repos" />
   </a>
-  <a href="https://github.com/dedsec1121fk">
-    <img src="https://img.shields.io/github/followers/dedsec1121fk?style=for-the-badge&label=Followers&color=0b0f19&logo=github&logoColor=white" alt="Followers" />
-  </a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=6d28d9" alt="Profile views" />
 </p>
 
 ---
@@ -71,13 +70,19 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 
 ---
 
-## GitHub statistics (stable)
+## GitHub statistics
 
 <p align="center">
-  <img src="github-metrics.svg" alt="GitHub Metrics" />
+  <img src="https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff" alt="GitHub Stats" />
 </p>
 
-> This image is generated inside the repo (GitHub Actions) so it won’t randomly break when external stat services go down.
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=transparent&border=9966ff&ring=9966ff&fire=9966ff&currStreakLabel=9966ff&sideLabels=d0d8e0&sideNums=d0d8e0&dates=d0d8e0" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff" alt="Top Languages" />
+</p>
 
 ---
 
