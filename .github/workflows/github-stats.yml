@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate SVG cards (no external services)
+      - name: Generate SVG cards (GitHub API)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -29,7 +29,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           git add assets/github-stats.svg assets/top-langs.svg
           git diff --cached --quiet && exit 0
           git commit -m "Stats cards update"
