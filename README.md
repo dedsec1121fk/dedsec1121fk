@@ -73,15 +73,15 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 ## GitHub statistics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff&cache_seconds=86400" alt="GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=transparent&border=9966ff&ring=9966ff&fire=9966ff&currStreakLabel=9966ff&sideLabels=d0d8e0&sideNums=d0d8e0&dates=d0d8e0" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=transparent&border=9966ff&ring=9966ff&fire=9966ff&currStreakLabel=9966ff&sideLabels=d0d8e0&sideNums=d0d8e0&dates=d0d8e0&cache_seconds=86400" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff" alt="Top Languages" />
+  <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff&cache_seconds=86400" alt="Top Languages" />
 </p>
 
 ---
