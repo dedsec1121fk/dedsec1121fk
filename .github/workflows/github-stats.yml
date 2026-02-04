@@ -14,50 +14,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Ensure assets folder exists
-        run: mkdir -p assets
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
 
-      - name: Fetch cards safely (keep last successful on failure)
-        shell: bash
+      - name: Generate SVG cards (no external services)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -euo pipefail
+          python scripts/generate_cards.py
 
-          fetch_svg() {
-            out="$1"
-            shift
-            tmp="$(mktemp)"
-
-            for url in "$@"; do
-              echo "Trying: $url"
-              code=$(curl -L -sS -o "$tmp" -w "%{http_code}" "$url" || true)
-              echo "HTTP: $code"
-
-              if [ "$code" = "200" ] && grep -qi "<svg" "$tmp"; then
-                mv "$tmp" "$out"
-                echo "Saved: $out"
-                return 0
-              fi
-            done
-
-            echo "All sources failed for $out (keeping previous)"
-            rm -f "$tmp"
-            return 0
-          }
-
-          mkdir -p assets
-
-          fetch_svg "assets/github-stats.svg"             "https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"             "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"
-
-          fetch_svg "assets/top-langs.svg"             "https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"             "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"
-
-      - name: Commit if files exist and changed
-        shell: bash
+      - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          [ -f assets/github-stats.svg ] || exit 0
-          [ -f assets/top-langs.svg ] || exit 0
 
           git add assets/github-stats.svg assets/top-langs.svg
           git diff --cached --quiet && exit 0
