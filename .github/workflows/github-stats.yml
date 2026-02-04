@@ -22,29 +22,33 @@ jobs:
         run: |
           set -euo pipefail
 
-          tmp_stats="$(mktemp)"
-          tmp_langs="$(mktemp)"
+          fetch_svg() {
+            out="$1"
+            shift
+            tmp="$(mktemp)"
 
-          stats_url="https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"
-          langs_url="https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"
+            for url in "$@"; do
+              echo "Trying: $url"
+              code=$(curl -L -sS -o "$tmp" -w "%{http_code}" "$url" || true)
+              echo "HTTP: $code"
 
-          # Download to temp first so we never overwrite your last good SVGs on failure.
-          if curl -fsSL "$stats_url" -o "$tmp_stats" && curl -fsSL "$langs_url" -o "$tmp_langs"; then
-            # Sanity check: must look like SVG, not an HTML error page.
-            if grep -qi "<svg" "$tmp_stats" && grep -qi "<svg" "$tmp_langs"; then
-              mv "$tmp_stats" assets/github-stats.svg
-              mv "$tmp_langs" assets/top-langs.svg
-              echo "Cards updated."
-            else
-              echo "Invalid SVG detected. Keeping previous files."
-              rm -f "$tmp_stats" "$tmp_langs"
-              exit 0
-            fi
-          else
-            echo "Fetch failed. Keeping previous files."
-            rm -f "$tmp_stats" "$tmp_langs"
-            exit 0
-          fi
+              if [ "$code" = "200" ] && grep -qi "<svg" "$tmp"; then
+                mv "$tmp" "$out"
+                echo "Saved: $out"
+                return 0
+              fi
+            done
+
+            echo "All sources failed for $out (keeping previous)"
+            rm -f "$tmp"
+            return 0
+          }
+
+          mkdir -p assets
+
+          fetch_svg "assets/github-stats.svg"             "https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"             "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"
+
+          fetch_svg "assets/top-langs.svg"             "https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"             "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=transparent&border_color=9966ff&text_color=d0d8e0&title_color=9966ff&icon_color=e6d9ff"
 
       - name: Commit if files exist and changed
         shell: bash
@@ -52,7 +56,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # First-run safety: only git-add if files exist.
           [ -f assets/github-stats.svg ] || exit 0
           [ -f assets/top-langs.svg ] || exit 0
 
