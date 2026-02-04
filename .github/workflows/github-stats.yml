@@ -34,7 +34,7 @@ jobs:
             if grep -qi "<svg" "$tmp_stats" && grep -qi "<svg" "$tmp_langs"; then
               mv "$tmp_stats" assets/github-stats.svg
               mv "$tmp_langs" assets/top-langs.svg
-              echo "Cards refreshed."
+              echo "Cards updated."
             else
               echo "Invalid SVG detected. Keeping previous files."
               rm -f "$tmp_stats" "$tmp_langs"
@@ -46,11 +46,17 @@ jobs:
             exit 0
           fi
 
-      - name: Commit if changed
+      - name: Commit if files exist and changed
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # First-run safety: only git-add if files exist.
+          [ -f assets/github-stats.svg ] || exit 0
+          [ -f assets/top-langs.svg ] || exit 0
+
           git add assets/github-stats.svg assets/top-langs.svg
           git diff --cached --quiet && exit 0
-          git commit -m "Refresh stats cards"
+          git commit -m "Stats cards update"
           git push
