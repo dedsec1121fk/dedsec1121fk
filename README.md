@@ -72,17 +72,30 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 
 ## GitHub statistics
 
-<p align="center">
-  <img src="assets/github-stats.svg" alt="GitHub Stats" />
-</p>
+<!--
+Layout tweak: keep the same cards/colors, but stack them like a clean dashboard.
+GitHub markdown supports basic HTML tables, which keeps spacing consistent.
+-->
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=transparent&border=9966ff&ring=9966ff&fire=9966ff&currStreakLabel=9966ff&sideLabels=d0d8e0&sideNums=d0d8e0&dates=d0d8e0" alt="GitHub Streak" />
-</p>
-
-<p align="center">
-  <img src="assets/top-langs.svg" alt="Top Languages" />
-</p>
+<div align="center">
+  <table>
+    <tr>
+      <td>
+        <img src="assets/top-langs.svg" width="600" alt="Top Languages" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="assets/github-stats.svg" width="600" alt="GitHub Stats" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=transparent&border=9966ff&ring=9966ff&fire=9966ff&currStreakLabel=9966ff&sideLabels=d0d8e0&sideNums=d0d8e0&dates=d0d8e0" width="600" alt="GitHub Streak" />
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
