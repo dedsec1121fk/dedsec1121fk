@@ -25,5 +25,5 @@
     <g transform="translate(310,122)">
       <rect x="0" y="0" width="18" height="18" rx="5" fill="#e6d9ff" opacity="0.15"/>
       <path d="M10 4a3 3 0 100 6 3 3 0 000-6zm-8 3h5a5 5 0 0010 0h5v2h-5a5 5 0 01-10 0H2z" transform="translate(1,1) scale(0.85)" fill="#e6d9ff" opacity="0.9"/>
-    </g><text x="336" y="138" fill="#d0d8e0" font-size="15" font-family="monospace">Commits (last year)</text><text x="570" y="138" fill="#e6d9ff" font-size="15" font-family="monospace" text-anchor="end">3,642</text>
+    </g><text x="336" y="138" fill="#d0d8e0" font-size="15" font-family="monospace">Commits (last year)</text><text x="570" y="138" fill="#e6d9ff" font-size="15" font-family="monospace" text-anchor="end">3,650</text>
 </svg>
