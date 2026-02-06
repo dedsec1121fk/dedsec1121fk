@@ -73,18 +73,15 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 ## GitHub statistics
 
 <p align="center">
-  <a href="https://github.com/dedsec1121fk">
-    <img height="165" src="https://github-readme-stats.vercel.app/api?username=dedsec1121fk&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=00000000&title_color=9966ff&text_color=d0d8e0&icon_color=9966ff&ring_color=9966ff&border_radius=16" alt="GitHub Stats" />
-  </a>
-  <a href="https://github.com/dedsec1121fk">
-    <img height="165" src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=transparent&hide_border=true&border_radius=16&ring=9966ff&fire=9966ff&currStreakLabel=9966ff&sideLabels=d0d8e0&sideNums=d0d8e0&dates=d0d8e0" alt="GitHub Streak" />
-  </a>
+  <img src="assets/github-stats.svg" alt="GitHub Stats" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/dedsec1121fk?tab=repositories">
-    <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&langs_count=10&hide_border=true&bg_color=00000000&title_color=9966ff&text_color=d0d8e0&border_radius=16" alt="Top Languages" />
-  </a>
+  <img src="https://streak-stats.demolab.com/?user=dedsec1121fk&theme=transparent&border=9966ff&ring=9966ff&fire=9966ff&currStreakLabel=9966ff&sideLabels=d0d8e0&sideNums=d0d8e0&dates=d0d8e0" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img src="assets/top-langs.svg" alt="Top Languages" />
 </p>
 
 ---
