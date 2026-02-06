@@ -7,13 +7,14 @@ from collections import defaultdict
 
 USERNAME = "dedsec1121fk"
 
-# Colors (match your theme)
-BORDER = "#9966ff"
-TEXT = "#d0d8e0"
-TITLE = "#9966ff"
-ICON = "#e6d9ff"
-MUTED = "#b6bfca"
-BG = "transparent"
+# Colors (card style like the screenshot)
+# NOTE: Only visual styling constants are changed; logic/data stays the same.
+BORDER = "#cfd6e4"   # soft light border
+TEXT   = "#e6edf3"   # main text
+TITLE  = "#ff5c9b"   # pink title
+ICON   = "#4da3ff"   # blue accents/icons
+MUTED  = "#a7b0bb"   # muted percent text
+BG     = "#222733"   # dark card background
 
 ASSETS_DIR = os.path.join(os.getcwd(), "assets")
 os.makedirs(ASSETS_DIR, exist_ok=True)
@@ -111,8 +112,13 @@ def stats_card(title, items, width=600, height=220):
     parts.append(draw_col(right, col2_x, row_y0))
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
   <rect x="1" y="1" width="{width-2}" height="{height-2}" rx="16" ry="16"
-        fill="{BG}" stroke="{BORDER}" stroke-width="2"/>
+        fill="{BG}" stroke="{BORDER}" stroke-width="2" stroke-opacity="0.85" filter="url(#shadow)"/>
   {''.join(parts)}
 </svg>
 '''
@@ -142,8 +148,13 @@ def langs_card(title, items, width=600, height=260):
         y += row_h
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
   <rect x="1" y="1" width="{width-2}" height="{height-2}" rx="16" ry="16"
-        fill="{BG}" stroke="{BORDER}" stroke-width="2"/>
+        fill="{BG}" stroke="{BORDER}" stroke-width="2" stroke-opacity="0.85" filter="url(#shadow)"/>
   {''.join(parts)}
 </svg>
 '''
