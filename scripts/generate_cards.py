@@ -7,14 +7,14 @@ from collections import defaultdict
 
 USERNAME = "dedsec1121fk"
 
-# Colors (card style like the screenshot)
-# NOTE: Only visual styling constants are changed; logic/data stays the same.
-BORDER = "#cfd6e4"   # soft light border
-TEXT   = "#e6edf3"   # main text
-TITLE  = "#ff5c9b"   # pink title
-ICON   = "#4da3ff"   # blue accents/icons
-MUTED  = "#a7b0bb"   # muted percent text
-BG     = "#222733"   # dark card background
+# Colors (match screenshot cards)
+CARD_BG = "#2b2f3a"
+BORDER = "#c9d1d9"
+TEXT = "#e6edf3"
+TITLE = "#ff5fa2"
+ACCENT = "#4fc3f7"
+MUTED = "#b6bfca"
+BG = CARD_BG
 
 ASSETS_DIR = os.path.join(os.getcwd(), "assets")
 os.makedirs(ASSETS_DIR, exist_ok=True)
@@ -77,88 +77,144 @@ def icon_svg(kind, x, y):
     path = ICON_PATHS.get(kind, ICON_PATHS["repo"])
     return f'''
     <g transform="translate({x},{y})">
-      <rect x="0" y="0" width="18" height="18" rx="5" fill="{ICON}" opacity="0.15"/>
-      <path d="{path}" transform="translate(1,1) scale(0.85)" fill="{ICON}" opacity="0.9"/>
+      <rect x="0" y="0" width="18" height="18" rx="5" fill="{ACCENT}" opacity="0.18"/>
+      <path d="{path}" transform="translate(1,1) scale(0.85)" fill="{ACCENT}" opacity="0.95"/>
     </g>'''
+def stats_card(title, items, width=700, height=260):
+    """
+    Screenshot-style stats card:
+    - dark filled background
+    - soft light border + inner divider line
+    - left: icon + label + value rows
+    - right: decorative grade ring (B+)
+    NOTE: Only presentation; input data/logic unchanged.
+    """
+    pad = 22
+    header_y = 52
+    divider_y = 78
 
-def stats_card(title, items, width=600, height=220):
-    # Layout inspired by github-readme-stats: title then two columns of stats.
-    pad = 18
-    header_y = 34
-    col1_x = pad
-    col2_x = width//2 + 10
-    row_y0 = 78
+    # Row layout (left area)
+    left_x = pad
+    row_y0 = 118
     row_h = 30
+    label_x = left_x + 34
+    value_x = width - pad - 150  # keep room for ring
 
-    # split items into two columns
-    mid = (len(items) + 1)//2
-    left = items[:mid]
-    right = items[mid:]
+    # Ring layout
+    ring_cx = width - pad - 78
+    ring_cy = height // 2 + 10
+    r = 44
+    stroke_w = 10
+    # fixed progress just for the look (not tied to stats)
+    progress = 0.78
 
     parts = []
+    # Title (pink)
     parts.append(f'<text x="{pad}" y="{header_y}" fill="{TITLE}" font-size="20" font-family="monospace">{esc(title)}</text>')
-    parts.append(f'<line x1="{pad}" y1="{header_y+10}" x2="{width-pad}" y2="{header_y+10}" stroke="{BORDER}" stroke-opacity="0.25"/>')
+    parts.append(f'<line x1="{pad}" y1="{divider_y}" x2="{width-pad}" y2="{divider_y}" stroke="{BORDER}" stroke-opacity="0.35"/>')
 
-    def draw_col(col_items, x0, y0):
-        out = []
-        for i,(kind,label,val) in enumerate(col_items):
-            y = y0 + i*row_h
-            out.append(icon_svg(kind, x0, y-16))
-            out.append(f'<text x="{x0+26}" y="{y}" fill="{TEXT}" font-size="15" font-family="monospace">{esc(label)}</text>')
-            out.append(f'<text x="{x0+260}" y="{y}" fill="{ICON}" font-size="15" font-family="monospace" text-anchor="end">{esc(val)}</text>')
-        return "".join(out)
+    # Rows (single column like screenshot)
+    for i, (kind, label, val) in enumerate(items):
+        y = row_y0 + i * row_h
+        parts.append(icon_svg(kind, left_x, y - 16))
+        lbl = label if label.endswith(":") else (label + ":")
+        parts.append(f'<text x="{label_x}" y="{y}" fill="{TEXT}" font-size="15" font-family="monospace">{esc(lbl)}</text>')
+        parts.append(f'<text x="{value_x}" y="{y}" fill="{TEXT}" font-size="15" font-family="monospace" text-anchor="end">{esc(val)}</text>')
 
-    parts.append(draw_col(left, col1_x, row_y0))
-    parts.append(draw_col(right, col2_x, row_y0))
+    # Grade ring (decorative)
+    import math
+    circ = 2 * math.pi * r
+    dash = circ * progress
+    gap = circ - dash
+    parts.append(f'<circle cx="{ring_cx}" cy="{ring_cy}" r="{r}" fill="none" stroke="{BORDER}" stroke-opacity="0.18" stroke-width="{stroke_w}"/>')
+    parts.append(
+        f'<circle cx="{ring_cx}" cy="{ring_cy}" r="{r}" fill="none" '
+        f'stroke="{TITLE}" stroke-width="{stroke_w}" stroke-linecap="round" '
+        f'stroke-dasharray="{dash:.2f} {gap:.2f}" transform="rotate(-90 {ring_cx} {ring_cy})"/>'
+    )
+    parts.append(f'<text x="{ring_cx}" y="{ring_cy+6}" fill="{TEXT}" font-size="26" font-family="monospace" text-anchor="middle">B+</text>')
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">
-  <defs>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
-    </filter>
-  </defs>
-  <rect x="1" y="1" width="{width-2}" height="{height-2}" rx="16" ry="16"
-        fill="{BG}" stroke="{BORDER}" stroke-width="2" stroke-opacity="0.85" filter="url(#shadow)"/>
+    return f"""<svg xmlns='http://www.w3.org/2000/svg' width='{width}' height='{height}' viewBox='0 0 {width} {height}'>
+  <rect x='1' y='1' width='{width-2}' height='{height-2}' rx='14' ry='14'
+        fill='{BG}' stroke='{BORDER}' stroke-opacity='0.55' stroke-width='2'/>
   {''.join(parts)}
 </svg>
-'''
+"""
 
-def langs_card(title, items, width=600, height=260):
-    pad = 18
-    header_y = 34
-    y = 80
-    row_h = 22
-    bar_x = pad + 210
-    bar_w = width - bar_x - pad
-    bar_h = 10
+def langs_card(title, items, width=700, height=300):
+    """Screenshot-style languages card:
+    - dark filled background
+    - big pink title
+    - stacked usage bar
+    - legend with colored dots and percentages (2 columns)
+    """
+    pad = 22
+    header_y = 70
+    divider_y = 98
+
+    # Bar layout
+    bar_x = pad
+    bar_y = 140
+    bar_w = width - 2*pad
+    bar_h = 14
+    radius = 7
 
     total = sum(v for _, v in items) or 1
+
+    # Language colors approximating the screenshot
+    palette = {
+        'HTML': '#e34c26',
+        'Python': '#3572A5',
+        'CSS': '#563d7c',
+        'JavaScript': '#f1e05a',
+        'Shell': '#89e051',
+    }
+    def lang_color(name: str) -> str:
+        return palette.get(name, '#8b949e')
+
     parts = []
-    parts.append(f'<text x="{pad}" y="{header_y}" fill="{TITLE}" font-size="20" font-family="monospace">{esc(title)}</text>')
-    parts.append(f'<line x1="{pad}" y1="{header_y+10}" x2="{width-pad}" y2="{header_y+10}" stroke="{BORDER}" stroke-opacity="0.25"/>')
+    parts.append(f'<text x="{pad}" y="{header_y}" fill="{TITLE}" font-size="30" font-family="monospace">{esc(title)}</text>')
+    parts.append(f'<line x1="{pad}" y1="{divider_y}" x2="{width-pad}" y2="{divider_y}" stroke="{BORDER}" stroke-opacity="0.35"/>')
 
-    for name, v in items:
-        pct = v/total
-        parts.append(f'<text x="{pad}" y="{y}" fill="{TEXT}" font-size="15" font-family="monospace">{esc(name)}</text>')
-        # background bar
-        parts.append(f'<rect x="{bar_x}" y="{y-12}" width="{bar_w}" height="{bar_h}" rx="5" fill="{ICON}" opacity="0.12"/>')
-        # filled bar
-        parts.append(f'<rect x="{bar_x}" y="{y-12}" width="{max(2, int(bar_w*pct))}" height="{bar_h}" rx="5" fill="{ICON}" opacity="0.55"/>')
-        parts.append(f'<text x="{width-pad}" y="{y}" fill="{MUTED}" font-size="13" font-family="monospace" text-anchor="end">{pct*100:0.1f}%</text>')
-        y += row_h
+    # Bar background
+    parts.append(f'<rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="{bar_h}" rx="{radius}" fill="{BORDER}" opacity="0.12"/>')
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">
-  <defs>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
-    </filter>
-  </defs>
-  <rect x="1" y="1" width="{width-2}" height="{height-2}" rx="16" ry="16"
-        fill="{BG}" stroke="{BORDER}" stroke-width="2" stroke-opacity="0.85" filter="url(#shadow)"/>
+    # Stacked segments
+    x = bar_x
+    for idx,(name,v) in enumerate(items):
+        w = int(round(bar_w * (v/total)))
+        # ensure last segment fills to end to avoid rounding gap
+        if idx == len(items)-1:
+            w = (bar_x + bar_w) - x
+        if w <= 0:
+            continue
+        col = lang_color(name)
+        # rounded ends only for first/last segment
+        rx = radius if idx == 0 else 0
+        ry = radius if idx == 0 else 0
+        parts.append(f'<rect x="{x}" y="{bar_y}" width="{w}" height="{bar_h}" rx="{rx}" ry="{ry}" fill="{col}"/>')
+        x += w
+
+    # Legend (two columns)
+    leg_y0 = 190
+    row_h = 36
+    col1_x = pad + 10
+    col2_x = width//2 + 10
+
+    for i,(name,v) in enumerate(items[:6]):
+        pct = v/total*100.0
+        cx = col1_x if i%2==0 else col2_x
+        y = leg_y0 + (i//2)*row_h
+        col = lang_color(name)
+        parts.append(f'<circle cx="{cx}" cy="{y-5}" r="8" fill="{col}"/>')
+        parts.append(f'<text x="{cx+18}" y="{y}" fill="{TEXT}" font-size="16" font-family="monospace">{esc(name)} {pct:0.2f}%</text>')
+
+    return f"""<svg xmlns='http://www.w3.org/2000/svg' width='{width}' height='{height}' viewBox='0 0 {width} {height}'>
+  <rect x='1' y='1' width='{width-2}' height='{height-2}' rx='14' ry='14'
+        fill='{BG}' stroke='{BORDER}' stroke-opacity='0.55' stroke-width='2'/>
   {''.join(parts)}
 </svg>
-'''
-
+"""
 def main():
     # Basic user stats (REST)
     user = rest(f"/users/{USERNAME}")
@@ -204,7 +260,7 @@ def main():
     top_langs = sorted(agg.items(), key=lambda x: x[1], reverse=True)[:8]
 
     stats_svg = stats_card(
-        "GitHub Stats",
+        "FK's GitHub Stats",
         [
             ("repo", "Public repos", fmt(public_repos)),
             ("repo", "Owned repos", fmt(owned_repos)),
@@ -213,10 +269,10 @@ def main():
             ("user", "Following", fmt(following)),
             ("commit", "Commits (last year)", fmt(commits)),
         ],
-        height=220
+        height=250
     )
 
-    langs_svg = langs_card("Top Languages", top_langs, height=260)
+    langs_svg = langs_card("Most Used Languages", top_langs, height=300)
 
     with open(os.path.join(ASSETS_DIR, "github-stats.svg"), "w", encoding="utf-8") as f:
         f.write(stats_svg)
