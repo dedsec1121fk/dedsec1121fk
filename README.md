@@ -23,6 +23,22 @@
 
 ---
 
+## GitHub statistics
+
+<p align="center">
+  <img src="https://github-readme-stats-fast.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=dracula" alt="GitHub Stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=dedsec1121fk&theme=dracula" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=dracula" alt="Top Languages" />
+</p>
+
+---
+
 ## About me
 
 I build **Termux-first tools** and automation-focused CLI projects — from productivity utilities and mini-games to educational cybersecurity tooling.  
@@ -67,22 +83,6 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 ## Repositories
 
 - **DedSec (The Official Project)** — https://github.com/dedsec1121fk/DedSec
-
----
-
-## GitHub statistics
-
-<p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=dracula" alt="GitHub Stats" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=dedsec1121fk&theme=dracula" alt="GitHub Streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=dracula" alt="Top Languages" />
-</p>
 
 ---
 
