@@ -76,7 +76,7 @@ Everything is designed to be **fast, practical, and beginner-friendly**, with a 
 - **Zepo And Xan Project** — https://ded-sec.space/Zepo-And-Xan-Project/
 - **ICE Project** — https://ded-sec.space/ICE-Project/
 - **KuNuPi Project** — https://ded-sec.space/KuNuPi-Project/
-- **DedSec Project (Website)** — https://ded-sec.space
+- **DedSec Project** — https://ded-sec.space
 
 ---
 
