@@ -38,39 +38,39 @@
 
 ## Job Experience
 
-<table align="center" width="100%">
+<table align="center" width="100%" style="table-layout:fixed; width:100%;">
   <tr>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Kitchen%20Crew.png" alt="Kitchen Crew" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
-      <sub><b>Kitchen Crew</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/a5d3a1d01a4d997a4e76fe9a5dc6b8e78bd66643/Job%20Experience/Kitchen%20Crew%20Member.png" alt="Kitchen Crew Member" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Kitchen Crew Member</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/HVAC%20Technician.png" alt="HVAC Technician" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/a5d3a1d01a4d997a4e76fe9a5dc6b8e78bd66643/Job%20Experience/HVAC%20Technician.png" alt="HVAC Technician" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
       <sub><b>HVAC Technician</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gas%20Station.png" alt="Gas Station" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
-      <sub><b>Gas Station</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/a5d3a1d01a4d997a4e76fe9a5dc6b8e78bd66643/Job%20Experience/Gas%20Station%20Employer.png" alt="Gas Station Employer" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Gas Station Employer</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/People%27s%20Market.png" alt="People's Market" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
-      <sub><b>People's Market</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/a5d3a1d01a4d997a4e76fe9a5dc6b8e78bd66643/Job%20Experience/People%27s%20Market%20Employer.png" alt="People's Market Employer" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>People's Market Employer</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Forest%20Cleaning.png" alt="Forest Cleaning" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
-      <sub><b>Forest Cleaning</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/a5d3a1d01a4d997a4e76fe9a5dc6b8e78bd66643/Job%20Experience/Forest%20Cleaning%20Team%20Member.png" alt="Forest Cleaning Team Member" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Forest Cleaning Team Member</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gravedigger.png" alt="Gravedigger" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/a5d3a1d01a4d997a4e76fe9a5dc6b8e78bd66643/Job%20Experience/Gravedigger.png" alt="Gravedigger" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
       <sub><b>Gravedigger</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Programming.png" alt="Programming" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
-      <sub><b>Programming</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/a5d3a1d01a4d997a4e76fe9a5dc6b8e78bd66643/Job%20Experience/Programmer.png" alt="Programmer" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Programmer</b></sub>
     </td>
     <td align="center" width="33%">&nbsp;</td>
     <td align="center" width="33%">&nbsp;</td>
