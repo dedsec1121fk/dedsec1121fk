@@ -79,13 +79,21 @@
 
 ---
 
-## Portofolio
+## Websites That I Created
 
+_Websites links here_
 - **ODY Project** — https://ded-sec.space/ODY-Project/
 - **Zepo And Xan Project** — https://ded-sec.space/Zepo-And-Xan-Project/
 - **ICE Project** — https://ded-sec.space/ICE-Project/
 - **KuNuPi Project** — https://ded-sec.space/KuNuPi-Project/
 - **DedSec Project** — https://ded-sec.space
+
+---
+
+## Repositories That I Contributed
+
+- **DedSec** — https://github.com/dedsec1121fk/DedSec
+- **core-termux** — https://github.com/dedsec1121fk/core-termux
 
 ---
 
