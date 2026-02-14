@@ -12,9 +12,6 @@
   <a href="https://github.com/sponsors/dedsec1121fk">
     <img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-9333ea?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="Sponsor" />
   </a>
-  <a href="https://github.com/dedsec1121fk?tab=repositories">
-    <img src="https://img.shields.io/badge/Repos-Explore-111827?style=for-the-badge&logo=github&logoColor=white" alt="Repos" />
-  </a>
 </p>
 
 <p align="center">
@@ -23,7 +20,7 @@
 
 ---
 
-## GitHub statistics
+## GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats-fast.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=dracula" alt="GitHub Stats" />
@@ -39,50 +36,56 @@
 
 ---
 
-## About me
+## Job Experience
 
-I build **Termux-first tools** and automation-focused CLI projects — from productivity utilities and mini-games to educational cybersecurity tooling.  
-Everything is designed to be **fast, practical, and beginner-friendly**, with a strong focus on **ethical & educational use**.
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Kitchen%20Crew.png" width="260" alt="Kitchen Crew" /><br/>
+      <sub><b>Kitchen Crew.png</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/HVAC%20Technician.png" width="260" alt="HVAC Technician" /><br/>
+      <sub><b>HVAC Technician.png</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gas%20Station.png" width="260" alt="Gas Station" /><br/>
+      <sub><b>Gas Station.png</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/People%27s%20Market.png" width="260" alt="People's Market" /><br/>
+      <sub><b>People's Market.png</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Forest%20Cleaning.png" width="260" alt="Forest Cleaning" /><br/>
+      <sub><b>Forest Cleaning.png</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gravedigger.png" width="260" alt="Gravedigger" /><br/>
+      <sub><b>Gravedigger.png</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Programming.png" width="260" alt="Programming" /><br/>
+      <sub><b>Programming.png</b></sub>
+    </td>
+    <td align="center" width="33%">&nbsp;</td>
+    <td align="center" width="33%">&nbsp;</td>
+  </tr>
+</table>
 
 ---
 
-## Toolbox (what I use)
-
-![Python](https://img.shields.io/badge/Python-111827?style=for-the-badge&logo=python&logoColor=white)
-![Shell](https://img.shields.io/badge/Shell-111827?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-111827?style=for-the-badge&logo=javascript&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-111827?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-111827?style=for-the-badge&logo=css3&logoColor=white)
-
-![Termux](https://img.shields.io/badge/Termux-0b0f19?style=for-the-badge&logo=android&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-0b0f19?style=for-the-badge&logo=linux&logoColor=white)
-![Git](https://img.shields.io/badge/Git-0b0f19?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-0b0f19?style=for-the-badge&logo=github&logoColor=white)
-
----
-
-## What you’ll find in my repos
-
-- **Termux automation** (setup helpers, repair wizards, backups)
-- **Network utilities** (analysis helpers, link safety tools, footprint checkers)
-- **Developer utilities** (file converters, site creators, helpers)
-- **Mini games & experiments** (terminal-based fun projects)
-
----
-
-## Portfolio
+## Portofolio
 
 - **ODY Project** — https://ded-sec.space/ODY-Project/
 - **Zepo And Xan Project** — https://ded-sec.space/Zepo-And-Xan-Project/
 - **ICE Project** — https://ded-sec.space/ICE-Project/
 - **KuNuPi Project** — https://ded-sec.space/KuNuPi-Project/
 - **DedSec Project** — https://ded-sec.space
-
----
-
-## Repositories
-
-- **DedSec (The Official Project)** — https://github.com/dedsec1121fk/DedSec
 
 ---
 
