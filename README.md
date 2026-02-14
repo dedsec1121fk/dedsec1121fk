@@ -38,39 +38,39 @@
 
 ## Job Experience
 
-<table align="center">
+<table align="center" width="100%">
   <tr>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Kitchen%20Crew.png" width="260" alt="Kitchen Crew" /><br/>
-      <sub><b>Kitchen Crew.png</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Kitchen%20Crew.png" alt="Kitchen Crew" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Kitchen Crew</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/HVAC%20Technician.png" width="260" alt="HVAC Technician" /><br/>
-      <sub><b>HVAC Technician.png</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/HVAC%20Technician.png" alt="HVAC Technician" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>HVAC Technician</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gas%20Station.png" width="260" alt="Gas Station" /><br/>
-      <sub><b>Gas Station.png</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gas%20Station.png" alt="Gas Station" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Gas Station</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/People%27s%20Market.png" width="260" alt="People's Market" /><br/>
-      <sub><b>People's Market.png</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/People%27s%20Market.png" alt="People's Market" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>People's Market</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Forest%20Cleaning.png" width="260" alt="Forest Cleaning" /><br/>
-      <sub><b>Forest Cleaning.png</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Forest%20Cleaning.png" alt="Forest Cleaning" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Forest Cleaning</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gravedigger.png" width="260" alt="Gravedigger" /><br/>
-      <sub><b>Gravedigger.png</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Gravedigger.png" alt="Gravedigger" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Gravedigger</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Programming.png" width="260" alt="Programming" /><br/>
-      <sub><b>Programming.png</b></sub>
+      <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e682f85010d27380679f0fa4d50472f1f0679706/Jobs/Programming.png" alt="Programming" width="260" style="width:100%; max-width:260px; height:auto;" /><br/>
+      <sub><b>Programming</b></sub>
     </td>
     <td align="center" width="33%">&nbsp;</td>
     <td align="center" width="33%">&nbsp;</td>
