@@ -93,6 +93,7 @@
 
 - **DedSec** https://github.com/dedsec1121fk/DedSec
 - **core-termux** https://github.com/dedsec1121fk/core-termux
+- **termux-app-store** https://github.com/djunekz/termux-app-store
 
 ---
 
