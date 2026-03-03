@@ -34,6 +34,12 @@
   <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=dracula" alt="Top Languages" />
 </p>
 
+<p align="center">
+  <b>Owner of the DedSec Project</b><br/>
+  <a href="https://github.com/dedsec1121fk/DedSec">https://github.com/dedsec1121fk/DedSec</a>
+</p>
+
+
 ---
 
 ## Job Experience
