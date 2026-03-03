@@ -91,9 +91,9 @@
 
 ## Repositories That I Contributed
 
-- **DedSec** https://github.com/dedsec1121fk/DedSec
-- **core-termux** https://github.com/dedsec1121fk/core-termux
+- **core-termux** https://github.com/DevCoreXOfficial/core-termux
 - **termux-app-store** https://github.com/djunekz/termux-app-store
+- **Termux-fixer** https://github.com/Niranj-coder/Termux-fixer
 
 ---
 
