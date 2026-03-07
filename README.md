@@ -1,10 +1,4 @@
 <p align="center">
-  <a href="https://github.com/sponsors/dedsec1121fk">
-    <img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-9333ea?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="Sponsor" />
-  </a>
-</p>
-
-<p align="center">
   <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=6d28d9" alt="Profile views" />
 </p>
 
