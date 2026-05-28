@@ -26,24 +26,6 @@
 
 ---
 
-## Websites That I Created
-
-- **ODY Project** https://ded-sec.space/ODY-Project/
-- **Zepo And Xan Project** https://ded-sec.space/Zepo-And-Xan-Project/
-- **ICE Project** https://ded-sec.space/ICE-Project/
-- **KuNuPi Project** https://ded-sec.space/KuNuPi-Project/
-- **DedSec Project** https://ded-sec.space
-
----
-
-## Repositories That I Contributed
-
-- **core-termux** https://github.com/DevCoreXOfficial/core-termux
-- **termux-app-store** https://github.com/djunekz/termux-app-store
-- **Termux-fixer** https://github.com/Niranj-coder/Termux-fixer
-
----
-
 ## Support the work
 
 If you like what I build and want to support updates, tools, and new drops:
