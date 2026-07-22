@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <b>Owner of the DedSec Project</b><br/>
+  <b>Owner Of The DedSec Project</b><br/>
   <a href="https://github.com/dedsec1121fk/DedSec">https://github.com/dedsec1121fk/DedSec</a>
 </p>
 
