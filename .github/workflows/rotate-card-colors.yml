@@ -1,0 +1,49 @@
+name: Rotate profile card colors
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-card-color-rotation
+  cancel-in-progress: false
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Rotate card palette
+        id: palette
+        shell: bash
+        run: |
+          set -euo pipefail
+          next_theme="$(python3 .github/scripts/rotate_card_theme.py)"
+          echo "theme=${next_theme}" >> "$GITHUB_OUTPUT"
+
+      - name: Commit updated colors
+        shell: bash
+        env:
+          NEXT_THEME: ${{ steps.palette.outputs.theme }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "dedsec1121fk"
+          git config user.email "172995856+dedsec1121fk@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No card color changes were generated."
+            exit 0
+          fi
+
+          git commit -m "style: rotate profile cards to ${NEXT_THEME}"
+          git push
