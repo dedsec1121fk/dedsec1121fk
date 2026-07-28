@@ -1,22 +1,22 @@
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=6d28d9" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=fe428e" alt="Profile views" />
 </p>
 
 ---
 
 ## GitHub Stats
 
-<!-- card-theme: dracula -->
+<!-- card-theme: radical -->
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=dracula" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-fast.vercel.app/api?username=dedsec1121fk&show_icons=true&theme=radical" alt="GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=dedsec1121fk&theme=dracula" alt="GitHub Streak" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=dedsec1121fk&theme=radical" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=dracula" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=radical" alt="Top Languages" />
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-9333ea?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-fe428e?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="GitHub Sponsors" />
 </a>
 
 ---
