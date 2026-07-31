@@ -19,6 +19,10 @@
   <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=cobalt" alt="Top Languages" />
 </p>
 
+<p align="center">
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dedsec1121fk&theme=algolia" alt="GitHub profile details, account history, and contributions" />
+</p>
+
 ---
 
 ## Contribution Activity
@@ -31,9 +35,6 @@
   </picture>
 </p>
 
-<p align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=dedsec1121fk&theme=react-dark&hide_border=true&area=true" alt="GitHub activity graph" />
-</p>
 
 <p align="center">
   <b>Owner Of The DedSec Project</b><br/>
