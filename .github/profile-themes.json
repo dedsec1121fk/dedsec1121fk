@@ -1,0 +1,167 @@
+{
+  "current": "tokyonight",
+  "rotation": [
+    "tokyonight",
+    "radical",
+    "dracula",
+    "gruvbox",
+    "monokai",
+    "nord_dark",
+    "github_dark",
+    "solarized_dark"
+  ],
+  "themes": {
+    "tokyonight": {
+      "accent": "7aa2f7",
+      "light_dots": [
+        "ebedf0",
+        "c0caf5",
+        "7aa2f7",
+        "7dcfff",
+        "bb9af7"
+      ],
+      "dark_dots": [
+        "1a1b26",
+        "24283b",
+        "414868",
+        "7dcfff",
+        "bb9af7"
+      ],
+      "stats_theme": "tokyonight",
+      "summary_theme": "tokyonight"
+    },
+    "radical": {
+      "accent": "fe428e",
+      "light_dots": [
+        "f8f8f2",
+        "ffb3d1",
+        "fe428e",
+        "a9fef7",
+        "f8d847"
+      ],
+      "dark_dots": [
+        "141321",
+        "2d2538",
+        "fe428e",
+        "a9fef7",
+        "f8d847"
+      ],
+      "stats_theme": "radical",
+      "summary_theme": "radical"
+    },
+    "dracula": {
+      "accent": "ff79c6",
+      "light_dots": [
+        "f8f8f2",
+        "bd93f9",
+        "ff79c6",
+        "8be9fd",
+        "50fa7b"
+      ],
+      "dark_dots": [
+        "282a36",
+        "44475a",
+        "6272a4",
+        "bd93f9",
+        "ff79c6"
+      ],
+      "stats_theme": "dracula",
+      "summary_theme": "dracula"
+    },
+    "gruvbox": {
+      "accent": "fabd2f",
+      "light_dots": [
+        "fbf1c7",
+        "d5c4a1",
+        "fe8019",
+        "fabd2f",
+        "b8bb26"
+      ],
+      "dark_dots": [
+        "282828",
+        "3c3836",
+        "665c54",
+        "d79921",
+        "b8bb26"
+      ],
+      "stats_theme": "gruvbox",
+      "summary_theme": "gruvbox"
+    },
+    "monokai": {
+      "accent": "f92672",
+      "light_dots": [
+        "f8f8f2",
+        "a6e22e",
+        "66d9ef",
+        "ae81ff",
+        "f92672"
+      ],
+      "dark_dots": [
+        "272822",
+        "3e3d32",
+        "75715e",
+        "66d9ef",
+        "f92672"
+      ],
+      "stats_theme": "monokai",
+      "summary_theme": "monokai"
+    },
+    "nord_dark": {
+      "accent": "88c0d0",
+      "light_dots": [
+        "eceff4",
+        "d8dee9",
+        "8fbcbb",
+        "88c0d0",
+        "81a1c1"
+      ],
+      "dark_dots": [
+        "2e3440",
+        "3b4252",
+        "4c566a",
+        "81a1c1",
+        "88c0d0"
+      ],
+      "stats_theme": "nord",
+      "summary_theme": "nord_dark"
+    },
+    "github_dark": {
+      "accent": "58a6ff",
+      "light_dots": [
+        "f6f8fa",
+        "d0d7de",
+        "54aeff",
+        "0969da",
+        "8250df"
+      ],
+      "dark_dots": [
+        "0d1117",
+        "161b22",
+        "21262d",
+        "1f6feb",
+        "58a6ff"
+      ],
+      "stats_theme": "github_dark",
+      "summary_theme": "github_dark"
+    },
+    "solarized_dark": {
+      "accent": "2aa198",
+      "light_dots": [
+        "fdf6e3",
+        "eee8d5",
+        "93a1a1",
+        "2aa198",
+        "268bd2"
+      ],
+      "dark_dots": [
+        "002b36",
+        "073642",
+        "586e75",
+        "2aa198",
+        "268bd2"
+      ],
+      "stats_theme": "solarized-dark",
+      "summary_theme": "solarized_dark"
+    }
+  }
+}
