@@ -2,7 +2,9 @@ name: Generate Contribution Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    # Refresh contribution data daily using Greece local time.
+    - cron: "47 4 * * *"
+      timezone: "Europe/Athens"
   workflow_dispatch:
   push:
     branches:
@@ -12,21 +14,32 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - name: Generate snake animation
+      - name: Check out profile repository
+        uses: actions/checkout@v6
+
+      - name: Load the current shared palette
+        id: theme
+        run: python3 .github/scripts/rotate_card_theme.py emit
+
+      - name: Generate matching snake animations
         uses: Platane/snk/svg-only@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          outputs: ${{ steps.theme.outputs.snake_outputs }}
 
-      - name: Publish animation to output branch
+      - name: Publish animations to output branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -36,5 +49,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b output
           git add .
-          git commit -m "Update contribution snake"
+          git commit -m "Refresh ${{ steps.theme.outputs.theme }} contribution snake"
           git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output

@@ -1,49 +1,80 @@
-name: Rotate profile card colors
+name: Rotate Profile Colors
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    # Change every 12 hours using Greece local time, including DST changes.
+    - cron: "17 3,15 * * *"
+      timezone: "Europe/Athens"
   workflow_dispatch:
+    inputs:
+      theme:
+        description: "Choose a theme, or use auto for the next theme"
+        required: true
+        default: auto
+        type: choice
+        options:
+          - auto
+          - tokyonight
+          - radical
+          - dracula
+          - gruvbox
+          - monokai
+          - nord_dark
+          - github_dark
+          - solarized_dark
 
 permissions:
   contents: write
 
 concurrency:
-  group: profile-card-color-rotation
-  cancel-in-progress: false
+  group: profile-color-rotation
+  cancel-in-progress: true
 
 jobs:
   rotate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - name: Check out profile repository
+        uses: actions/checkout@v6
 
-      - name: Rotate card palette
-        id: palette
-        shell: bash
-        run: |
-          set -euo pipefail
-          next_theme="$(python3 .github/scripts/rotate_card_theme.py)"
-          echo "theme=${next_theme}" >> "$GITHUB_OUTPUT"
-
-      - name: Commit updated colors
-        shell: bash
+      - name: Select one shared theme
+        id: theme
         env:
-          NEXT_THEME: ${{ steps.palette.outputs.theme }}
+          REQUESTED_THEME: ${{ github.event.inputs.theme || 'auto' }}
+        run: python3 .github/scripts/rotate_card_theme.py set "$REQUESTED_THEME"
+
+      - name: Generate matching snake animations
+        uses: Platane/snk/svg-only@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: ${{ steps.theme.outputs.snake_outputs }}
+
+      - name: Commit README and theme state
         run: |
-          set -euo pipefail
-
-          git config user.name "dedsec1121fk"
-          git config user.email "172995856+dedsec1121fk@users.noreply.github.com"
-
-          git add README.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md .github/profile-themes.json
 
           if git diff --cached --quiet; then
-            echo "No card color changes were generated."
-            exit 0
+            echo "README already uses ${{ steps.theme.outputs.theme }}."
+          else
+            git commit -m "Rotate profile colors to ${{ steps.theme.outputs.theme }}"
+            git push
           fi
 
-          git commit -m "style: rotate profile cards to ${NEXT_THEME}"
-          git push
+      - name: Publish matching snake to output branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b output
+          git add .
+          git commit -m "Update ${{ steps.theme.outputs.theme }} contribution snake"
+          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output
