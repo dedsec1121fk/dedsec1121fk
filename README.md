@@ -19,11 +19,26 @@
   <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=cobalt" alt="Top Languages" />
 </p>
 
+---
+
+## Contribution Activity
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg" />
+    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg" alt="Animated GitHub contribution snake" />
+  </picture>
+</p>
+
+<p align="center">
+  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=dedsec1121fk&theme=react-dark&hide_border=true&area=true" alt="GitHub activity graph" />
+</p>
+
 <p align="center">
   <b>Owner Of The DedSec Project</b><br/>
   <a href="https://github.com/dedsec1121fk/DedSec">https://github.com/dedsec1121fk/DedSec</a>
 </p>
-
 
 ---
 
