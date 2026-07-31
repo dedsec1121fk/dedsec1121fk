@@ -13,20 +13,16 @@
 </p>
 
 <p align="center">
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dedsec1121fk&theme=tokyonight" alt="GitHub profile details and contribution history" />
+</p>
+
+<p align="center">
   <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=dedsec1121fk&theme=tokyonight" alt="GitHub Streak" />
 </p>
 
 <p align="center">
   <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=tokyonight" alt="Top Languages" />
 </p>
-
-<p align="center">
-  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dedsec1121fk&theme=tokyonight" alt="GitHub profile details and contribution history" />
-</p>
-
----
-
-## Contribution Activity
 
 <p align="center">
   <picture>
