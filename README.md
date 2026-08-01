@@ -1,15 +1,13 @@
 <!-- profile-theme: radical -->
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=fe428e" alt="Profile views" />
-</p>
-
 ---
-
-## GitHub Stats
 
 <p align="center">
   <img width="100%" src="https://raw.githubusercontent.com/dedsec1121fk/DedSec/c1c55a3dd6f0d3a626a5af15e1bfb41385727818/Extra%20Content/Images/DedSec%20Project%20PC%20Wallpaper.png" alt="DedSec Project PC Wallpaper" />
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=fe428e" alt="Profile views" />
 </p>
 
 <p align="center">
