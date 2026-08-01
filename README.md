@@ -13,6 +13,10 @@
 </p>
 
 <p align="center">
+  <img width="100%" src="https://raw.githubusercontent.com/dedsec1121fk/DedSec/c1c55a3dd6f0d3a626a5af15e1bfb41385727818/Extra%20Content/Images/DedSec%20Project%20PC%20Wallpaper.png" alt="DedSec Project PC Wallpaper" />
+</p>
+
+<p align="center">
   <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=dedsec1121fk&theme=radical" alt="GitHub profile details and contribution history" />
 </p>
 
