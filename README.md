@@ -1,4 +1,4 @@
-<!-- profile-theme: radical -->
+<!-- profile-theme: dracula -->
 
 ---
 
@@ -7,19 +7,19 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=fe428e" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=ff79c6" alt="Profile views" />
 </p>
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=141321&text=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8" alt="DedSec GitHub Stats" />
+  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=282a36&text=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8" alt="DedSec GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=dedsec1121fk&background=141321&border=2d2538&stroke=2d2538&ring=fe428e&fire=f8d847&currStreakNum=a9fef7&sideNums=f8f8f2&currStreakLabel=fe428e&sideLabels=a9fef7&dates=f8f8f2&border_radius=8" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com?user=dedsec1121fk&background=282a36&border=44475a&stroke=44475a&ring=ff79c6&fire=50fa7b&currStreakNum=8be9fd&sideNums=f8f8f2&currStreakLabel=ff79c6&sideLabels=8be9fd&dates=f8f8f2&border_radius=8" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=141321&text_color=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=282a36&text_color=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8" alt="Top Languages" />
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-fe428e?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-ff79c6?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="GitHub Sponsors" />
 </a>
 
 ---
