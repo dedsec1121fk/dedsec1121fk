@@ -9,19 +9,19 @@
 ## GitHub Stats
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=dedsec1121fk" alt="DedSec GitHub Stats" />
-</p>
-
-<p align="center">
   <img width="100%" src="https://raw.githubusercontent.com/dedsec1121fk/DedSec/c1c55a3dd6f0d3a626a5af15e1bfb41385727818/Extra%20Content/Images/DedSec%20Project%20PC%20Wallpaper.png" alt="DedSec Project PC Wallpaper" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=dedsec1121fk&theme=radical" alt="GitHub Streak" />
+  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=141321&text=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8" alt="DedSec GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&theme=radical" alt="Top Languages" />
+  <img src="https://streak-stats.demolab.com?user=dedsec1121fk&background=141321&border=2d2538&stroke=2d2538&ring=fe428e&fire=f8d847&currStreakNum=a9fef7&sideNums=f8f8f2&currStreakLabel=fe428e&sideLabels=a9fef7&dates=f8f8f2&border_radius=8" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=141321&text_color=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8" alt="Top Languages" />
 </p>
 
 <p align="center">
