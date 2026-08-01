@@ -59,15 +59,35 @@ def replace_exact(text: str, pattern: str, replacement: str, expected: int, labe
     return updated
 
 
+def card_palette(theme_data: dict[str, Any]) -> dict[str, str]:
+    light = theme_data["light_dots"]
+    dark = theme_data["dark_dots"]
+    if len(light) < 5 or len(dark) < 2:
+        raise SystemExit("Each theme needs at least five light colors and two dark colors.")
+
+    return {
+        "accent": theme_data["accent"],
+        "background": dark[0],
+        "border": dark[1],
+        "text": light[0],
+        "secondary": light[3],
+        "highlight": light[4],
+    }
+
+
 def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     try:
         text = README_PATH.read_text(encoding="utf-8")
     except OSError as exc:
         raise SystemExit(f"Unable to read {README_PATH}: {exc}") from exc
 
-    accent = theme_data["accent"]
-    stats_theme = theme_data.get("stats_theme", theme)
-    summary_theme = theme_data.get("summary_theme", theme)
+    palette = card_palette(theme_data)
+    accent = palette["accent"]
+    background = palette["background"]
+    border = palette["border"]
+    body_text = palette["text"]
+    secondary = palette["secondary"]
+    highlight = palette["highlight"]
 
     marker = f"<!-- profile-theme: {theme} -->"
     if re.search(r"<!-- profile-theme: [a-z0-9_-]+ -->", text):
@@ -81,20 +101,48 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     else:
         text = marker + "\n\n" + text
 
-    text = replace_exact(
-        text,
-        r"(github-readme-stats-fast\.vercel\.app/[^\"\s]*?[?&]theme=)[a-zA-Z0-9_-]+",
-        rf"\g<1>{stats_theme}",
-        3,
-        "stats-card theme",
+    ghstats_url = (
+        "https://ghstats.dev/api/card?username=dedsec1121fk"
+        f"&bg={background}&text={body_text}&title_color={accent}"
+        f"&icon_color={secondary}&border_color={border}&border_radius=8"
     )
     text = replace_exact(
         text,
-        r"(github-profile-summary-cards\.vercel\.app/[^\"\s]*?[?&]theme=)[a-zA-Z0-9_-]+",
-        rf"\g<1>{summary_theme}",
+        r"https://ghstats\.dev/api/card\?[^\"\s]+",
+        ghstats_url,
         1,
-        "profile-summary theme",
+        "main stats card",
     )
+
+    streak_url = (
+        "https://streak-stats.demolab.com?user=dedsec1121fk"
+        f"&background={background}&border={border}&stroke={border}"
+        f"&ring={accent}&fire={highlight}&currStreakNum={secondary}"
+        f"&sideNums={body_text}&currStreakLabel={accent}"
+        f"&sideLabels={secondary}&dates={body_text}&border_radius=8"
+    )
+    text = replace_exact(
+        text,
+        r"https://streak-stats\.demolab\.com\?[^\"\s]+",
+        streak_url,
+        1,
+        "streak card",
+    )
+
+    languages_url = (
+        "https://github-readme-stats-fast.vercel.app/api/top-langs/"
+        "?username=dedsec1121fk&layout=compact"
+        f"&bg_color={background}&text_color={body_text}&title_color={accent}"
+        f"&icon_color={secondary}&border_color={border}&border_radius=8"
+    )
+    text = replace_exact(
+        text,
+        r"https://github-readme-stats-fast\.vercel\.app/api/top-langs/\?[^\"\s]+",
+        languages_url,
+        1,
+        "top-languages card",
+    )
+
     text = replace_exact(
         text,
         r"(komarev\.com/ghpvc/\?[^\"\s]*?[?&]color=)[0-9a-fA-F]{6}",
