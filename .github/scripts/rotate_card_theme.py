@@ -114,20 +114,6 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
         "main stats card",
     )
 
-    streak_url = (
-        "https://streak-stats.demolab.com?user=dedsec1121fk"
-        f"&background={background}&border={border}&stroke={border}"
-        f"&ring={accent}&fire={highlight}&currStreakNum={secondary}"
-        f"&sideNums={body_text}&currStreakLabel={accent}"
-        f"&sideLabels={secondary}&dates={body_text}&border_radius=8"
-    )
-    text = replace_exact(
-        text,
-        r"https://streak-stats\.demolab\.com\?[^\"\s]+",
-        streak_url,
-        1,
-        "streak card",
-    )
 
     languages_url = (
         "https://github-readme-stats-fast.vercel.app/api/top-langs/"
@@ -161,6 +147,26 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     README_PATH.write_text(text, encoding="utf-8")
 
 
+def streak_options(theme_data: dict[str, Any]) -> str:
+    """Build the self-hosted streak-card query string for the current palette."""
+    palette = card_palette(theme_data)
+    return (
+        "user=dedsec1121fk"
+        f"&background={palette['background']}"
+        f"&border={palette['border']}"
+        f"&stroke={palette['border']}"
+        f"&ring={palette['accent']}"
+        f"&fire={palette['highlight']}"
+        f"&currStreakNum={palette['secondary']}"
+        f"&sideNums={palette['text']}"
+        f"&currStreakLabel={palette['accent']}"
+        f"&sideLabels={palette['secondary']}"
+        f"&dates={palette['text']}"
+        "&border_radius=8"
+        "&disable_animations=true"
+    )
+
+
 def snake_outputs(theme_data: dict[str, Any]) -> str:
     accent = theme_data["accent"]
     light = ",".join(f"%23{color}" for color in theme_data["light_dots"])
@@ -175,15 +181,18 @@ def snake_outputs(theme_data: dict[str, Any]) -> str:
 
 def emit_outputs(theme: str, theme_data: dict[str, Any]) -> None:
     output_path = os.environ.get("GITHUB_OUTPUT")
+    options = streak_options(theme_data)
     if not output_path:
         print(f"theme={theme}")
         print(f"accent={theme_data['accent']}")
+        print(f"streak_options={options}")
         print(snake_outputs(theme_data))
         return
 
     with open(output_path, "a", encoding="utf-8") as handle:
         handle.write(f"theme={theme}\n")
         handle.write(f"accent={theme_data['accent']}\n")
+        handle.write(f"streak_options={options}\n")
         handle.write("snake_outputs<<PROFILE_SNAKE_OUTPUTS\n")
         handle.write(snake_outputs(theme_data))
         handle.write("\nPROFILE_SNAKE_OUTPUTS\n")
