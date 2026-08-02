@@ -45,6 +45,13 @@ jobs:
           REQUESTED_THEME: ${{ github.event.inputs.theme || 'auto' }}
         run: python3 .github/scripts/rotate_card_theme.py set "$REQUESTED_THEME"
 
+      - name: Generate matching streak card
+        uses: DenverCoder1/github-readme-streak-stats@main
+        with:
+          options: ${{ steps.theme.outputs.streak_options }}
+          path: profile/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate matching snake animations
         uses: Platane/snk/svg-only@v3
         env:
@@ -57,7 +64,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md .github/profile-themes.json
+          git add README.md .github/profile-themes.json profile/streak.svg
 
           if git diff --cached --quiet; then
             echo "README already uses ${{ steps.theme.outputs.theme }}."
