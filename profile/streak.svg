@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub Streak</title>
+  <desc id="desc">The GitHub Actions workflow is preparing the current streak statistics.</desc>
+  <rect x="0.5" y="0.5" width="494" height="194" rx="8" fill="#272822" stroke="#3e3d32"/>
+  <text x="247.5" y="88" text-anchor="middle" fill="#f92672" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">GitHub Streak</text>
+  <text x="247.5" y="119" text-anchor="middle" fill="#f8f8f2" font-family="Arial, Helvetica, sans-serif" font-size="14">Updating automatically…</text>
+</svg>
