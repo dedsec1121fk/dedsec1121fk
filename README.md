@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=dedsec1121fk&background=272822&border=3e3d32&stroke=3e3d32&ring=f92672&fire=f92672&currStreakNum=ae81ff&sideNums=f8f8f2&currStreakLabel=f92672&sideLabels=ae81ff&dates=f8f8f2&border_radius=8" alt="GitHub Streak" />
+  <img src="./profile/streak.svg" alt="GitHub Streak" />
 </p>
 
 <p align="center">
