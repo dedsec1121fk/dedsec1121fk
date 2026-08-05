@@ -2,7 +2,7 @@ name: Rotate Profile Colors
 
 on:
   schedule:
-    - cron: "17 3,15 * * *"
+    - cron: "17 */4 * * *"
       timezone: "Europe/Athens"
   workflow_dispatch:
     inputs:
