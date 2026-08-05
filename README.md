@@ -1,4 +1,4 @@
-<!-- profile-theme: dracula -->
+<!-- profile-theme: gruvbox -->
 
 ---
 
@@ -7,19 +7,19 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=ff79c6" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=fabd2f" alt="Profile views" />
 </p>
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=282a36&text=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8" alt="DedSec GitHub Stats" />
+  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=282828&text=fbf1c7&title_color=fabd2f&icon_color=fabd2f&border_color=3c3836&border_radius=8" alt="DedSec GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="./profile/streak.svg?v=dracula" alt="GitHub Streak" />
+  <img src="./profile/streak.svg?v=gruvbox" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=282a36&text_color=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=282828&text_color=fbf1c7&title_color=fabd2f&icon_color=fabd2f&border_color=3c3836&border_radius=8" alt="Top Languages" />
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-ff79c6?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-fabd2f?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white" alt="GitHub Sponsors" />
 </a>
 
 ---
