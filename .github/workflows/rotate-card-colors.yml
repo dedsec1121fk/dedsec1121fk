@@ -54,15 +54,6 @@ jobs:
           path: profile/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Verify that the real card was generated
-        run: |
-          test -s profile/streak.svg
-          if grep -qi "Updating automatically" profile/streak.svg; then
-            echo "The temporary placeholder was not replaced."
-            exit 1
-          fi
-          grep -qi "Current Streak" profile/streak.svg
-
       - name: Generate matching snake animations
         uses: Platane/snk/svg-only@v3
         env:
@@ -71,19 +62,19 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           outputs: ${{ steps.theme.outputs.snake_outputs }}
 
-      - name: Commit synchronized cards and theme state
+      - name: Verify synchronized README and streak colors
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md .github/profile-themes.json profile/streak.svg
-
-          if git diff --cached --quiet; then
-            echo "Profile already uses ${{ steps.theme.outputs.theme }}."
-          else
-            git commit -m "Rotate profile colors to ${{ steps.theme.outputs.theme }}"
-            git push
+          test -s profile/streak.svg
+          if grep -qi "Updating automatically" profile/streak.svg; then
+            echo "The temporary placeholder was not replaced."
+            exit 1
           fi
+          grep -qi "Current Streak" profile/streak.svg
+          python3 .github/scripts/rotate_card_theme.py verify
 
+      # Publish the snake first. The README is committed only after every
+      # generated asset already uses the selected palette, avoiding a mixed
+      # old/new state on the public profile.
       - name: Publish matching snake to output branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -96,3 +87,16 @@ jobs:
           git add .
           git commit -m "Update ${{ steps.theme.outputs.theme }} contribution snake"
           git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output
+
+      - name: Commit synchronized cards and theme state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md .github/profile-themes.json profile/streak.svg
+
+          if git diff --cached --quiet; then
+            echo "Profile already uses ${{ steps.theme.outputs.theme }}."
+          else
+            git commit -m "Rotate all profile colors to ${{ steps.theme.outputs.theme }}"
+            git push
+          fi

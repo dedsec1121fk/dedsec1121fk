@@ -14,6 +14,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = ROOT / ".github" / "profile-themes.json"
 README_PATH = ROOT / "README.md"
+STREAK_PATH = ROOT / "profile" / "streak.svg"
+
+HEX_COLOR = re.compile(r"^[0-9a-fA-F]{6}$")
 
 
 def load_config() -> dict[str, Any]:
@@ -31,6 +34,16 @@ def load_config() -> dict[str, Any]:
         raise SystemExit(f"Unknown current theme: {current}")
     if not rotation or any(name not in themes for name in rotation):
         raise SystemExit("Theme rotation contains an unknown or missing theme.")
+
+    for theme_name, theme_data in themes.items():
+        colors = [
+            theme_data.get("accent"),
+            *theme_data.get("light_dots", []),
+            *theme_data.get("dark_dots", []),
+        ]
+        if not colors or any(not isinstance(color, str) or not HEX_COLOR.fullmatch(color) for color in colors):
+            raise SystemExit(f"Theme '{theme_name}' contains an invalid six-digit hex color.")
+
     return config
 
 
@@ -66,12 +79,58 @@ def card_palette(theme_data: dict[str, Any]) -> dict[str, str]:
         raise SystemExit("Each theme needs at least five light colors and two dark colors.")
 
     return {
-        "accent": theme_data["accent"],
-        "background": dark[0],
-        "border": dark[1],
-        "text": light[0],
-        "secondary": light[3],
-        "highlight": light[4],
+        "accent": theme_data["accent"].lower(),
+        "background": dark[0].lower(),
+        "border": dark[1].lower(),
+        "text": light[0].lower(),
+        "secondary": light[3].lower(),
+        "highlight": light[4].lower(),
+    }
+
+
+def cache_key(theme: str, theme_data: dict[str, Any]) -> str:
+    """Change every image URL whenever the shared palette changes."""
+    palette = card_palette(theme_data)
+    return f"{theme}-{palette['accent']}"
+
+
+def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, str]:
+    palette = card_palette(theme_data)
+    version = cache_key(theme, theme_data)
+
+    return {
+        "marker": f"<!-- profile-theme: {theme} -->",
+        "ghstats": (
+            "https://ghstats.dev/api/card?username=dedsec1121fk"
+            f"&bg={palette['background']}&text={palette['text']}"
+            f"&title_color={palette['accent']}&icon_color={palette['secondary']}"
+            f"&border_color={palette['border']}&border_radius=8&v={version}"
+        ),
+        "streak": f"./profile/streak.svg?v={version}",
+        "languages": (
+            "https://github-readme-stats-fast.vercel.app/api/top-langs/"
+            "?username=dedsec1121fk&layout=compact"
+            f"&bg_color={palette['background']}&text_color={palette['text']}"
+            f"&title_color={palette['accent']}&icon_color={palette['secondary']}"
+            f"&border_color={palette['border']}&border_radius=8&v={version}"
+        ),
+        "views": (
+            "https://komarev.com/ghpvc/?username=dedsec1121fk"
+            f"&style=flat-square&color={palette['accent']}&v={version}"
+        ),
+        "sponsors": (
+            "https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-"
+            f"{palette['accent']}?style=for-the-badge&logo=GitHub-Sponsors"
+            f"&logoColor=white&v={version}"
+        ),
+        "snake_light": (
+            "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/"
+            f"github-contribution-grid-snake.svg?v={version}"
+        ),
+        "snake_dark": (
+            "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/"
+            f"github-contribution-grid-snake-dark.svg?v={version}"
+        ),
     }
 
 
@@ -81,79 +140,108 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     except OSError as exc:
         raise SystemExit(f"Unable to read {README_PATH}: {exc}") from exc
 
-    palette = card_palette(theme_data)
-    accent = palette["accent"]
-    background = palette["background"]
-    border = palette["border"]
-    body_text = palette["text"]
-    secondary = palette["secondary"]
+    values = expected_readme_values(theme, theme_data)
 
-    marker = f"<!-- profile-theme: {theme} -->"
     if re.search(r"<!-- profile-theme: [a-z0-9_-]+ -->", text):
         text = replace_exact(
             text,
             r"<!-- profile-theme: [a-z0-9_-]+ -->",
-            marker,
+            values["marker"],
             1,
             "theme marker",
         )
     else:
-        text = marker + "\n\n" + text
+        text = values["marker"] + "\n\n" + text
 
-    ghstats_url = (
-        "https://ghstats.dev/api/card?username=dedsec1121fk"
-        f"&bg={background}&text={body_text}&title_color={accent}"
-        f"&icon_color={secondary}&border_color={border}&border_radius=8"
-    )
     text = replace_exact(
         text,
         r"https://ghstats\.dev/api/card\?[^\"\s]+",
-        ghstats_url,
+        values["ghstats"],
         1,
         "main stats card",
     )
-
-    # The real SVG is generated by GitHub Actions. The changing query value
-    # invalidates GitHub's image cache whenever the profile palette rotates.
-    streak_src = f"./profile/streak.svg?v={theme}"
     text = replace_exact(
         text,
         r'(<img\s+src=")[^"]+("\s+alt="GitHub Streak"\s*/>)',
-        rf"\g<1>{streak_src}\g<2>",
+        rf"\g<1>{values['streak']}\g<2>",
         1,
         "streak image source",
-    )
-
-    languages_url = (
-        "https://github-readme-stats-fast.vercel.app/api/top-langs/"
-        "?username=dedsec1121fk&layout=compact"
-        f"&bg_color={background}&text_color={body_text}&title_color={accent}"
-        f"&icon_color={secondary}&border_color={border}&border_radius=8"
     )
     text = replace_exact(
         text,
         r"https://github-readme-stats-fast\.vercel\.app/api/top-langs/\?[^\"\s]+",
-        languages_url,
+        values["languages"],
         1,
         "top-languages card",
     )
-
     text = replace_exact(
         text,
-        r"(komarev\.com/ghpvc/\?[^\"\s]*?[?&]color=)[0-9a-fA-F]{6}",
-        rf"\g<1>{accent}",
+        r"https://komarev\.com/ghpvc/\?[^\"\s]+",
+        values["views"],
         1,
-        "profile-view badge color",
+        "profile-view badge",
     )
     text = replace_exact(
         text,
-        r"(GitHub%20Sponsors-Support%20%E2%9D%A4-)[0-9a-fA-F]{6}(\?style=)",
-        rf"\g<1>{accent}\g<2>",
+        r"https://img\.shields\.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-[^\"\s]+",
+        values["sponsors"],
         1,
-        "Sponsors badge color",
+        "Sponsors badge",
+    )
+    text = replace_exact(
+        text,
+        r"https://raw\.githubusercontent\.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake\.svg(?:\?[^\"\s]*)?",
+        values["snake_light"],
+        1,
+        "light contribution snake",
+    )
+    text = replace_exact(
+        text,
+        r"https://raw\.githubusercontent\.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark\.svg(?:\?[^\"\s]*)?",
+        values["snake_dark"],
+        2,
+        "dark contribution snake",
     )
 
     README_PATH.write_text(text, encoding="utf-8")
+
+
+def verify_sync(theme: str, theme_data: dict[str, Any], require_streak: bool = True) -> None:
+    try:
+        readme = README_PATH.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise SystemExit(f"Unable to read {README_PATH}: {exc}") from exc
+
+    values = expected_readme_values(theme, theme_data)
+    expected_counts = {
+        "marker": 1,
+        "ghstats": 1,
+        "streak": 1,
+        "languages": 1,
+        "views": 1,
+        "sponsors": 1,
+        "snake_light": 1,
+        "snake_dark": 2,
+    }
+    for name, expected_count in expected_counts.items():
+        actual_count = readme.count(values[name])
+        if actual_count != expected_count:
+            raise SystemExit(
+                f"README synchronization failed for {name}: expected {expected_count}, found {actual_count}."
+            )
+
+    if require_streak:
+        try:
+            streak = STREAK_PATH.read_text(encoding="utf-8").lower()
+        except OSError as exc:
+            raise SystemExit(f"Unable to read generated streak card {STREAK_PATH}: {exc}") from exc
+
+        palette = card_palette(theme_data)
+        for role, color in palette.items():
+            if f"#{color}" not in streak:
+                raise SystemExit(f"Generated streak card is missing the shared {role} color #{color}.")
+
+    print(f"All profile cards are synchronized to {theme} ({cache_key(theme, theme_data)}).")
 
 
 def streak_options(theme_data: dict[str, Any]) -> str:
@@ -190,9 +278,11 @@ def snake_outputs(theme_data: dict[str, Any]) -> str:
 def emit_outputs(theme: str, theme_data: dict[str, Any]) -> None:
     output_path = os.environ.get("GITHUB_OUTPUT")
     options = streak_options(theme_data)
+    version = cache_key(theme, theme_data)
     if not output_path:
         print(f"theme={theme}")
         print(f"accent={theme_data['accent']}")
+        print(f"cache_key={version}")
         print(f"streak_options={options}")
         print(snake_outputs(theme_data))
         return
@@ -200,6 +290,7 @@ def emit_outputs(theme: str, theme_data: dict[str, Any]) -> None:
     with open(output_path, "a", encoding="utf-8") as handle:
         handle.write(f"theme={theme}\n")
         handle.write(f"accent={theme_data['accent']}\n")
+        handle.write(f"cache_key={version}\n")
         handle.write(f"streak_options={options}\n")
         handle.write("snake_outputs<<PROFILE_SNAKE_OUTPUTS\n")
         handle.write(snake_outputs(theme_data))
@@ -224,6 +315,12 @@ def command_emit() -> None:
     emit_outputs(current, config["themes"][current])
 
 
+def command_verify() -> None:
+    config = load_config()
+    current = config["current"]
+    verify_sync(current, config["themes"][current])
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -232,6 +329,7 @@ def build_parser() -> argparse.ArgumentParser:
     set_parser.add_argument("theme", help="Theme name or 'auto' for the next rotation theme.")
 
     subparsers.add_parser("emit", help="Emit the current shared card palette.")
+    subparsers.add_parser("verify", help="Verify that every visible card uses the current palette.")
     return parser
 
 
@@ -241,6 +339,8 @@ def main() -> int:
         command_set(args.theme)
     elif args.command == "emit":
         command_emit()
+    elif args.command == "verify":
+        command_verify()
     else:
         raise SystemExit("Unsupported command.")
     return 0

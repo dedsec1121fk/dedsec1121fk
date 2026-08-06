@@ -6,10 +6,6 @@ on:
     - cron: "47 4 * * *"
       timezone: "Europe/Athens"
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - master
 
 permissions:
   contents: write
@@ -25,7 +21,7 @@ jobs:
 
     steps:
       - name: Check out profile repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Load the current shared palette
         id: theme
