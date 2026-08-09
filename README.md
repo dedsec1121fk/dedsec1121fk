@@ -1,4 +1,4 @@
-<!-- profile-theme: nord_dark -->
+<!-- profile-theme: github_dark -->
 
 ---
 
@@ -7,26 +7,26 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=88c0d0&v=nord_dark-88c0d0" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=58a6ff&v=github_dark-58a6ff" alt="Profile views" />
 </p>
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=2e3440&text=eceff4&title_color=88c0d0&icon_color=88c0d0&border_color=3b4252&border_radius=8&v=nord_dark-88c0d0" alt="DedSec GitHub Stats" />
+  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=0d1117&text=f6f8fa&title_color=58a6ff&icon_color=0969da&border_color=161b22&border_radius=8&v=github_dark-58a6ff" alt="DedSec GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="./profile/streak.svg?v=nord_dark-88c0d0" alt="GitHub Streak" />
+  <img src="./profile/streak.svg?v=github_dark-58a6ff" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=2e3440&text_color=eceff4&title_color=88c0d0&icon_color=88c0d0&border_color=3b4252&border_radius=8&v=nord_dark-88c0d0" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=0d1117&text_color=f6f8fa&title_color=58a6ff&icon_color=0969da&border_color=161b22&border_radius=8&v=github_dark-58a6ff" alt="Top Languages" />
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=nord_dark-88c0d0" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=nord_dark-88c0d0" />
-    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=nord_dark-88c0d0" alt="Animated GitHub contribution snake" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=github_dark-58a6ff" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=github_dark-58a6ff" />
+    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=github_dark-58a6ff" alt="Animated GitHub contribution snake" />
   </picture>
 </p>
 
@@ -37,7 +37,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-88c0d0?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=nord_dark-88c0d0" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-58a6ff?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=github_dark-58a6ff" alt="GitHub Sponsors" />
 </a>
 
 ---
