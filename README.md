@@ -1,4 +1,4 @@
-<!-- profile-theme: radical -->
+<!-- profile-theme: dracula -->
 
 ---
 
@@ -7,26 +7,26 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=fe428e&v=radical-fe428e" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=ff79c6&v=dracula-ff79c6" alt="Profile views" />
 </p>
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=141321&text=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8&v=radical-fe428e" alt="DedSec GitHub Stats" />
+  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=282a36&text=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8&v=dracula-ff79c6" alt="DedSec GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="./profile/streak.svg?v=radical-fe428e" alt="GitHub Streak" />
+  <img src="./profile/streak.svg?v=dracula-ff79c6" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=141321&text_color=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8&v=radical-fe428e" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=282a36&text_color=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8&v=dracula-ff79c6" alt="Top Languages" />
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=radical-fe428e" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=radical-fe428e" />
-    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=radical-fe428e" alt="Animated GitHub contribution snake" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=dracula-ff79c6" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=dracula-ff79c6" />
+    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=dracula-ff79c6" alt="Animated GitHub contribution snake" />
   </picture>
 </p>
 
@@ -37,7 +37,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-fe428e?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=radical-fe428e" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-ff79c6?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=dracula-ff79c6" alt="GitHub Sponsors" />
 </a>
 
 ---
