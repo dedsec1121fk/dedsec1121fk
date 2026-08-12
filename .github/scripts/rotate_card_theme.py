@@ -134,6 +134,84 @@ def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, 
     }
 
 
+def update_skill_badges(text: str, theme_data: dict[str, Any]) -> str:
+    """Synchronize all Technologies & Skills shields with the active palette."""
+    palette = card_palette(theme_data)
+    skill_start = text.find("## Technologies & Skills")
+    if skill_start == -1:
+        raise SystemExit("README is missing the Technologies & Skills section.")
+
+    # The skills section ends at the streak card, directly after the final badge group.
+    skill_end = text.find('<p align="center">\n  <img src="./profile/streak.svg', skill_start)
+    if skill_end == -1:
+        raise SystemExit("Unable to locate the end of the Technologies & Skills badge section.")
+
+    before = text[:skill_start]
+    section = text[skill_start:skill_end]
+    after = text[skill_end:]
+
+    badge_url = re.compile(r"https://img\.shields\.io/badge/[^\"\s]+")
+    changed = 0
+
+    def recolor(match: re.Match[str]) -> str:
+        nonlocal changed
+        url = match.group(0)
+        if "style=flat-square" not in url:
+            return url
+
+        path, query = url.split("?", 1)
+        prefix, old_color = path.rsplit("-", 1)
+        if not HEX_COLOR.fullmatch(old_color):
+            raise SystemExit(f"Unexpected skill badge color in URL: {url}")
+
+        path = f"{prefix}-{palette['accent']}"
+        if re.search(r"(?:^|&)logoColor=[^&]+", query):
+            query = re.sub(
+                r"((?:^|&)logoColor=)[^&]+",
+                rf"\g<1>{palette['background']}",
+                query,
+            )
+        else:
+            query += f"&logoColor={palette['background']}"
+
+        changed += 1
+        return f"{path}?{query}"
+
+    section = badge_url.sub(recolor, section)
+    if changed == 0:
+        raise SystemExit("No Technologies & Skills badges were found to recolor.")
+
+    return before + section + after
+
+
+def verify_skill_badges(readme: str, theme_data: dict[str, Any]) -> None:
+    """Fail if any Technologies & Skills badge is outside the active palette."""
+    palette = card_palette(theme_data)
+    skill_start = readme.find("## Technologies & Skills")
+    skill_end = readme.find('<p align="center">\n  <img src="./profile/streak.svg', skill_start)
+    if skill_start == -1 or skill_end == -1:
+        raise SystemExit("Unable to verify Technologies & Skills badge colors.")
+
+    section = readme[skill_start:skill_end]
+    urls = re.findall(r"https://img\.shields\.io/badge/[^\"\s]+", section)
+    skill_urls = [url for url in urls if "style=flat-square" in url]
+    if not skill_urls:
+        raise SystemExit("No Technologies & Skills badges were found during verification.")
+
+    for url in skill_urls:
+        path, query = url.split("?", 1)
+        color = path.rsplit("-", 1)[-1].lower()
+        logo_match = re.search(r"(?:^|&)logoColor=([^&]+)", query)
+        logo_color = logo_match.group(1).lower() if logo_match else ""
+        if color != palette["accent"] or logo_color != palette["background"]:
+            raise SystemExit(
+                "Technologies & Skills badge is out of sync: "
+                f"expected background #{palette['accent']} and logo #{palette['background']}, got {url}"
+            )
+
+    print(f"Verified {len(skill_urls)} Technologies & Skills badges on the active palette.")
+
+
 def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     try:
         text = README_PATH.read_text(encoding="utf-8")
@@ -203,6 +281,7 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
         "dark contribution snake",
     )
 
+    text = update_skill_badges(text, theme_data)
     README_PATH.write_text(text, encoding="utf-8")
 
 
@@ -229,6 +308,8 @@ def verify_sync(theme: str, theme_data: dict[str, Any], require_streak: bool = T
             raise SystemExit(
                 f"README synchronization failed for {name}: expected {expected_count}, found {actual_count}."
             )
+
+    verify_skill_badges(readme, theme_data)
 
     if require_streak:
         try:
