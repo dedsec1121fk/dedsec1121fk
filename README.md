@@ -1,9 +1,9 @@
-<!-- profile-theme: radical -->
+<!-- profile-theme: dracula -->
 
 ---
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=fe428e&v=radical-fe428e" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=ff79c6&v=dracula-ff79c6" alt="Profile views" />
 </p>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=141321&text=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8&v=radical-fe428e" alt="DedSec GitHub Stats" />
+  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=282a36&text=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8&v=dracula-ff79c6" alt="DedSec GitHub Stats" />
 </p>
 
 ---
@@ -21,88 +21,88 @@
 ### Languages & Data
 
 <p>
-  <img src="https://img.shields.io/badge/Python-fe428e?style=flat-square&logo=python&logoColor=141321" alt="Python" />
-  <img src="https://img.shields.io/badge/Bash%20%2F%20Shell-fe428e?style=flat-square&logo=gnubash&logoColor=141321" alt="Bash / Shell" />
-  <img src="https://img.shields.io/badge/JavaScript-fe428e?style=flat-square&logo=javascript&logoColor=141321" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/HTML5-fe428e?style=flat-square&logo=html5&logoColor=141321" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-fe428e?style=flat-square&logo=css&logoColor=141321" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JSON-fe428e?style=flat-square&logo=json&logoColor=141321" alt="JSON" />
-  <img src="https://img.shields.io/badge/Markdown-fe428e?style=flat-square&logo=markdown&logoColor=141321" alt="Markdown" />
-  <img src="https://img.shields.io/badge/SQLite-fe428e?style=flat-square&logo=sqlite&logoColor=141321" alt="SQLite" />
+  <img src="https://img.shields.io/badge/Python-ff79c6?style=flat-square&logo=python&logoColor=282a36" alt="Python" />
+  <img src="https://img.shields.io/badge/Bash%20%2F%20Shell-ff79c6?style=flat-square&logo=gnubash&logoColor=282a36" alt="Bash / Shell" />
+  <img src="https://img.shields.io/badge/JavaScript-ff79c6?style=flat-square&logo=javascript&logoColor=282a36" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/HTML5-ff79c6?style=flat-square&logo=html5&logoColor=282a36" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-ff79c6?style=flat-square&logo=css&logoColor=282a36" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JSON-ff79c6?style=flat-square&logo=json&logoColor=282a36" alt="JSON" />
+  <img src="https://img.shields.io/badge/Markdown-ff79c6?style=flat-square&logo=markdown&logoColor=282a36" alt="Markdown" />
+  <img src="https://img.shields.io/badge/SQLite-ff79c6?style=flat-square&logo=sqlite&logoColor=282a36" alt="SQLite" />
 </p>
 
 ### Development & Platforms
 
 <p>
-  <img src="https://img.shields.io/badge/Termux-fe428e?style=flat-square&logo=termux&logoColor=141321" alt="Termux" />
-  <img src="https://img.shields.io/badge/Linux%20CLI-fe428e?style=flat-square&logo=linux&logoColor=141321" alt="Linux CLI" />
-  <img src="https://img.shields.io/badge/Git-fe428e?style=flat-square&logo=git&logoColor=141321" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-fe428e?style=flat-square&logo=github&logoColor=141321" alt="GitHub" />
-  <img src="https://img.shields.io/badge/GitHub%20Actions-fe428e?style=flat-square&logo=githubactions&logoColor=141321" alt="GitHub Actions" />
-  <img src="https://img.shields.io/badge/GitHub%20Pages-fe428e?style=flat-square&logo=githubpages&logoColor=141321" alt="GitHub Pages" />
+  <img src="https://img.shields.io/badge/Termux-ff79c6?style=flat-square&logo=termux&logoColor=282a36" alt="Termux" />
+  <img src="https://img.shields.io/badge/Linux%20CLI-ff79c6?style=flat-square&logo=linux&logoColor=282a36" alt="Linux CLI" />
+  <img src="https://img.shields.io/badge/Git-ff79c6?style=flat-square&logo=git&logoColor=282a36" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-ff79c6?style=flat-square&logo=github&logoColor=282a36" alt="GitHub" />
+  <img src="https://img.shields.io/badge/GitHub%20Actions-ff79c6?style=flat-square&logo=githubactions&logoColor=282a36" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/GitHub%20Pages-ff79c6?style=flat-square&logo=githubpages&logoColor=282a36" alt="GitHub Pages" />
 </p>
 
 ### Cybersecurity
 
 <p>
-  <img src="https://img.shields.io/badge/Cybersecurity%20Tooling-fe428e?style=flat-square&logoColor=141321" alt="Cybersecurity Tooling" />
-  <img src="https://img.shields.io/badge/OSINT-fe428e?style=flat-square&logoColor=141321" alt="OSINT" />
-  <img src="https://img.shields.io/badge/Security%20Testing%20%26%20Auditing-fe428e?style=flat-square&logoColor=141321" alt="Security Testing & Auditing" />
-  <img src="https://img.shields.io/badge/Network%20%26%20Security%20Tooling-fe428e?style=flat-square&logoColor=141321" alt="Network & Security Tooling" />
-  <img src="https://img.shields.io/badge/File%20%26%20Metadata%20Analysis-fe428e?style=flat-square&logoColor=141321" alt="File & Metadata Analysis" />
+  <img src="https://img.shields.io/badge/Cybersecurity%20Tooling-ff79c6?style=flat-square&logoColor=282a36" alt="Cybersecurity Tooling" />
+  <img src="https://img.shields.io/badge/OSINT-ff79c6?style=flat-square&logoColor=282a36" alt="OSINT" />
+  <img src="https://img.shields.io/badge/Security%20Testing%20%26%20Auditing-ff79c6?style=flat-square&logoColor=282a36" alt="Security Testing & Auditing" />
+  <img src="https://img.shields.io/badge/Network%20%26%20Security%20Tooling-ff79c6?style=flat-square&logoColor=282a36" alt="Network & Security Tooling" />
+  <img src="https://img.shields.io/badge/File%20%26%20Metadata%20Analysis-ff79c6?style=flat-square&logoColor=282a36" alt="File & Metadata Analysis" />
 </p>
 
 ### AI & Local Models
 
 <p>
-  <img src="https://img.shields.io/badge/Local%20LLMs-fe428e?style=flat-square&logoColor=141321" alt="Local LLMs" />
-  <img src="https://img.shields.io/badge/GGUF%20Models-fe428e?style=flat-square&logoColor=141321" alt="GGUF Models" />
-  <img src="https://img.shields.io/badge/llama.cpp-fe428e?style=flat-square&logoColor=141321" alt="llama.cpp" />
-  <img src="https://img.shields.io/badge/RAG-fe428e?style=flat-square&logoColor=141321" alt="Retrieval-Augmented Generation" />
-  <img src="https://img.shields.io/badge/Local%20Knowledge%20Retrieval-fe428e?style=flat-square&logoColor=141321" alt="Local Knowledge Retrieval" />
-  <img src="https://img.shields.io/badge/AI%20Model%20Routing-fe428e?style=flat-square&logoColor=141321" alt="AI Model Routing" />
-  <img src="https://img.shields.io/badge/Offline%20AI-fe428e?style=flat-square&logoColor=141321" alt="Offline AI" />
+  <img src="https://img.shields.io/badge/Local%20LLMs-ff79c6?style=flat-square&logoColor=282a36" alt="Local LLMs" />
+  <img src="https://img.shields.io/badge/GGUF%20Models-ff79c6?style=flat-square&logoColor=282a36" alt="GGUF Models" />
+  <img src="https://img.shields.io/badge/llama.cpp-ff79c6?style=flat-square&logoColor=282a36" alt="llama.cpp" />
+  <img src="https://img.shields.io/badge/RAG-ff79c6?style=flat-square&logoColor=282a36" alt="Retrieval-Augmented Generation" />
+  <img src="https://img.shields.io/badge/Local%20Knowledge%20Retrieval-ff79c6?style=flat-square&logoColor=282a36" alt="Local Knowledge Retrieval" />
+  <img src="https://img.shields.io/badge/AI%20Model%20Routing-ff79c6?style=flat-square&logoColor=282a36" alt="AI Model Routing" />
+  <img src="https://img.shields.io/badge/Offline%20AI-ff79c6?style=flat-square&logoColor=282a36" alt="Offline AI" />
 </p>
 
 ### Application Development
 
 <p>
-  <img src="https://img.shields.io/badge/CLI%20Development-fe428e?style=flat-square&logoColor=141321" alt="CLI Development" />
-  <img src="https://img.shields.io/badge/TUI%20Development-fe428e?style=flat-square&logoColor=141321" alt="TUI Development" />
-  <img src="https://img.shields.io/badge/Android%20%2F%20Termux%20Development-fe428e?style=flat-square&logo=android&logoColor=141321" alt="Android / Termux Development" />
-  <img src="https://img.shields.io/badge/Local--First%20Applications-fe428e?style=flat-square&logoColor=141321" alt="Local-First Applications" />
-  <img src="https://img.shields.io/badge/Offline--First%20Applications-fe428e?style=flat-square&logoColor=141321" alt="Offline-First Applications" />
-  <img src="https://img.shields.io/badge/Responsive%20Web%20Development-fe428e?style=flat-square&logoColor=141321" alt="Responsive Web Development" />
-  <img src="https://img.shields.io/badge/API%20Integration-fe428e?style=flat-square&logoColor=141321" alt="API Integration" />
+  <img src="https://img.shields.io/badge/CLI%20Development-ff79c6?style=flat-square&logoColor=282a36" alt="CLI Development" />
+  <img src="https://img.shields.io/badge/TUI%20Development-ff79c6?style=flat-square&logoColor=282a36" alt="TUI Development" />
+  <img src="https://img.shields.io/badge/Android%20%2F%20Termux%20Development-ff79c6?style=flat-square&logo=android&logoColor=282a36" alt="Android / Termux Development" />
+  <img src="https://img.shields.io/badge/Local--First%20Applications-ff79c6?style=flat-square&logoColor=282a36" alt="Local-First Applications" />
+  <img src="https://img.shields.io/badge/Offline--First%20Applications-ff79c6?style=flat-square&logoColor=282a36" alt="Offline-First Applications" />
+  <img src="https://img.shields.io/badge/Responsive%20Web%20Development-ff79c6?style=flat-square&logoColor=282a36" alt="Responsive Web Development" />
+  <img src="https://img.shields.io/badge/API%20Integration-ff79c6?style=flat-square&logoColor=282a36" alt="API Integration" />
 </p>
 
 ### Automation & Project Work
 
 <p>
-  <img src="https://img.shields.io/badge/Automation%20%26%20Scripting-fe428e?style=flat-square&logoColor=141321" alt="Automation & Scripting" />
-  <img src="https://img.shields.io/badge/Repository%20Automation-fe428e?style=flat-square&logoColor=141321" alt="Repository Automation" />
-  <img src="https://img.shields.io/badge/Backup%20%26%20Recovery-fe428e?style=flat-square&logoColor=141321" alt="Backup & Recovery" />
-  <img src="https://img.shields.io/badge/Data%20Integrity-fe428e?style=flat-square&logoColor=141321" alt="Data Integrity" />
-  <img src="https://img.shields.io/badge/SHA--256%20Verification-fe428e?style=flat-square&logoColor=141321" alt="SHA-256 Verification" />
-  <img src="https://img.shields.io/badge/Testing%20%26%20QA%20Automation-fe428e?style=flat-square&logoColor=141321" alt="Testing & QA Automation" />
-  <img src="https://img.shields.io/badge/Technical%20Documentation-fe428e?style=flat-square&logoColor=141321" alt="Technical Documentation" />
-  <img src="https://img.shields.io/badge/Open--Source%20Development-fe428e?style=flat-square&logo=opensourceinitiative&logoColor=141321" alt="Open-Source Development" />
-  <img src="https://img.shields.io/badge/English%20%2F%20Greek%20Localization-fe428e?style=flat-square&logoColor=141321" alt="English / Greek Localization" />
+  <img src="https://img.shields.io/badge/Automation%20%26%20Scripting-ff79c6?style=flat-square&logoColor=282a36" alt="Automation & Scripting" />
+  <img src="https://img.shields.io/badge/Repository%20Automation-ff79c6?style=flat-square&logoColor=282a36" alt="Repository Automation" />
+  <img src="https://img.shields.io/badge/Backup%20%26%20Recovery-ff79c6?style=flat-square&logoColor=282a36" alt="Backup & Recovery" />
+  <img src="https://img.shields.io/badge/Data%20Integrity-ff79c6?style=flat-square&logoColor=282a36" alt="Data Integrity" />
+  <img src="https://img.shields.io/badge/SHA--256%20Verification-ff79c6?style=flat-square&logoColor=282a36" alt="SHA-256 Verification" />
+  <img src="https://img.shields.io/badge/Testing%20%26%20QA%20Automation-ff79c6?style=flat-square&logoColor=282a36" alt="Testing & QA Automation" />
+  <img src="https://img.shields.io/badge/Technical%20Documentation-ff79c6?style=flat-square&logoColor=282a36" alt="Technical Documentation" />
+  <img src="https://img.shields.io/badge/Open--Source%20Development-ff79c6?style=flat-square&logo=opensourceinitiative&logoColor=282a36" alt="Open-Source Development" />
+  <img src="https://img.shields.io/badge/English%20%2F%20Greek%20Localization-ff79c6?style=flat-square&logoColor=282a36" alt="English / Greek Localization" />
 </p>
 
 <p align="center">
-  <img src="./profile/streak.svg?v=radical-fe428e" alt="GitHub Streak" />
+  <img src="./profile/streak.svg?v=dracula-ff79c6" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=141321&text_color=f8f8f2&title_color=fe428e&icon_color=a9fef7&border_color=2d2538&border_radius=8&v=radical-fe428e" alt="Top Languages" />
+  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=282a36&text_color=f8f8f2&title_color=ff79c6&icon_color=8be9fd&border_color=44475a&border_radius=8&v=dracula-ff79c6" alt="Top Languages" />
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=radical-fe428e" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=radical-fe428e" />
-    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=radical-fe428e" alt="Animated GitHub contribution snake" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=dracula-ff79c6" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=dracula-ff79c6" />
+    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=dracula-ff79c6" alt="Animated GitHub contribution snake" />
   </picture>
 </p>
 
@@ -113,7 +113,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-fe428e?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=radical-fe428e" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-ff79c6?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=dracula-ff79c6" alt="GitHub Sponsors" />
 </a>
 
 ---
