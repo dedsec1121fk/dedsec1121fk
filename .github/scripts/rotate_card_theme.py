@@ -100,9 +100,18 @@ def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, 
 
     return {
         "marker": f"<!-- profile-theme: {theme} -->",
-        "stats": f"./profile/stats.svg?v={version}",
-        "streak": f"./profile/streak.svg?v={version}",
-        "languages": f"./profile/top-langs.svg?v={version}",
+        "stats": (
+            "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
+            f"profile/stats.svg?v={version}"
+        ),
+        "streak": (
+            "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
+            f"profile/streak.svg?v={version}"
+        ),
+        "languages": (
+            "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
+            f"profile/top-langs.svg?v={version}"
+        ),
         "views": (
             "https://komarev.com/ghpvc/?username=dedsec1121fk"
             f"&style=flat-square&color={palette['accent']}&v={version}"
@@ -123,17 +132,25 @@ def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, 
     }
 
 
-def update_skill_badges(text: str, theme_data: dict[str, Any]) -> str:
-    """Synchronize all Technologies & Skills shields with the active palette."""
-    palette = card_palette(theme_data)
+def skill_section_bounds(text: str) -> tuple[int, int]:
+    """Locate the skills section without depending on a specific card URL."""
     skill_start = text.find("## Technologies & Skills")
     if skill_start == -1:
         raise SystemExit("README is missing the Technologies & Skills section.")
 
-    # The skills section ends at the streak card, directly after the final badge group.
-    skill_end = text.find('<p align="center">\n  <img src="./profile/streak.svg', skill_start)
-    if skill_end == -1:
-        raise SystemExit("Unable to locate the end of the Technologies & Skills badge section.")
+    streak = re.search(
+        r'<p align="center">\s*<img[^>]*alt="GitHub Streak"[^>]*/>\s*</p>',
+        text[skill_start:],
+    )
+    if not streak:
+        raise SystemExit("Unable to locate the GitHub Streak card after Technologies & Skills.")
+    return skill_start, skill_start + streak.start()
+
+
+def update_skill_badges(text: str, theme_data: dict[str, Any]) -> str:
+    """Synchronize all Technologies & Skills shields with the active palette."""
+    palette = card_palette(theme_data)
+    skill_start, skill_end = skill_section_bounds(text)
 
     before = text[:skill_start]
     section = text[skill_start:skill_end]
@@ -176,11 +193,7 @@ def update_skill_badges(text: str, theme_data: dict[str, Any]) -> str:
 def verify_skill_badges(readme: str, theme_data: dict[str, Any]) -> None:
     """Fail if any Technologies & Skills badge is outside the active palette."""
     palette = card_palette(theme_data)
-    skill_start = readme.find("## Technologies & Skills")
-    skill_end = readme.find('<p align="center">\n  <img src="./profile/streak.svg', skill_start)
-    if skill_start == -1 or skill_end == -1:
-        raise SystemExit("Unable to verify Technologies & Skills badge colors.")
-
+    skill_start, skill_end = skill_section_bounds(readme)
     section = readme[skill_start:skill_end]
     urls = re.findall(r"https://img\.shields\.io/badge/[^\"\s]+", section)
     skill_urls = [url for url in urls if "style=flat-square" in url]
@@ -199,7 +212,6 @@ def verify_skill_badges(readme: str, theme_data: dict[str, Any]) -> None:
             )
 
     print(f"Verified {len(skill_urls)} Technologies & Skills badges on the active palette.")
-
 
 def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     try:

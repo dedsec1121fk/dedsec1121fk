@@ -235,26 +235,62 @@ def calculate_streaks(days: list[dict[str, Any]], today: date) -> tuple[int, int
     return current, longest
 
 
+FONT_FAMILY = "-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif"
+
+
+def svg_text(
+    x: int | float,
+    y: int | float,
+    text: object,
+    role: str,
+    p: dict[str, str],
+    *,
+    anchor: str | None = None,
+) -> str:
+    styles = {
+        "title": (18, 600, p["accent"], None),
+        "label": (13, 400, p["text"], None),
+        "value": (18, 600, p["secondary"], None),
+        "small": (11, 400, p["text"], "0.78"),
+    }
+    if role not in styles:
+        raise ValueError(f"Unknown SVG text role: {role}")
+
+    size, weight, color, opacity = styles[role]
+    attrs = [
+        f'x="{x}"',
+        f'y="{y}"',
+        f'font-family="{FONT_FAMILY}"',
+        f'font-size="{size}"',
+        f'font-weight="{weight}"',
+        f'fill="#{color}"',
+    ]
+    if anchor:
+        attrs.append(f'text-anchor="{anchor}"')
+    if opacity:
+        attrs.append(f'opacity="{opacity}"')
+    return f'  <text {" ".join(attrs)}>{escape(str(text))}</text>'
+
+
 def svg_shell(width: int, height: int, title: str, content: str, p: dict[str, str]) -> str:
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{escape(title)}">
+    title_text = escape(title)
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{title_text}">
+  <title>{title_text}</title>
   <rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="8" fill="#{p['background']}" stroke="#{p['border']}"/>
-  <style>
-    .title {{ font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #{p['accent']}; }}
-    .label {{ font: 400 13px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #{p['text']}; }}
-    .value {{ font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #{p['secondary']}; }}
-    .small {{ font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #{p['text']}; opacity: .78; }}
-  </style>
-  <text x="20" y="30" class="title">{escape(title)}</text>
+{svg_text(20, 30, title, "title", p)}
 {content}
-</svg>\n'''
+</svg>
+'''
 
 
 def render_stats(data: dict[str, Any], p: dict[str, str]) -> str:
     if data.get("seed"):
-        content = (
-            f'  <text x="20" y="82" class="value">Refresh pending</text>\n'
-            f'  <text x="20" y="112" class="label">One authenticated daily refresh will populate this card.</text>\n'
-            f'  <circle cx="410" cy="28" r="4" fill="#{p["highlight"]}"/>'
+        content = "\n".join(
+            [
+                svg_text(20, 82, "Refresh pending", "value", p),
+                svg_text(20, 112, "One authenticated daily refresh will populate this card.", "label", p),
+                f'  <circle cx="410" cy="28" r="4" fill="#{p["highlight"]}"/>',
+            ]
         )
         return svg_shell(440, 150, "DedSec GitHub Stats", content, p)
 
@@ -264,48 +300,52 @@ def render_stats(data: dict[str, Any], p: dict[str, str]) -> str:
         ("Followers", data["followers"]),
         ("Contributions (1y)", data["contributions_1y"]),
     ]
-    parts = []
+    parts: list[str] = []
     for idx, (label, value) in enumerate(rows):
         col = idx % 2
         row = idx // 2
         x = 22 + col * 210
         y = 67 + row * 58
-        parts.append(f'  <text x="{x}" y="{y}" class="label">{escape(label)}</text>')
-        parts.append(f'  <text x="{x}" y="{y + 24}" class="value">{value:,}</text>')
-    parts.append(f'  <text x="20" y="164" class="small">Static daily card • {escape(data["generated_at_utc"])}</text>')
+        parts.append(svg_text(x, y, label, "label", p))
+        parts.append(svg_text(x, y + 24, f"{value:,}", "value", p))
+    parts.append(svg_text(20, 164, f'Static daily card • {data["generated_at_utc"]}', "small", p))
     return svg_shell(440, 180, "DedSec GitHub Stats", "\n".join(parts), p)
 
 
 def render_streak(data: dict[str, Any], p: dict[str, str]) -> str:
     if data.get("seed"):
-        content = (
-            f'  <circle cx="55" cy="51" r="4" fill="#{p["highlight"]}"/>\n'
-            f'  <text x="20" y="88" class="value">Refresh pending</text>\n'
-            f'  <text x="20" y="116" class="label">Streak data is cached locally after the first daily refresh.</text>'
+        content = "\n".join(
+            [
+                f'  <circle cx="55" cy="51" r="4" fill="#{p["highlight"]}"/>',
+                svg_text(20, 88, "Refresh pending", "value", p),
+                svg_text(20, 116, "Streak data is cached locally after the first daily refresh.", "label", p),
+            ]
         )
         return svg_shell(440, 145, "GitHub Streak", content, p)
 
     parts = [
         f'  <circle cx="55" cy="51" r="4" fill="#{p["highlight"]}"/>',
-        f'  <text x="55" y="82" text-anchor="middle" class="value">{data["current_streak"]}</text>',
-        f'  <text x="55" y="105" text-anchor="middle" class="label">Current Streak</text>',
-        f'  <text x="220" y="82" text-anchor="middle" class="value">{data["longest_streak_1y"]}</text>',
-        f'  <text x="220" y="105" text-anchor="middle" class="label">Longest (1y)</text>',
-        f'  <text x="385" y="82" text-anchor="middle" class="value">{data["contributions_1y"]:,}</text>',
-        f'  <text x="385" y="105" text-anchor="middle" class="label">Contributions (1y)</text>',
+        svg_text(55, 82, data["current_streak"], "value", p, anchor="middle"),
+        svg_text(55, 105, "Current Streak", "label", p, anchor="middle"),
+        svg_text(220, 82, data["longest_streak_1y"], "value", p, anchor="middle"),
+        svg_text(220, 105, "Longest (1y)", "label", p, anchor="middle"),
+        svg_text(385, 82, f'{data["contributions_1y"]:,}', "value", p, anchor="middle"),
+        svg_text(385, 105, "Contributions (1y)", "label", p, anchor="middle"),
         f'  <line x1="137" y1="58" x2="137" y2="112" stroke="#{p["border"]}"/>',
         f'  <line x1="302" y1="58" x2="302" y2="112" stroke="#{p["border"]}"/>',
-        f'  <text x="20" y="144" class="small">Generated locally from one authenticated GitHub refresh</text>',
+        svg_text(20, 144, "Generated locally from one authenticated GitHub refresh", "small", p),
     ]
     return svg_shell(440, 160, "GitHub Streak", "\n".join(parts), p)
 
 
 def render_languages(data: dict[str, Any], p: dict[str, str]) -> str:
     if data.get("seed"):
-        content = (
-            f'  <text x="20" y="82" class="value">Refresh pending</text>\n'
-            f'  <text x="20" y="112" class="label">Language totals will be rendered from cached repository data.</text>\n'
-            f'  <circle cx="410" cy="28" r="4" fill="#{p["highlight"]}"/>'
+        content = "\n".join(
+            [
+                svg_text(20, 82, "Refresh pending", "value", p),
+                svg_text(20, 112, "Language totals will be rendered from cached repository data.", "label", p),
+                f'  <circle cx="410" cy="28" r="4" fill="#{p["highlight"]}"/>',
+            ]
         )
         return svg_shell(440, 150, "Most Used Languages", content, p)
 
@@ -315,12 +355,14 @@ def render_languages(data: dict[str, Any], p: dict[str, str]) -> str:
     parts: list[str] = []
     x0, y0, bar_w = 20, 52, 400
     cursor = x0
-    for idx, item in enumerate(top):
+    for item in top:
         width = bar_w * int(item["size"]) / total
         color = item.get("color") or f"#{p['accent']}"
         if not str(color).startswith("#"):
             color = f"#{p['accent']}"
-        parts.append(f'  <rect x="{cursor:.1f}" y="{y0}" width="{width:.1f}" height="10" fill="{escape(str(color))}"/>')
+        parts.append(
+            f'  <rect x="{cursor:.1f}" y="{y0}" width="{width:.1f}" height="10" fill="{escape(str(color))}"/>'
+        )
         cursor += width
 
     for idx, item in enumerate(top):
@@ -333,11 +375,10 @@ def render_languages(data: dict[str, Any], p: dict[str, str]) -> str:
         if not str(color).startswith("#"):
             color = f"#{p['accent']}"
         parts.append(f'  <circle cx="{x}" cy="{y - 4}" r="5" fill="{escape(str(color))}"/>')
-        parts.append(f'  <text x="{x + 12}" y="{y}" class="label">{escape(item["name"])} {pct:.1f}%</text>')
+        parts.append(svg_text(x + 12, y, f'{item["name"]} {pct:.1f}%', "label", p))
 
-    parts.append('  <text x="20" y="174" class="small">Language share by bytes across owned, non-fork repositories</text>')
+    parts.append(svg_text(20, 174, "Language share by bytes across owned, non-fork repositories", "small", p))
     return svg_shell(440, 190, "Most Used Languages", "\n".join(parts), p)
-
 
 def render_all(data: dict[str, Any]) -> None:
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)
