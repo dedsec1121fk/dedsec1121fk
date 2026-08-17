@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Check out profile repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 1
 
@@ -74,5 +74,19 @@ jobs:
             echo "Profile data is already current."
           else
             git commit -m "Refresh cached GitHub profile data"
-            git push
+
+            # A manual/user push can land after checkout. Rebase and retry instead
+            # of failing the whole refresh with a non-fast-forward rejection.
+            for attempt in 1 2 3; do
+              if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+
+              echo "Main branch moved during refresh; synchronizing before retry ${attempt}/3."
+              git fetch origin "${GITHUB_REF_NAME}:refs/remotes/origin/${GITHUB_REF_NAME}"
+              git rebase -X theirs "origin/${GITHUB_REF_NAME}"
+            done
+
+            echo "Unable to publish refreshed profile data after 3 retries." >&2
+            exit 1
           fi
