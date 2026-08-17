@@ -100,20 +100,9 @@ def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, 
 
     return {
         "marker": f"<!-- profile-theme: {theme} -->",
-        "ghstats": (
-            "https://ghstats.dev/api/card?username=dedsec1121fk"
-            f"&bg={palette['background']}&text={palette['text']}"
-            f"&title_color={palette['accent']}&icon_color={palette['secondary']}"
-            f"&border_color={palette['border']}&border_radius=8&v={version}"
-        ),
+        "stats": f"./profile/stats.svg?v={version}",
         "streak": f"./profile/streak.svg?v={version}",
-        "languages": (
-            "https://github-readme-stats-fast.vercel.app/api/top-langs/"
-            "?username=dedsec1121fk&layout=compact"
-            f"&bg_color={palette['background']}&text_color={palette['text']}"
-            f"&title_color={palette['accent']}&icon_color={palette['secondary']}"
-            f"&border_color={palette['border']}&border_radius=8&v={version}"
-        ),
+        "languages": f"./profile/top-langs.svg?v={version}",
         "views": (
             "https://komarev.com/ghpvc/?username=dedsec1121fk"
             f"&style=flat-square&color={palette['accent']}&v={version}"
@@ -233,8 +222,8 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
 
     text = replace_exact(
         text,
-        r"https://ghstats\.dev/api/card\?[^\"\s]+",
-        values["ghstats"],
+        r'(<img\s+src=")[^"]+("\s+alt="DedSec GitHub Stats"\s*/>)',
+        rf"\g<1>{values['stats']}\g<2>",
         1,
         "main stats card",
     )
@@ -247,8 +236,8 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     )
     text = replace_exact(
         text,
-        r"https://github-readme-stats-fast\.vercel\.app/api/top-langs/\?[^\"\s]+",
-        values["languages"],
+        r'(<img\s+src=")[^"]+("\s+alt="Top Languages"\s*/>)',
+        rf"\g<1>{values['languages']}\g<2>",
         1,
         "top-languages card",
     )
@@ -294,7 +283,7 @@ def verify_sync(theme: str, theme_data: dict[str, Any], require_streak: bool = T
     values = expected_readme_values(theme, theme_data)
     expected_counts = {
         "marker": 1,
-        "ghstats": 1,
+        "stats": 1,
         "streak": 1,
         "languages": 1,
         "views": 1,
@@ -356,7 +345,7 @@ def snake_outputs(theme_data: dict[str, Any]) -> str:
     )
 
 
-def emit_outputs(theme: str, theme_data: dict[str, Any]) -> None:
+def emit_outputs(theme: str, theme_data: dict[str, Any], previous_theme: str | None = None) -> None:
     output_path = os.environ.get("GITHUB_OUTPUT")
     options = streak_options(theme_data)
     version = cache_key(theme, theme_data)
@@ -364,6 +353,8 @@ def emit_outputs(theme: str, theme_data: dict[str, Any]) -> None:
         print(f"theme={theme}")
         print(f"accent={theme_data['accent']}")
         print(f"cache_key={version}")
+        if previous_theme is not None:
+            print(f"previous_theme={previous_theme}")
         print(f"streak_options={options}")
         print(snake_outputs(theme_data))
         return
@@ -372,6 +363,8 @@ def emit_outputs(theme: str, theme_data: dict[str, Any]) -> None:
         handle.write(f"theme={theme}\n")
         handle.write(f"accent={theme_data['accent']}\n")
         handle.write(f"cache_key={version}\n")
+        if previous_theme is not None:
+            handle.write(f"previous_theme={previous_theme}\n")
         handle.write(f"streak_options={options}\n")
         handle.write("snake_outputs<<PROFILE_SNAKE_OUTPUTS\n")
         handle.write(snake_outputs(theme_data))
@@ -380,13 +373,14 @@ def emit_outputs(theme: str, theme_data: dict[str, Any]) -> None:
 
 def command_set(requested: str) -> None:
     config = load_config()
+    previous = config["current"]
     selected = select_theme(config, requested)
     config["current"] = selected
     theme_data = config["themes"][selected]
 
     update_readme(selected, theme_data)
     CONFIG_PATH.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
-    emit_outputs(selected, theme_data)
+    emit_outputs(selected, theme_data, previous_theme=previous)
 
 
 def command_emit() -> None:
