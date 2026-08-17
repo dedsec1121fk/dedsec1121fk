@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="./profile/stats.svg?v=dracula-ff79c6" alt="DedSec GitHub Stats" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats.svg?v=dracula-ff79c6" alt="DedSec GitHub Stats" />
 </p>
 
 ---
@@ -91,11 +91,11 @@
 </p>
 
 <p align="center">
-  <img src="./profile/streak.svg?v=dracula-ff79c6" alt="GitHub Streak" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/streak.svg?v=dracula-ff79c6" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="./profile/top-langs.svg?v=dracula-ff79c6" alt="Top Languages" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/top-langs.svg?v=dracula-ff79c6" alt="Top Languages" />
 </p>
 
 <p align="center">

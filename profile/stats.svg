@@ -1,19 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="180" viewBox="0 0 440 180" role="img" aria-label="DedSec GitHub Stats">
+  <title>DedSec GitHub Stats</title>
   <rect x="0.5" y="0.5" width="439" height="179" rx="8" fill="#282a36" stroke="#44475a"/>
-  <style>
-    .title { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #ff79c6; }
-    .label { font: 400 13px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #f8f8f2; }
-    .value { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #8be9fd; }
-    .small { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #f8f8f2; opacity: .78; }
-  </style>
-  <text x="20" y="30" class="title">DedSec GitHub Stats</text>
-  <text x="22" y="67" class="label">Stars</text>
-  <text x="22" y="91" class="value">1,054</text>
-  <text x="232" y="67" class="label">Repositories</text>
-  <text x="232" y="91" class="value">10</text>
-  <text x="22" y="125" class="label">Followers</text>
-  <text x="22" y="149" class="value">265</text>
-  <text x="232" y="125" class="label">Contributions (1y)</text>
-  <text x="232" y="149" class="value">4,742</text>
-  <text x="20" y="164" class="small">Static daily card • 2026-08-17T20:08:48Z</text>
+  <text x="20" y="30" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#ff79c6">DedSec GitHub Stats</text>
+  <text x="22" y="67" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#f8f8f2">Stars</text>
+  <text x="22" y="91" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#8be9fd">1,054</text>
+  <text x="232" y="67" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#f8f8f2">Repositories</text>
+  <text x="232" y="91" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#8be9fd">10</text>
+  <text x="22" y="125" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#f8f8f2">Followers</text>
+  <text x="22" y="149" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#8be9fd">265</text>
+  <text x="232" y="125" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#f8f8f2">Contributions (1y)</text>
+  <text x="232" y="149" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#8be9fd">4,743</text>
+  <text x="20" y="164" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="400" fill="#f8f8f2" opacity="0.78">Static daily card • 2026-08-17T20:09:10Z</text>
 </svg>
