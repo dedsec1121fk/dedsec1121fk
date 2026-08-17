@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -75,19 +76,29 @@ def replace_exact(text: str, pattern: str, replacement: str, expected: int, labe
     return updated
 
 
+def blend_hex(first: str, second: str, second_weight: float) -> str:
+    second_weight = max(0.0, min(1.0, second_weight))
+    a = tuple(int(first[i:i + 2], 16) for i in (0, 2, 4))
+    b = tuple(int(second[i:i + 2], 16) for i in (0, 2, 4))
+    return "".join(
+        f"{round(left * (1 - second_weight) + right * second_weight):02x}"
+        for left, right in zip(a, b)
+    )
+
+
 def card_palette(theme_data: dict[str, Any]) -> dict[str, str]:
-    light = theme_data["light_dots"]
-    dark = theme_data["dark_dots"]
+    light = [str(value).lower() for value in theme_data["light_dots"]]
+    dark = [str(value).lower() for value in theme_data["dark_dots"]]
     if len(light) < 5 or len(dark) < 2:
         raise SystemExit("Each theme needs at least five light colors and two dark colors.")
 
     return {
-        "accent": theme_data["accent"].lower(),
-        "background": dark[0].lower(),
-        "border": dark[1].lower(),
-        "text": light[0].lower(),
-        "secondary": light[3].lower(),
-        "highlight": light[4].lower(),
+        "accent": str(theme_data["accent"]).lower(),
+        "background": blend_hex(dark[0], "0d1117", 0.68),
+        "border": blend_hex(dark[1], "30363d", 0.72),
+        "text": light[0],
+        "secondary": light[3],
+        "highlight": light[4],
     }
 
 
@@ -103,10 +114,20 @@ def data_cache_token() -> str:
     return token or "seed"
 
 
+def renderer_cache_token() -> str:
+    """Change the image URL whenever the local card renderer itself changes."""
+    renderer = ROOT / ".github" / "scripts" / "generate_profile_cards.py"
+    try:
+        digest = hashlib.sha256(renderer.read_bytes()).hexdigest()
+    except OSError:
+        return "renderer"
+    return digest[:10]
+
+
 def cache_key(theme: str, theme_data: dict[str, Any]) -> str:
-    """Bust image caches when either palette or cached profile data changes."""
+    """Bust image caches for palette, profile data, and renderer changes."""
     palette = card_palette(theme_data)
-    return f"{theme}-{palette['accent']}-{data_cache_token()}"
+    return f"{theme}-{palette['accent']}-{data_cache_token()}-{renderer_cache_token()}"
 
 
 def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, str]:
@@ -331,7 +352,7 @@ def verify_sync(theme: str, theme_data: dict[str, Any], require_streak: bool = T
         palette = card_palette(theme_data)
         card_specs = [
             (STATS_PATH, "stats", 3, "PROFILE RANK"),
-            (STREAK_PATH, "streak", 7, "Contributions"),
+            (STREAK_PATH, "streak", 6, "Contributions"),
             (LANGUAGES_PATH, "languages", 3, "Language share by bytes"),
         ]
         for path, label, minimum_circles, required_text in card_specs:
