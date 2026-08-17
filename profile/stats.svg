@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="180" viewBox="0 0 440 180" role="img" aria-label="DedSec GitHub Stats">
+  <title>DedSec GitHub Stats</title>
+  <rect x="0.5" y="0.5" width="439" height="179" rx="8" fill="#282828" stroke="#3c3836"/>
+  <text x="20" y="30" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#fabd2f">DedSec GitHub Stats</text>
+  <text x="22" y="67" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#fbf1c7">Stars</text>
+  <text x="22" y="91" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#fabd2f">1,054</text>
+  <text x="232" y="67" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#fbf1c7">Repositories</text>
+  <text x="232" y="91" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#fabd2f">10</text>
+  <text x="22" y="125" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#fbf1c7">Followers</text>
+  <text x="22" y="149" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#fabd2f">265</text>
+  <text x="232" y="125" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#fbf1c7">Contributions (1y)</text>
+  <text x="232" y="149" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#fabd2f">4,747</text>
+  <text x="20" y="164" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="400" fill="#fbf1c7" opacity="0.78">Static daily card • 2026-08-17T20:17:24Z</text>
+</svg>
