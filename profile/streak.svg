@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="160" viewBox="0 0 440 160" role="img" aria-label="GitHub Streak">
-  <rect x="0.5" y="0.5" width="439" height="159" rx="8" fill="#2e3440" stroke="#3b4252"/>
+  <rect x="0.5" y="0.5" width="439" height="159" rx="8" fill="#282a36" stroke="#44475a"/>
   <style>
-    .title { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #88c0d0; }
-    .label { font: 400 13px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #eceff4; }
-    .value { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #88c0d0; }
-    .small { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #eceff4; opacity: .78; }
+    .title { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #ff79c6; }
+    .label { font: 400 13px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #f8f8f2; }
+    .value { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #8be9fd; }
+    .small { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #f8f8f2; opacity: .78; }
   </style>
   <text x="20" y="30" class="title">GitHub Streak</text>
-  <circle cx="55" cy="51" r="4" fill="#81a1c1"/>
+  <circle cx="55" cy="51" r="4" fill="#50fa7b"/>
   <text x="55" y="82" text-anchor="middle" class="value">2</text>
   <text x="55" y="105" text-anchor="middle" class="label">Current Streak</text>
   <text x="220" y="82" text-anchor="middle" class="value">18</text>
   <text x="220" y="105" text-anchor="middle" class="label">Longest (1y)</text>
   <text x="385" y="82" text-anchor="middle" class="value">4,729</text>
   <text x="385" y="105" text-anchor="middle" class="label">Contributions (1y)</text>
-  <line x1="137" y1="58" x2="137" y2="112" stroke="#3b4252"/>
-  <line x1="302" y1="58" x2="302" y2="112" stroke="#3b4252"/>
+  <line x1="137" y1="58" x2="137" y2="112" stroke="#44475a"/>
+  <line x1="302" y1="58" x2="302" y2="112" stroke="#44475a"/>
   <text x="20" y="144" class="small">Generated locally from one authenticated GitHub refresh</text>
 </svg>
