@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="177" viewBox="0 0 440 177" role="img" aria-label="GitHub Streak">
+  <title>GitHub Streak</title>
+  <rect x="0.75" y="0.75" width="438.5" height="175.5" rx="12" fill="#282828" stroke="#3c3836" stroke-width="1.5"/>
+  <circle cx="416" cy="24" r="4" fill="#b8bb26" opacity="0.95"/>
+  <text x="20" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#fabd2f">GitHub Streak</text>
+  <circle cx="78" cy="88" r="31" fill="none" stroke="#3c3836" stroke-width="5" opacity="0.75"/>
+  <circle cx="78" cy="88" r="31" fill="none" stroke="#fabd2f" stroke-width="5" stroke-linecap="round" stroke-dasharray="21.64 173.14" transform="rotate(-90 78 88)"/>
+  <circle cx="220" cy="88" r="31" fill="none" stroke="#3c3836" stroke-width="5" opacity="0.75"/>
+  <circle cx="220" cy="88" r="31" fill="none" stroke="#fabd2f" stroke-width="5" stroke-linecap="round" stroke-dasharray="194.78 0.00" transform="rotate(-90 220 88)"/>
+  <circle cx="362" cy="88" r="31" fill="none" stroke="#3c3836" stroke-width="5" opacity="0.75"/>
+  <circle cx="362" cy="88" r="31" fill="none" stroke="#b8bb26" stroke-width="5" stroke-linecap="round" stroke-dasharray="194.78 0.00" transform="rotate(-90 362 88)"/>
+  <text x="78" y="94" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="600" fill="#fabd2f" text-anchor="middle">2</text>
+  <text x="220" y="94" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="600" fill="#fabd2f" text-anchor="middle">18</text>
+  <text x="362" y="94" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="600" fill="#fabd2f" text-anchor="middle">4,751</text>
+  <text x="78" y="137" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="12" font-weight="400" fill="#fbf1c7" text-anchor="middle">Current</text>
+  <text x="220" y="137" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="12" font-weight="400" fill="#fbf1c7" text-anchor="middle">Longest (1y)</text>
+  <text x="362" y="137" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="12" font-weight="400" fill="#fbf1c7" text-anchor="middle">Contributions</text>
+  <text x="20" y="163" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="10" font-weight="400" fill="#fbf1c7" opacity="0.72">Generated locally from one authenticated GitHub refresh</text>
+</svg>
