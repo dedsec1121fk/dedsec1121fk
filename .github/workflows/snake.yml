@@ -1,29 +1,29 @@
-name: Generate Contribution Snake
+name: Manual Contribution Snake Refresh
 
+# Deliberately manual-only. The scheduled refresh in streak-stats.yml already
+# regenerates the snake once per day, so another schedule only duplicates API use.
 on:
-  schedule:
-    # Refresh contribution data daily using Greece local time.
-    - cron: "47 4 * * *"
-      timezone: "Europe/Athens"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: contribution-snake
-  cancel-in-progress: true
+  group: profile-generated-assets
+  cancel-in-progress: false
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Check out profile repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
-      - name: Load the current shared palette
+      - name: Load current shared palette
         id: theme
         run: python3 .github/scripts/rotate_card_theme.py emit
 
@@ -39,11 +39,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           cd dist
           git init
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b output
           git add .
-          git commit -m "Refresh ${{ steps.theme.outputs.theme }} contribution snake"
+          git commit -m "Manual refresh of ${{ steps.theme.outputs.theme }} contribution snake"
           git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output

@@ -2,6 +2,7 @@ name: Rotate Profile Colors
 
 on:
   schedule:
+    # Color rotation is local-only: it does not query the GitHub API.
     - cron: "17 */4 * * *"
       timezone: "Europe/Athens"
   workflow_dispatch:
@@ -37,6 +38,8 @@ jobs:
     steps:
       - name: Check out profile repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Select one shared theme
         id: theme
@@ -44,59 +47,54 @@ jobs:
           REQUESTED_THEME: ${{ github.event.inputs.theme || 'auto' }}
         run: python3 .github/scripts/rotate_card_theme.py set "$REQUESTED_THEME"
 
-      - name: Prepare output directory
-        run: mkdir -p profile
+      - name: Re-render cached cards without GitHub API calls
+        run: python3 .github/scripts/generate_profile_cards.py render
 
-      - name: Generate matching real streak statistics
-        uses: DenverCoder1/github-readme-streak-stats@main
-        with:
-          options: ${{ steps.theme.outputs.streak_options }}
-          path: profile/streak.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate matching snake animations
-        uses: Platane/snk/svg-only@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: ${{ steps.theme.outputs.snake_outputs }}
-
-      - name: Verify synchronized README and streak colors
-        run: |
-          test -s profile/streak.svg
-          if grep -qi "Updating automatically" profile/streak.svg; then
-            echo "The temporary placeholder was not replaced."
-            exit 1
-          fi
-          grep -qi "Current Streak" profile/streak.svg
-          python3 .github/scripts/rotate_card_theme.py verify
-
-      # Publish the snake first. The README is committed only after every
-      # generated asset already uses the selected palette, avoiding a mixed
-      # old/new state on the public profile.
-      - name: Publish matching snake to output branch
+      - name: Recolor existing snake without regenerating contribution data
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FROM_THEME: ${{ steps.theme.outputs.previous_theme }}
+          TO_THEME: ${{ steps.theme.outputs.theme }}
         run: |
-          cd dist
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b output
-          git add .
-          git commit -m "Update ${{ steps.theme.outputs.theme }} contribution snake"
-          git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output
+          set -euo pipefail
+          rm -rf /tmp/profile-output
 
-      - name: Commit synchronized cards and theme state
+          if ! git clone --quiet --depth 1 --branch output \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            /tmp/profile-output; then
+            echo "Output branch is not available yet; snake recolor skipped."
+            exit 0
+          fi
+
+          python3 .github/scripts/recolor_snake.py \
+            --from-theme "$FROM_THEME" \
+            --to-theme "$TO_THEME" \
+            --directory /tmp/profile-output
+
+          git -C /tmp/profile-output config user.name "github-actions[bot]"
+          git -C /tmp/profile-output config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C /tmp/profile-output add github-contribution-grid-snake.svg github-contribution-grid-snake-dark.svg
+
+          if git -C /tmp/profile-output diff --cached --quiet; then
+            echo "Snake already uses the selected palette."
+          else
+            git -C /tmp/profile-output commit -m "Recolor contribution snake to $TO_THEME"
+            git -C /tmp/profile-output push origin output
+          fi
+
+      - name: Verify synchronized local cards
+        run: python3 .github/scripts/rotate_card_theme.py verify
+
+      - name: Commit synchronized colors
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md .github/profile-themes.json profile/streak.svg
+          git add README.md .github/profile-themes.json profile/stats.svg profile/streak.svg profile/top-langs.svg
 
           if git diff --cached --quiet; then
             echo "Profile already uses ${{ steps.theme.outputs.theme }}."
           else
-            git commit -m "Rotate all profile colors to ${{ steps.theme.outputs.theme }}"
+            git commit -m "Rotate cached profile colors to ${{ steps.theme.outputs.theme }}"
             git push
           fi
