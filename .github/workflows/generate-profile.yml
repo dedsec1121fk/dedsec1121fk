@@ -1,0 +1,27 @@
+name: Generate Profile Data and Snake
+
+on:
+  schedule:
+    # One authenticated GitHub data refresh per day in Greece local time.
+    - cron: "27 5 * * *"
+      timezone: "Europe/Athens"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - ".github/workflows/generate-profile.yml"
+      - ".github/workflows/streak-stats.yml"
+      - ".github/scripts/generate_profile_cards.py"
+
+permissions:
+  contents: write
+
+# This workflow owns the automatic trigger. The implementation lives in
+# streak-stats.yml so manual and scheduled refreshes use exactly the same code
+# without creating two independent scheduled GitHub API consumers.
+jobs:
+  generate-profile:
+    uses: ./.github/workflows/streak-stats.yml
+    secrets: inherit
