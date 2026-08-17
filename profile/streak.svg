@@ -12,7 +12,7 @@
   <text x="55" y="105" text-anchor="middle" class="label">Current Streak</text>
   <text x="220" y="82" text-anchor="middle" class="value">18</text>
   <text x="220" y="105" text-anchor="middle" class="label">Longest (1y)</text>
-  <text x="385" y="82" text-anchor="middle" class="value">4,728</text>
+  <text x="385" y="82" text-anchor="middle" class="value">4,729</text>
   <text x="385" y="105" text-anchor="middle" class="label">Contributions (1y)</text>
   <line x1="137" y1="58" x2="137" y2="112" stroke="#3b4252"/>
   <line x1="302" y1="58" x2="302" y2="112" stroke="#3b4252"/>
