@@ -7,7 +7,7 @@
   <text x="55" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#f8f8f2" text-anchor="middle">Current Streak</text>
   <text x="220" y="82" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#8be9fd" text-anchor="middle">18</text>
   <text x="220" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#f8f8f2" text-anchor="middle">Longest (1y)</text>
-  <text x="385" y="82" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#8be9fd" text-anchor="middle">4,743</text>
+  <text x="385" y="82" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#8be9fd" text-anchor="middle">4,741</text>
   <text x="385" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#f8f8f2" text-anchor="middle">Contributions (1y)</text>
   <line x1="137" y1="58" x2="137" y2="112" stroke="#44475a"/>
   <line x1="302" y1="58" x2="302" y2="112" stroke="#44475a"/>
