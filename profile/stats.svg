@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="180" viewBox="0 0 440 180" role="img" aria-label="DedSec GitHub Stats">
+  <rect x="0.5" y="0.5" width="439" height="179" rx="8" fill="#2e3440" stroke="#3b4252"/>
+  <style>
+    .title { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #88c0d0; }
+    .label { font: 400 13px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #eceff4; }
+    .value { font: 600 18px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #88c0d0; }
+    .small { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill: #eceff4; opacity: .78; }
+  </style>
+  <text x="20" y="30" class="title">DedSec GitHub Stats</text>
+  <text x="22" y="67" class="label">Stars</text>
+  <text x="22" y="91" class="value">1,054</text>
+  <text x="232" y="67" class="label">Repositories</text>
+  <text x="232" y="91" class="value">10</text>
+  <text x="22" y="125" class="label">Followers</text>
+  <text x="22" y="149" class="value">265</text>
+  <text x="232" y="125" class="label">Contributions (1y)</text>
+  <text x="232" y="149" class="value">4,728</text>
+  <text x="20" y="164" class="small">Static daily card • 2026-08-17T17:56:26Z</text>
+</svg>

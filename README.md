@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=dedsec1121fk&bg=2e3440&text=eceff4&title_color=88c0d0&icon_color=88c0d0&border_color=3b4252&border_radius=8&v=nord_dark-88c0d0" alt="DedSec GitHub Stats" />
+  <img src="./profile/stats.svg?v=nord_dark-88c0d0" alt="DedSec GitHub Stats" />
 </p>
 
 ---
@@ -95,7 +95,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=dedsec1121fk&layout=compact&bg_color=2e3440&text_color=eceff4&title_color=88c0d0&icon_color=88c0d0&border_color=3b4252&border_radius=8&v=nord_dark-88c0d0" alt="Top Languages" />
+  <img src="./profile/top-langs.svg?v=nord_dark-88c0d0" alt="Top Languages" />
 </p>
 
 <p align="center">
