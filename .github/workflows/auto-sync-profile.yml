@@ -1,0 +1,159 @@
+name: Auto Sync Profile Assets
+
+on:
+  # Self-heal after any workflow that can change profile data, colors, or snake files.
+  workflow_run:
+    workflows:
+      - "Generate Profile Data and Snake"
+      - "Profile Data Refresh Engine"
+      - "Rotate Profile Colors"
+      - "Manual Contribution Snake Refresh"
+    types:
+      - completed
+  # Also repair generated assets if their source/configuration is edited manually.
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - ".github/profile-themes.json"
+      - ".github/scripts/generate_profile_cards.py"
+      - ".github/scripts/rotate_card_theme.py"
+      - ".github/scripts/recolor_snake.py"
+      - "profile/profile-data.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-generated-assets
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    # Successful data/theme writes trigger this job through the push event.
+    # workflow_run is retained as a failure-recovery path and for the manual
+    # snake workflow, which writes only to the output branch.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion != 'success' ||
+      github.event.workflow_run.name == 'Manual Contribution Snake Refresh'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out latest default branch
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Rebuild all local cards from cached profile data
+        run: python3 .github/scripts/generate_profile_cards.py render
+
+      - name: Synchronize README to the active palette and cache key
+        id: theme
+        run: python3 .github/scripts/rotate_card_theme.py emit
+
+      - name: Verify cards, rings, donut, badges, URLs, and palette
+        run: python3 .github/scripts/rotate_card_theme.py verify
+
+      - name: Auto-sync contribution snake palette
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_THEME: ${{ steps.theme.outputs.theme }}
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/profile-output
+
+          if ! git clone --quiet --depth 1 --branch output \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            /tmp/profile-output; then
+            echo "Output branch is not available yet; main profile assets can still be synchronized."
+            exit 0
+          fi
+
+          sync_output() {
+            python3 .github/scripts/recolor_snake.py \
+              --from-theme auto \
+              --to-theme "$TARGET_THEME" \
+              --directory /tmp/profile-output
+
+            git -C /tmp/profile-output add \
+              github-contribution-grid-snake.svg \
+              github-contribution-grid-snake-dark.svg
+
+            if git -C /tmp/profile-output diff --cached --quiet; then
+              return 1
+            fi
+
+            git -C /tmp/profile-output config user.name "github-actions[bot]"
+            git -C /tmp/profile-output config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git -C /tmp/profile-output commit -m "Auto-sync contribution snake to ${TARGET_THEME}"
+            return 0
+          }
+
+          if ! sync_output; then
+            echo "Contribution snake already matches ${TARGET_THEME}."
+            exit 0
+          fi
+
+          for attempt in 1 2 3 4 5; do
+            if git -C /tmp/profile-output push origin output; then
+              exit 0
+            fi
+
+            echo "Output branch moved; rebuilding synchronized snake before retry ${attempt}/5."
+            git -C /tmp/profile-output fetch origin output
+            git -C /tmp/profile-output reset --hard origin/output
+            if ! sync_output; then
+              echo "Remote output branch is now synchronized."
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+
+          echo "Unable to synchronize contribution snake after 5 retries." >&2
+          exit 1
+
+      - name: Publish synchronized main-branch assets
+        env:
+          MAIN_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          stage_sync() {
+            python3 .github/scripts/generate_profile_cards.py render
+            python3 .github/scripts/rotate_card_theme.py emit
+            python3 .github/scripts/rotate_card_theme.py verify
+            git add README.md profile/stats.svg profile/streak.svg profile/top-langs.svg
+          }
+
+          stage_sync
+          if git diff --cached --quiet; then
+            echo "Main profile assets are already synchronized."
+            exit 0
+          fi
+
+          git commit -m "Auto-sync generated profile assets"
+
+          for attempt in 1 2 3 4 5; do
+            if git push origin "HEAD:${MAIN_BRANCH}"; then
+              exit 0
+            fi
+
+            echo "Default branch moved; rebuilding from the newest state before retry ${attempt}/5."
+            git fetch origin "${MAIN_BRANCH}:refs/remotes/origin/${MAIN_BRANCH}"
+            git rebase -X theirs "origin/${MAIN_BRANCH}"
+            stage_sync
+            if ! git diff --cached --quiet; then
+              git commit --amend --no-edit
+            fi
+            sleep $((attempt * 2))
+          done
+
+          echo "Unable to publish synchronized profile assets after 5 retries." >&2
+          exit 1

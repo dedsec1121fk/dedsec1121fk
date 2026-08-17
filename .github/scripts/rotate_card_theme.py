@@ -14,7 +14,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = ROOT / ".github" / "profile-themes.json"
 README_PATH = ROOT / "README.md"
+STATS_PATH = ROOT / "profile" / "stats.svg"
 STREAK_PATH = ROOT / "profile" / "streak.svg"
+LANGUAGES_PATH = ROOT / "profile" / "top-langs.svg"
 DATA_PATH = ROOT / "profile" / "profile-data.json"
 
 HEX_COLOR = re.compile(r"^[0-9a-fA-F]{6}$")
@@ -326,15 +328,45 @@ def verify_sync(theme: str, theme_data: dict[str, Any], require_streak: bool = T
     verify_skill_badges(readme, theme_data)
 
     if require_streak:
-        try:
-            streak = STREAK_PATH.read_text(encoding="utf-8").lower()
-        except OSError as exc:
-            raise SystemExit(f"Unable to read generated streak card {STREAK_PATH}: {exc}") from exc
-
         palette = card_palette(theme_data)
-        for role, color in palette.items():
-            if f"#{color}" not in streak:
-                raise SystemExit(f"Generated streak card is missing the shared {role} color #{color}.")
+        card_specs = [
+            (STATS_PATH, "stats", 3, "PROFILE RANK"),
+            (STREAK_PATH, "streak", 7, "Contributions"),
+            (LANGUAGES_PATH, "languages", 3, "Language share by bytes"),
+        ]
+        for path, label, minimum_circles, required_text in card_specs:
+            try:
+                svg = path.read_text(encoding="utf-8")
+            except OSError as exc:
+                raise SystemExit(f"Unable to read generated {label} card {path}: {exc}") from exc
+
+            lowered = svg.lower()
+            for role in ("background", "border", "accent", "text"):
+                color = palette[role]
+                if f"#{color}" not in lowered:
+                    raise SystemExit(
+                        f"Generated {label} card is missing the shared {role} color #{color}."
+                    )
+
+            circle_count = lowered.count("<circle")
+            if circle_count < minimum_circles:
+                raise SystemExit(
+                    f"Generated {label} card lost its circular visual structure: "
+                    f"expected at least {minimum_circles} circle elements, found {circle_count}."
+                )
+            if required_text not in svg:
+                raise SystemExit(
+                    f"Generated {label} card is missing its expected circular-layout marker: {required_text!r}."
+                )
+
+            # Parse as XML too, so malformed SVG never gets published.
+            try:
+                import xml.etree.ElementTree as ET
+                ET.fromstring(svg)
+            except Exception as exc:
+                raise SystemExit(f"Generated {label} card is not valid SVG/XML: {exc}") from exc
+
+        print("Verified circular stats rank, streak rings, and language donut structure.")
 
     print(f"All profile cards are synchronized to {theme} ({cache_key(theme, theme_data)}).")
 
