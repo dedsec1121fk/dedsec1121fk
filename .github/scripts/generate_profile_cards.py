@@ -249,9 +249,11 @@ def svg_text(
 ) -> str:
     styles = {
         "title": (18, 600, p["accent"], None),
-        "label": (13, 400, p["text"], None),
-        "value": (18, 600, p["secondary"], None),
-        "small": (11, 400, p["text"], "0.78"),
+        "label": (12, 400, p["text"], None),
+        "value": (17, 600, p["secondary"], None),
+        "small": (10, 400, p["text"], "0.72"),
+        "rank": (28, 700, p["secondary"], None),
+        "rank_label": (10, 500, p["text"], "0.78"),
     }
     if role not in styles:
         raise ValueError(f"Unknown SVG text role: {role}")
@@ -276,109 +278,230 @@ def svg_shell(width: int, height: int, title: str, content: str, p: dict[str, st
     title_text = escape(title)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{title_text}">
   <title>{title_text}</title>
-  <rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="8" fill="#{p['background']}" stroke="#{p['border']}"/>
-{svg_text(20, 30, title, "title", p)}
+  <rect x="0.75" y="0.75" width="{width - 1.5}" height="{height - 1.5}" rx="12" fill="#{p['background']}" stroke="#{p['border']}" stroke-width="1.5"/>
+  <circle cx="{width - 24}" cy="24" r="4" fill="#{p['highlight']}" opacity="0.95"/>
+{svg_text(20, 31, title, "title", p)}
 {content}
 </svg>
 '''
+
+
+def _exponential_cdf(value: float) -> float:
+    return 1 - 2 ** (-value)
+
+
+def _log_normal_cdf(value: float) -> float:
+    return value / (1 + value) if value > -1 else 0.0
+
+
+def profile_rank(data: dict[str, Any]) -> tuple[str, float, float]:
+    # Mirrors the published GitHub Readme Stats weighting so the rank ring is
+    # meaningful instead of a hard-coded decoration. Cached commits cover one
+    # rolling year, therefore the non-all-commits median is used.
+    commits = max(0, int(data.get("commits_1y") or 0))
+    prs = max(0, int(data.get("pull_requests_1y") or 0))
+    issues = max(0, int(data.get("issues_1y") or 0))
+    reviews = max(0, int(data.get("reviews_1y") or 0))
+    stars = max(0, int(data.get("stars") or 0))
+    followers = max(0, int(data.get("followers") or 0))
+
+    weighted = (
+        2 * _exponential_cdf(commits / 250)
+        + 3 * _exponential_cdf(prs / 50)
+        + _exponential_cdf(issues / 25)
+        + _exponential_cdf(reviews / 2)
+        + 4 * _log_normal_cdf(stars / 50)
+        + _log_normal_cdf(followers / 10)
+    )
+    percentile = max(0.0, min(100.0, (1 - weighted / 12) * 100))
+    thresholds = [1, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100]
+    levels = ["S", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"]
+    level = next((level for limit, level in zip(thresholds, levels) if percentile <= limit), "C")
+    return level, percentile, 100 - percentile
+
+
+def ring(
+    cx: int | float,
+    cy: int | float,
+    radius: int | float,
+    completion: float,
+    color: str,
+    p: dict[str, str],
+    *,
+    width: int = 7,
+) -> str:
+    completion = max(0.0, min(100.0, completion))
+    circumference = 2 * 3.141592653589793 * float(radius)
+    filled = circumference * completion / 100
+    gap = circumference - filled
+    return "\n".join(
+        [
+            f'  <circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="#{p["border"]}" stroke-width="{width}" opacity="0.75"/>',
+            f'  <circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="#{color}" stroke-width="{width}" stroke-linecap="round" stroke-dasharray="{filled:.2f} {gap:.2f}" transform="rotate(-90 {cx} {cy})"/>',
+        ]
+    )
+
+
+def stat_icon(kind: str, x: int, y: int, p: dict[str, str]) -> str:
+    color = p["accent"]
+    if kind == "star":
+        return f'  <path d="M{x} {y-7} l2.3 4.7 5.2 .8 -3.8 3.7 .9 5.2 -4.6 -2.5 -4.6 2.5 .9 -5.2 -3.8 -3.7 5.2 -.8 z" fill="#{color}"/>'
+    if kind == "commit":
+        return "\n".join([
+            f'  <line x1="{x-7}" y1="{y}" x2="{x+7}" y2="{y}" stroke="#{color}" stroke-width="2"/>',
+            f'  <circle cx="{x}" cy="{y}" r="3.6" fill="#{p["background"]}" stroke="#{color}" stroke-width="2"/>',
+        ])
+    if kind == "pr":
+        return "\n".join([
+            f'  <circle cx="{x-5}" cy="{y-5}" r="2.4" fill="none" stroke="#{color}" stroke-width="1.8"/>',
+            f'  <circle cx="{x+5}" cy="{y+5}" r="2.4" fill="none" stroke="#{color}" stroke-width="1.8"/>',
+            f'  <path d="M{x-5} {y-2.5} v7.5 M{x+5} {y+2.5} v-5 h-5" fill="none" stroke="#{color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+        ])
+    if kind == "issue":
+        return "\n".join([
+            f'  <circle cx="{x}" cy="{y}" r="6" fill="none" stroke="#{color}" stroke-width="1.8"/>',
+            f'  <line x1="{x}" y1="{y-3}" x2="{x}" y2="{y+1}" stroke="#{color}" stroke-width="1.8" stroke-linecap="round"/>',
+            f'  <circle cx="{x}" cy="{y+3.5}" r="1" fill="#{color}"/>',
+        ])
+    if kind == "followers":
+        return "\n".join([
+            f'  <circle cx="{x}" cy="{y-3.5}" r="3.2" fill="none" stroke="#{color}" stroke-width="1.8"/>',
+            f'  <path d="M{x-6} {y+6} c.8-4 3.2-5.6 6-5.6 s5.2 1.6 6 5.6" fill="none" stroke="#{color}" stroke-width="1.8" stroke-linecap="round"/>',
+        ])
+    return f'  <circle cx="{x}" cy="{y}" r="4" fill="#{color}"/>'
 
 
 def render_stats(data: dict[str, Any], p: dict[str, str]) -> str:
     if data.get("seed"):
         content = "\n".join(
             [
-                svg_text(20, 82, "Refresh pending", "value", p),
-                svg_text(20, 112, "One authenticated daily refresh will populate this card.", "label", p),
-                f'  <circle cx="410" cy="28" r="4" fill="#{p["highlight"]}"/>',
+                ring(355, 96, 42, 15, p["accent"], p),
+                svg_text(355, 101, "…", "rank", p, anchor="middle"),
+                svg_text(355, 121, "RANK", "rank_label", p, anchor="middle"),
+                svg_text(24, 82, "Refresh pending", "value", p),
+                svg_text(24, 110, "An authenticated refresh will populate the profile card.", "label", p),
             ]
         )
-        return svg_shell(440, 150, "DedSec GitHub Stats", content, p)
+        return svg_shell(440, 170, "DedSec GitHub Stats", content, p)
 
-    rows = [
-        ("Stars", data["stars"]),
-        ("Repositories", data["repositories"]),
-        ("Followers", data["followers"]),
-        ("Contributions (1y)", data["contributions_1y"]),
+    rank_level, rank_percentile, completion = profile_rank(data)
+    metrics = [
+        ("star", "Stars", data["stars"]),
+        ("commit", "Commits (1y)", data["commits_1y"]),
+        ("pr", "Pull Requests (1y)", data["pull_requests_1y"]),
+        ("issue", "Issues (1y)", data["issues_1y"]),
+        ("followers", "Followers", data["followers"]),
     ]
     parts: list[str] = []
-    for idx, (label, value) in enumerate(rows):
-        col = idx % 2
-        row = idx // 2
-        x = 22 + col * 210
-        y = 67 + row * 58
-        parts.append(svg_text(x, y, label, "label", p))
-        parts.append(svg_text(x, y + 24, f"{value:,}", "value", p))
-    parts.append(svg_text(20, 164, f'Static daily card • {data["generated_at_utc"]}', "small", p))
-    return svg_shell(440, 180, "DedSec GitHub Stats", "\n".join(parts), p)
+    for idx, (icon, label, value) in enumerate(metrics):
+        y = 61 + idx * 24
+        parts.append(stat_icon(icon, 29, y - 4, p))
+        parts.append(svg_text(44, y, label, "label", p))
+        parts.append(svg_text(238, y, f"{int(value):,}", "value", p, anchor="end"))
+
+    parts.extend(
+        [
+            ring(354, 101, 44, completion, p["accent"], p, width=7),
+            svg_text(354, 105, rank_level, "rank", p, anchor="middle"),
+            svg_text(354, 126, "PROFILE RANK", "rank_label", p, anchor="middle"),
+            svg_text(354, 164, f"top {rank_percentile:.1f}%", "small", p, anchor="middle"),
+            svg_text(20, 190, f'Cached • {data["generated_at_utc"]}', "small", p),
+        ]
+    )
+    return svg_shell(440, 205, "DedSec GitHub Stats", "\n".join(parts), p)
 
 
 def render_streak(data: dict[str, Any], p: dict[str, str]) -> str:
     if data.get("seed"):
-        content = "\n".join(
-            [
-                f'  <circle cx="55" cy="51" r="4" fill="#{p["highlight"]}"/>',
-                svg_text(20, 88, "Refresh pending", "value", p),
-                svg_text(20, 116, "Streak data is cached locally after the first daily refresh.", "label", p),
-            ]
-        )
-        return svg_shell(440, 145, "GitHub Streak", content, p)
+        parts = [
+            ring(85, 91, 30, 10, p["accent"], p, width=5),
+            ring(220, 91, 30, 10, p["secondary"], p, width=5),
+            ring(355, 91, 30, 10, p["highlight"], p, width=5),
+            svg_text(220, 95, "…", "value", p, anchor="middle"),
+            svg_text(220, 142, "Refresh pending", "label", p, anchor="middle"),
+        ]
+        return svg_shell(440, 165, "GitHub Streak", "\n".join(parts), p)
+
+    current = int(data["current_streak"])
+    longest = max(1, int(data["longest_streak_1y"]))
+    contributions = int(data["contributions_1y"])
+    current_completion = min(100.0, 100.0 * current / longest)
 
     parts = [
-        f'  <circle cx="55" cy="51" r="4" fill="#{p["highlight"]}"/>',
-        svg_text(55, 82, data["current_streak"], "value", p, anchor="middle"),
-        svg_text(55, 105, "Current Streak", "label", p, anchor="middle"),
-        svg_text(220, 82, data["longest_streak_1y"], "value", p, anchor="middle"),
-        svg_text(220, 105, "Longest (1y)", "label", p, anchor="middle"),
-        svg_text(385, 82, f'{data["contributions_1y"]:,}', "value", p, anchor="middle"),
-        svg_text(385, 105, "Contributions (1y)", "label", p, anchor="middle"),
-        f'  <line x1="137" y1="58" x2="137" y2="112" stroke="#{p["border"]}"/>',
-        f'  <line x1="302" y1="58" x2="302" y2="112" stroke="#{p["border"]}"/>',
-        svg_text(20, 144, "Generated locally from one authenticated GitHub refresh", "small", p),
+        ring(78, 88, 31, current_completion, p["accent"], p, width=5),
+        ring(220, 88, 31, 100, p["secondary"], p, width=5),
+        ring(362, 88, 31, 100, p["highlight"], p, width=5),
+        svg_text(78, 94, current, "value", p, anchor="middle"),
+        svg_text(220, 94, data["longest_streak_1y"], "value", p, anchor="middle"),
+        svg_text(362, 94, f"{contributions:,}", "value", p, anchor="middle"),
+        svg_text(78, 137, "Current", "label", p, anchor="middle"),
+        svg_text(220, 137, "Longest (1y)", "label", p, anchor="middle"),
+        svg_text(362, 137, "Contributions", "label", p, anchor="middle"),
+        svg_text(20, 163, "Generated locally from one authenticated GitHub refresh", "small", p),
     ]
-    return svg_shell(440, 160, "GitHub Streak", "\n".join(parts), p)
+    return svg_shell(440, 177, "GitHub Streak", "\n".join(parts), p)
 
 
 def render_languages(data: dict[str, Any], p: dict[str, str]) -> str:
     if data.get("seed"):
         content = "\n".join(
             [
-                svg_text(20, 82, "Refresh pending", "value", p),
-                svg_text(20, 112, "Language totals will be rendered from cached repository data.", "label", p),
-                f'  <circle cx="410" cy="28" r="4" fill="#{p["highlight"]}"/>',
+                ring(92, 103, 45, 12, p["accent"], p, width=13),
+                svg_text(92, 108, "…", "value", p, anchor="middle"),
+                svg_text(190, 94, "Refresh pending", "value", p),
+                svg_text(190, 120, "Language totals will appear here.", "label", p),
             ]
         )
-        return svg_shell(440, 150, "Most Used Languages", content, p)
+        return svg_shell(440, 180, "Most Used Languages", content, p)
 
     langs = data.get("languages") or []
     total = sum(int(item.get("size") or 0) for item in langs) or 1
     top = langs[:6]
-    parts: list[str] = []
-    x0, y0, bar_w = 20, 52, 400
-    cursor = x0
+    cx, cy, radius = 92, 108, 48
+    circumference = 2 * 3.141592653589793 * radius
+    parts: list[str] = [
+        f'  <circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="#{p["border"]}" stroke-width="15" opacity="0.72"/>'
+    ]
+
+    consumed = 0.0
     for item in top:
-        width = bar_w * int(item["size"]) / total
-        color = item.get("color") or f"#{p['accent']}"
-        if not str(color).startswith("#"):
+        fraction = int(item["size"]) / total
+        color = str(item.get("color") or f"#{p['accent']}")
+        if not color.startswith("#"):
             color = f"#{p['accent']}"
+        seg = circumference * fraction
+        remainder = max(0.0, circumference - seg)
+        offset = -(circumference * consumed)
         parts.append(
-            f'  <rect x="{cursor:.1f}" y="{y0}" width="{width:.1f}" height="10" fill="{escape(str(color))}"/>'
+            f'  <circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="{escape(color)}" stroke-width="15" '
+            f'stroke-dasharray="{seg:.2f} {remainder:.2f}" stroke-dashoffset="{offset:.2f}" '
+            f'transform="rotate(-90 {cx} {cy})"/>'
         )
-        cursor += width
+        consumed += fraction
+
+    dominant = top[0]["name"] if top else "—"
+    dominant_pct = 100 * int(top[0]["size"]) / total if top else 0
+    parts.extend(
+        [
+            svg_text(cx, cy - 2, f"{dominant_pct:.0f}%", "value", p, anchor="middle"),
+            svg_text(cx, cy + 17, dominant, "rank_label", p, anchor="middle"),
+        ]
+    )
 
     for idx, item in enumerate(top):
         pct = 100 * int(item["size"]) / total
-        col = idx % 2
-        row = idx // 2
-        x = 24 + col * 205
-        y = 88 + row * 29
-        color = item.get("color") or f"#{p['accent']}"
-        if not str(color).startswith("#"):
+        x = 185
+        y = 62 + idx * 23
+        color = str(item.get("color") or f"#{p['accent']}")
+        if not color.startswith("#"):
             color = f"#{p['accent']}"
-        parts.append(f'  <circle cx="{x}" cy="{y - 4}" r="5" fill="{escape(str(color))}"/>')
-        parts.append(svg_text(x + 12, y, f'{item["name"]} {pct:.1f}%', "label", p))
+        parts.append(f'  <circle cx="{x}" cy="{y - 4}" r="5" fill="{escape(color)}"/>')
+        parts.append(svg_text(x + 13, y, item["name"], "label", p))
+        parts.append(svg_text(416, y, f"{pct:.1f}%", "label", p, anchor="end"))
 
-    parts.append(svg_text(20, 174, "Language share by bytes across owned, non-fork repositories", "small", p))
-    return svg_shell(440, 190, "Most Used Languages", "\n".join(parts), p)
+    parts.append(svg_text(20, 198, "Language share by bytes across owned, non-fork repositories", "small", p))
+    return svg_shell(440, 212, "Most Used Languages", "\n".join(parts), p)
+
 
 def render_all(data: dict[str, Any]) -> None:
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)

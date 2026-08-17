@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = ROOT / ".github" / "profile-themes.json"
 README_PATH = ROOT / "README.md"
 STREAK_PATH = ROOT / "profile" / "streak.svg"
+DATA_PATH = ROOT / "profile" / "profile-data.json"
 
 HEX_COLOR = re.compile(r"^[0-9a-fA-F]{6}$")
 
@@ -88,10 +89,22 @@ def card_palette(theme_data: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def data_cache_token() -> str:
+    """Return a stable token that changes whenever cached profile data changes."""
+    try:
+        data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return "seed"
+
+    generated = str(data.get("generated_at_utc") or "seed")
+    token = re.sub(r"[^0-9A-Za-z]+", "", generated)
+    return token or "seed"
+
+
 def cache_key(theme: str, theme_data: dict[str, Any]) -> str:
-    """Change every image URL whenever the shared palette changes."""
+    """Bust image caches when either palette or cached profile data changes."""
     palette = card_palette(theme_data)
-    return f"{theme}-{palette['accent']}"
+    return f"{theme}-{palette['accent']}-{data_cache_token()}"
 
 
 def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, str]:
