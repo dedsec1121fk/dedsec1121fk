@@ -32,13 +32,13 @@ concurrency:
 
 jobs:
   sync:
-    # Successful data/theme writes trigger this job through the push event.
-    # workflow_run is retained as a failure-recovery path and for the manual
-    # snake workflow, which writes only to the output branch.
+    # Run after successful profile-producing workflows. Commits pushed with the
+    # repository GITHUB_TOKEN do not start another workflow through `push`, so
+    # workflow_run must perform the synchronization instead of being skipped.
+    # Direct push and manual-dispatch runs are also allowed.
     if: >-
       github.event_name != 'workflow_run' ||
-      github.event.workflow_run.conclusion != 'success' ||
-      github.event.workflow_run.name == 'Manual Contribution Snake Refresh'
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
