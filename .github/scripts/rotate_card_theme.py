@@ -148,9 +148,12 @@ def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, 
             "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
             f"profile/top-langs.svg?v={version}"
         ),
+        "views_counter": (
+            "https://komarev.com/ghpvc/?username=dedsec1121fk&amp;style=pixel"
+        ),
         "views": (
-            "https://komarev.com/ghpvc/?username=dedsec1121fk"
-            f"&style=flat-square&color={palette['accent']}&v={version}"
+            "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
+            f"profile/views.svg?v={version}"
         ),
         "sponsors": (
             "https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-"
@@ -291,11 +294,19 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     )
     text = replace_exact(
         text,
-        r"https://komarev\.com/ghpvc/\?[^\"\s]+",
-        values["views"],
+        r'(<img\s+src=")[^"]+("\s+alt="Profile views"\s*/>)',
+        rf"\g<1>{values['views']}\g<2>",
         1,
         "profile-view badge",
     )
+    if values["views_counter"] not in text:
+        visible = f'  <img src="{values["views"]}" alt="Profile views" />'
+        hidden = (
+            f'  <img width="1" height="1" src="{values["views_counter"]}" alt="" />'
+        )
+        if visible not in text:
+            raise SystemExit("Unable to locate the synchronized profile-view badge for counter insertion.")
+        text = text.replace(visible, f"{hidden}\n{visible}", 1)
     text = replace_exact(
         text,
         r"https://img\.shields\.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-[^\"\s]+",
@@ -334,6 +345,7 @@ def verify_sync(theme: str, theme_data: dict[str, Any], require_streak: bool = T
         "stats": 1,
         "streak": 1,
         "languages": 1,
+        "views_counter": 1,
         "views": 1,
         "sponsors": 1,
         "snake_light": 1,
