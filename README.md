@@ -3,7 +3,8 @@
 ---
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=dedsec1121fk&style=flat-square&color=ff79c6&v=dracula-ff79c6-20260818T180030Z-e617299e9f" alt="Profile views" />
+  <img width="1" height="1" src="https://komarev.com/ghpvc/?username=dedsec1121fk&amp;style=pixel" alt="" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/views.svg?v=dracula-ff79c6-20260818T180030Z-e617299e9f" alt="Profile views" />
 </p>
 
 <p align="center">
