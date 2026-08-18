@@ -20,6 +20,7 @@ on:
       - ".github/scripts/generate_profile_cards.py"
       - ".github/scripts/rotate_card_theme.py"
       - ".github/scripts/recolor_snake.py"
+      - ".github/scripts/sync_profile_views.py"
       - "profile/profile-data.json"
   workflow_dispatch:
 
@@ -56,8 +57,13 @@ jobs:
         id: theme
         run: python3 .github/scripts/rotate_card_theme.py emit
 
+      - name: Render cached profile-view badge
+        run: python3 .github/scripts/sync_profile_views.py render
+
       - name: Verify cards, rings, donut, badges, URLs, and palette
-        run: python3 .github/scripts/rotate_card_theme.py verify
+        run: |
+          python3 .github/scripts/sync_profile_views.py verify
+          python3 .github/scripts/rotate_card_theme.py verify
 
       - name: Auto-sync contribution snake palette
         env:
@@ -128,8 +134,10 @@ jobs:
           stage_sync() {
             python3 .github/scripts/generate_profile_cards.py render
             python3 .github/scripts/rotate_card_theme.py emit
+            python3 .github/scripts/sync_profile_views.py render
+            python3 .github/scripts/sync_profile_views.py verify
             python3 .github/scripts/rotate_card_theme.py verify
-            git add README.md profile/stats.svg profile/streak.svg profile/top-langs.svg
+            git add README.md profile/views.svg profile/stats.svg profile/streak.svg profile/top-langs.svg
           }
 
           stage_sync

@@ -33,6 +33,9 @@ jobs:
         id: theme
         run: python3 .github/scripts/rotate_card_theme.py emit
 
+      - name: Refresh cached profile-view total
+        run: python3 .github/scripts/sync_profile_views.py refresh
+
       # The snake is the only remaining third-party GitHub-data generator and
       # runs once daily instead of being regenerated every four hours.
       - name: Generate contribution snake once
@@ -61,14 +64,16 @@ jobs:
           git push --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output
 
       - name: Verify local cards
-        run: python3 .github/scripts/rotate_card_theme.py verify
+        run: |
+          python3 .github/scripts/sync_profile_views.py verify
+          python3 .github/scripts/rotate_card_theme.py verify
 
       - name: Commit refreshed local profile data
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md profile/profile-data.json profile/stats.svg profile/streak.svg profile/top-langs.svg
+          git add README.md profile/profile-data.json profile/profile-views.json profile/views.svg profile/stats.svg profile/streak.svg profile/top-langs.svg
 
           if git diff --cached --quiet; then
             echo "Profile data is already current."

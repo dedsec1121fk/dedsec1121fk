@@ -50,6 +50,9 @@ jobs:
       - name: Re-render cached cards without GitHub API calls
         run: python3 .github/scripts/generate_profile_cards.py render
 
+      - name: Re-render cached profile-view badge
+        run: python3 .github/scripts/sync_profile_views.py render
+
       - name: Recolor existing snake without regenerating contribution data
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -83,14 +86,16 @@ jobs:
           fi
 
       - name: Verify synchronized local cards
-        run: python3 .github/scripts/rotate_card_theme.py verify
+        run: |
+          python3 .github/scripts/sync_profile_views.py verify
+          python3 .github/scripts/rotate_card_theme.py verify
 
       - name: Commit synchronized colors
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md .github/profile-themes.json profile/stats.svg profile/streak.svg profile/top-langs.svg
+          git add README.md .github/profile-themes.json profile/views.svg profile/stats.svg profile/streak.svg profile/top-langs.svg
 
           if git diff --cached --quiet; then
             echo "Profile already uses ${{ steps.theme.outputs.theme }}."
