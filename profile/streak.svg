@@ -19,7 +19,7 @@
   <circle cx="358" cy="101" r="34" fill="none" stroke="#f92672" stroke-width="1" opacity="0.15"/>
   <circle cx="358" cy="101" r="31" fill="none" stroke="#34383a" stroke-width="4" opacity="0.78"/>
   <circle cx="358" cy="101" r="31" fill="none" stroke="#f92672" stroke-width="2" opacity="0.90"/>
-  <text x="358" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#f92672" text-anchor="middle">4,759</text>
+  <text x="358" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#f92672" text-anchor="middle">4,760</text>
   <text x="358" y="121" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#f8f8f2" text-anchor="middle" opacity="0.56">1 year</text>
   <text x="358" y="157" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="middle" opacity="0.76">Contributions</text>
 </svg>
