@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="176" viewBox="0 0 440 176" role="img" aria-label="GitHub Streak">
   <title>GitHub Streak</title>
-  <rect x="0.75" y="0.75" width="438.5" height="174.5" rx="13" fill="#16181c" stroke="#33373b" stroke-width="1.5"/>
-  <rect x="20" y="43" width="46" height="2" rx="1" fill="#fabd2f" opacity="0.88"/>
-  <text x="20" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#fabd2f">GitHub Streak</text>
-  <text x="416" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#fbf1c7" text-anchor="end" opacity="0.56">LAST 365 DAYS</text>
-  <circle cx="82" cy="101" r="34" fill="none" stroke="#fabd2f" stroke-width="1" opacity="0.15"/>
-  <circle cx="82" cy="101" r="31" fill="none" stroke="#33373b" stroke-width="4" opacity="0.78"/>
-  <circle cx="82" cy="101" r="31" fill="none" stroke="#fabd2f" stroke-width="2" opacity="0.90"/>
-  <text x="82" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#fabd2f" text-anchor="middle">0</text>
-  <text x="82" y="121" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#fbf1c7" text-anchor="middle" opacity="0.56">days</text>
-  <text x="82" y="157" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#fbf1c7" text-anchor="middle" opacity="0.76">Current streak</text>
-  <circle cx="220" cy="101" r="34" fill="none" stroke="#fabd2f" stroke-width="1" opacity="0.15"/>
-  <circle cx="220" cy="101" r="31" fill="none" stroke="#33373b" stroke-width="4" opacity="0.78"/>
-  <circle cx="220" cy="101" r="31" fill="none" stroke="#fabd2f" stroke-width="2" opacity="0.90"/>
-  <text x="220" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#fabd2f" text-anchor="middle">18</text>
-  <text x="220" y="121" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#fbf1c7" text-anchor="middle" opacity="0.56">days</text>
-  <text x="220" y="157" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#fbf1c7" text-anchor="middle" opacity="0.76">Longest streak</text>
-  <circle cx="358" cy="101" r="34" fill="none" stroke="#fabd2f" stroke-width="1" opacity="0.15"/>
-  <circle cx="358" cy="101" r="31" fill="none" stroke="#33373b" stroke-width="4" opacity="0.78"/>
-  <circle cx="358" cy="101" r="31" fill="none" stroke="#fabd2f" stroke-width="2" opacity="0.90"/>
-  <text x="358" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#fabd2f" text-anchor="middle">4,727</text>
-  <text x="358" y="121" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#fbf1c7" text-anchor="middle" opacity="0.56">1 year</text>
-  <text x="358" y="157" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#fbf1c7" text-anchor="middle" opacity="0.76">Contributions</text>
+  <rect x="0.75" y="0.75" width="438.5" height="174.5" rx="13" fill="#15181b" stroke="#34383a" stroke-width="1.5"/>
+  <rect x="20" y="43" width="46" height="2" rx="1" fill="#f92672" opacity="0.88"/>
+  <text x="20" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#f92672">GitHub Streak</text>
+  <text x="416" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#f8f8f2" text-anchor="end" opacity="0.56">LAST 365 DAYS</text>
+  <circle cx="82" cy="101" r="34" fill="none" stroke="#f92672" stroke-width="1" opacity="0.15"/>
+  <circle cx="82" cy="101" r="31" fill="none" stroke="#34383a" stroke-width="4" opacity="0.78"/>
+  <circle cx="82" cy="101" r="31" fill="none" stroke="#f92672" stroke-width="2" opacity="0.90"/>
+  <text x="82" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#f92672" text-anchor="middle">0</text>
+  <text x="82" y="121" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#f8f8f2" text-anchor="middle" opacity="0.56">days</text>
+  <text x="82" y="157" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="middle" opacity="0.76">Current streak</text>
+  <circle cx="220" cy="101" r="34" fill="none" stroke="#f92672" stroke-width="1" opacity="0.15"/>
+  <circle cx="220" cy="101" r="31" fill="none" stroke="#34383a" stroke-width="4" opacity="0.78"/>
+  <circle cx="220" cy="101" r="31" fill="none" stroke="#f92672" stroke-width="2" opacity="0.90"/>
+  <text x="220" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#f92672" text-anchor="middle">18</text>
+  <text x="220" y="121" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#f8f8f2" text-anchor="middle" opacity="0.56">days</text>
+  <text x="220" y="157" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="middle" opacity="0.76">Longest streak</text>
+  <circle cx="358" cy="101" r="34" fill="none" stroke="#f92672" stroke-width="1" opacity="0.15"/>
+  <circle cx="358" cy="101" r="31" fill="none" stroke="#34383a" stroke-width="4" opacity="0.78"/>
+  <circle cx="358" cy="101" r="31" fill="none" stroke="#f92672" stroke-width="2" opacity="0.90"/>
+  <text x="358" y="105" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#f92672" text-anchor="middle">4,727</text>
+  <text x="358" y="121" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#f8f8f2" text-anchor="middle" opacity="0.56">1 year</text>
+  <text x="358" y="157" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="middle" opacity="0.76">Contributions</text>
 </svg>
