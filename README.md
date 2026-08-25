@@ -4,7 +4,7 @@
 
 <p align="center">
   <img width="1" height="1" src="https://komarev.com/ghpvc/?username=dedsec1121fk&amp;style=pixel" alt="" />
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/views.svg?v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" alt="Profile views" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/views.svg?v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" alt="Profile views" />
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats.svg?v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" alt="DedSec GitHub Stats" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats.svg?v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" alt="DedSec GitHub Stats" />
 </p>
 
 ---
@@ -92,18 +92,18 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/streak.svg?v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" alt="GitHub Streak" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/streak.svg?v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/top-langs.svg?v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" alt="Top Languages" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/top-langs.svg?v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" alt="Top Languages" />
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" />
-    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" alt="Animated GitHub contribution snake" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake.svg?v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" />
+    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark.svg?v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" alt="Animated GitHub contribution snake" />
   </picture>
 </p>
 
@@ -114,7 +114,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-7aa2f7?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=tokyonight-7aa2f7-20260824T032811Z-e617299e9f" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-7aa2f7?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=tokyonight-7aa2f7-20260825T032312Z-e617299e9f" alt="GitHub Sponsors" />
 </a>
 
 ---
