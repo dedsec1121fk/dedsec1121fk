@@ -2,8 +2,8 @@
   <title>Profile views: 3,552</title>
   <rect width="139" height="20" rx="4" fill="#30363d"/>
   <rect x="1" y="1" width="85" height="18" rx="3" fill="#161921"/>
-  <rect x="86" y="1" width="52" height="18" rx="3" fill="#f92672"/>
-  <path d="M86 1h3v18h-3z" fill="#f92672"/>
+  <rect x="86" y="1" width="52" height="18" rx="3" fill="#88c0d0"/>
+  <path d="M86 1h3v18h-3z" fill="#88c0d0"/>
   <g fill="#ffffff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
     <text x="43.0" y="14">Profile views</text>
     <text x="112.5" y="14" font-weight="700">3,552</text>
