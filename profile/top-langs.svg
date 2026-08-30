@@ -1,34 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="210" viewBox="0 0 440 210" role="img" aria-label="Most Used Languages">
   <title>Most Used Languages</title>
-  <rect x="0.75" y="0.75" width="438.5" height="208.5" rx="13" fill="#181c24" stroke="#333943" stroke-width="1.5"/>
-  <rect x="20" y="43" width="46" height="2" rx="1" fill="#88c0d0" opacity="0.88"/>
-  <text x="20" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#88c0d0">Most Used Languages</text>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#333943" stroke-width="13" opacity="0.62"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#88c0d0" stroke-width="13" stroke-dasharray="146.43 136.31" stroke-dashoffset="-0.00" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#88c0d0" stroke-width="13" stroke-dasharray="110.76 171.98" stroke-dashoffset="-146.43" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#8fbcbb" stroke-width="13" stroke-dasharray="18.19 264.55" stroke-dashoffset="-257.20" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#d8dee9" stroke-width="13" stroke-dasharray="3.49 279.26" stroke-dashoffset="-275.39" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#acd1dd" stroke-width="13" stroke-dasharray="1.44 281.30" stroke-dashoffset="-278.88" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#6f98a8" stroke-width="13" stroke-dasharray="0.77 281.97" stroke-dashoffset="-280.31" transform="rotate(-90 94 125)"/>
-  <text x="94" y="124" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#88c0d0" text-anchor="middle">52%</text>
-  <text x="94" y="141" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#eceff4" text-anchor="middle" opacity="0.56">Python</text>
-  <circle cx="184" cy="68" r="4" fill="#88c0d0"/>
-  <text x="196" y="72" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" opacity="0.76">Python</text>
-  <text x="416" y="72" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" text-anchor="end" opacity="0.76">51.8%</text>
-  <circle cx="184" cy="89" r="4" fill="#88c0d0"/>
-  <text x="196" y="93" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" opacity="0.76">HTML</text>
-  <text x="416" y="93" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" text-anchor="end" opacity="0.76">39.2%</text>
-  <circle cx="184" cy="110" r="4" fill="#8fbcbb"/>
-  <text x="196" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" opacity="0.76">Befunge</text>
-  <text x="416" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" text-anchor="end" opacity="0.76">6.4%</text>
-  <circle cx="184" cy="131" r="4" fill="#d8dee9"/>
-  <text x="196" y="135" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" opacity="0.76">CSS</text>
-  <text x="416" y="135" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" text-anchor="end" opacity="0.76">1.2%</text>
-  <circle cx="184" cy="152" r="4" fill="#acd1dd"/>
-  <text x="196" y="156" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" opacity="0.76">Shell</text>
-  <text x="416" y="156" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" text-anchor="end" opacity="0.76">0.5%</text>
-  <circle cx="184" cy="173" r="4" fill="#6f98a8"/>
-  <text x="196" y="177" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" opacity="0.76">JavaScript</text>
-  <text x="416" y="177" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#eceff4" text-anchor="end" opacity="0.76">0.3%</text>
-  <text x="20" y="198" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="9" font-weight="450" fill="#eceff4" opacity="0.52">Language share by bytes • owned, non-fork repositories</text>
+  <rect x="0.75" y="0.75" width="438.5" height="208.5" rx="13" fill="#0d1117" stroke="#292e35" stroke-width="1.5"/>
+  <rect x="20" y="43" width="46" height="2" rx="1" fill="#58a6ff" opacity="0.88"/>
+  <text x="20" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#58a6ff">Most Used Languages</text>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#292e35" stroke-width="13" opacity="0.62"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#58a6ff" stroke-width="13" stroke-dasharray="146.43 136.31" stroke-dashoffset="-0.00" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#0969da" stroke-width="13" stroke-dasharray="110.76 171.98" stroke-dashoffset="-146.43" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#54aeff" stroke-width="13" stroke-dasharray="18.19 264.55" stroke-dashoffset="-257.20" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#d0d7de" stroke-width="13" stroke-dasharray="3.49 279.26" stroke-dashoffset="-275.39" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#91c4fd" stroke-width="13" stroke-dasharray="1.44 281.30" stroke-dashoffset="-278.88" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#0d509f" stroke-width="13" stroke-dasharray="0.77 281.97" stroke-dashoffset="-280.31" transform="rotate(-90 94 125)"/>
+  <text x="94" y="124" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#58a6ff" text-anchor="middle">52%</text>
+  <text x="94" y="141" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#f6f8fa" text-anchor="middle" opacity="0.56">Python</text>
+  <circle cx="184" cy="68" r="4" fill="#58a6ff"/>
+  <text x="196" y="72" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" opacity="0.76">Python</text>
+  <text x="416" y="72" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" text-anchor="end" opacity="0.76">51.8%</text>
+  <circle cx="184" cy="89" r="4" fill="#0969da"/>
+  <text x="196" y="93" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" opacity="0.76">HTML</text>
+  <text x="416" y="93" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" text-anchor="end" opacity="0.76">39.2%</text>
+  <circle cx="184" cy="110" r="4" fill="#54aeff"/>
+  <text x="196" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" opacity="0.76">Befunge</text>
+  <text x="416" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" text-anchor="end" opacity="0.76">6.4%</text>
+  <circle cx="184" cy="131" r="4" fill="#d0d7de"/>
+  <text x="196" y="135" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" opacity="0.76">CSS</text>
+  <text x="416" y="135" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" text-anchor="end" opacity="0.76">1.2%</text>
+  <circle cx="184" cy="152" r="4" fill="#91c4fd"/>
+  <text x="196" y="156" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" opacity="0.76">Shell</text>
+  <text x="416" y="156" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" text-anchor="end" opacity="0.76">0.5%</text>
+  <circle cx="184" cy="173" r="4" fill="#0d509f"/>
+  <text x="196" y="177" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" opacity="0.76">JavaScript</text>
+  <text x="416" y="177" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f6f8fa" text-anchor="end" opacity="0.76">0.3%</text>
+  <text x="20" y="198" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="9" font-weight="450" fill="#f6f8fa" opacity="0.52">Language share by bytes • owned, non-fork repositories</text>
 </svg>
