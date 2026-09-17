@@ -417,7 +417,7 @@ def render_stats(data: dict[str, Any], p: dict[str, str]) -> str:
                 svg_text(28, 112, "Authenticated profile data will populate this card.", "label", p),
             ]
         )
-        return svg_shell(440, 190, "dedsec1121fk's (Loukas Floros)", content, p)
+        return svg_shell(440, 190, "dedsec1121fk (Loukas Floros) Stats", content, p)
 
     rank_level, rank_percentile, completion = profile_rank(data)
     parts = [
@@ -431,7 +431,7 @@ def render_stats(data: dict[str, Any], p: dict[str, str]) -> str:
         svg_text(354, 166, "PROFILE RANK", "rank_label", p, anchor="middle"),
         svg_text(24, 177, f'{int(data["pull_requests_1y"]):,} pull requests  •  {int(data["issues_1y"]):,} issues  •  updated {str(data["generated_at_utc"])[11:16]} UTC', "small", p),
     ]
-    return svg_shell(440, 190, "dedsec1121fk's (Loukas Floros)", "\n".join(parts), p)
+    return svg_shell(440, 190, "dedsec1121fk (Loukas Floros) Stats", "\n".join(parts), p)
 
 
 def render_streak(data: dict[str, Any], p: dict[str, str]) -> str:
