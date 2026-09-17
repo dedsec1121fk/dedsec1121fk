@@ -24,4 +24,9 @@ permissions:
 jobs:
   generate-profile:
     uses: ./.github/workflows/streak-stats.yml
+    with:
+      # A human push of this bundle performs one immediate palette rotation.
+      # Scheduled refreshes keep the current palette; the 4-hour color workflow
+      # remains responsible for normal ongoing rotation.
+      rotate_theme: ${{ github.event_name == 'push' }}
     secrets: inherit
