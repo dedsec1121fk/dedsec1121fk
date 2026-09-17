@@ -41,6 +41,8 @@ jobs:
         run: |
           set -euo pipefail
           cd dist
+          cp github-contribution-grid-snake.svg "github-contribution-grid-snake-light-${{ steps.theme.outputs.theme }}.svg"
+          cp github-contribution-grid-snake-dark.svg "github-contribution-grid-snake-dark-${{ steps.theme.outputs.theme }}.svg"
           git init
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

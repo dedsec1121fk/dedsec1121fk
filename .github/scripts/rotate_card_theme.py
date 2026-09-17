@@ -138,22 +138,22 @@ def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, 
         "marker": f"<!-- profile-theme: {theme} -->",
         "stats": (
             "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
-            f"profile/stats.svg?v={version}"
+            f"profile/stats-{theme}.svg?v={version}"
         ),
         "streak": (
             "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
-            f"profile/streak.svg?v={version}"
+            f"profile/streak-{theme}.svg?v={version}"
         ),
         "languages": (
             "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
-            f"profile/top-langs.svg?v={version}"
+            f"profile/top-langs-{theme}.svg?v={version}"
         ),
         "views_counter": (
             "https://komarev.com/ghpvc/?username=dedsec1121fk&amp;style=pixel"
         ),
         "views": (
             "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/"
-            f"profile/views.svg?v={version}"
+            f"profile/views-{theme}.svg?v={version}"
         ),
         "sponsors": (
             "https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-"
@@ -162,11 +162,11 @@ def expected_readme_values(theme: str, theme_data: dict[str, Any]) -> dict[str, 
         ),
         "snake_light": (
             "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/"
-            f"github-contribution-grid-snake.svg?v={version}"
+            f"github-contribution-grid-snake-light-{theme}.svg?v={version}"
         ),
         "snake_dark": (
             "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/"
-            f"github-contribution-grid-snake-dark.svg?v={version}"
+            f"github-contribution-grid-snake-dark-{theme}.svg?v={version}"
         ),
     }
 
@@ -316,14 +316,14 @@ def update_readme(theme: str, theme_data: dict[str, Any]) -> None:
     )
     text = replace_exact(
         text,
-        r"https://raw\.githubusercontent\.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake\.svg(?:\?[^\"\s]*)?",
+        r"https://raw\.githubusercontent\.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake(?:-light-[a-z0-9_-]+)?\.svg(?:\?[^\"\s]*)?",
         values["snake_light"],
         1,
         "light contribution snake",
     )
     text = replace_exact(
         text,
-        r"https://raw\.githubusercontent\.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark\.svg(?:\?[^\"\s]*)?",
+        r"https://raw\.githubusercontent\.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark(?:-[a-z0-9_-]+)?\.svg(?:\?[^\"\s]*)?",
         values["snake_dark"],
         2,
         "dark contribution snake",

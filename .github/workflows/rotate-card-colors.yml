@@ -74,9 +74,14 @@ jobs:
             --to-theme "$TO_THEME" \
             --directory /tmp/profile-output
 
+          cp /tmp/profile-output/github-contribution-grid-snake.svg \
+            "/tmp/profile-output/github-contribution-grid-snake-light-${TO_THEME}.svg"
+          cp /tmp/profile-output/github-contribution-grid-snake-dark.svg \
+            "/tmp/profile-output/github-contribution-grid-snake-dark-${TO_THEME}.svg"
+
           git -C /tmp/profile-output config user.name "github-actions[bot]"
           git -C /tmp/profile-output config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -C /tmp/profile-output add github-contribution-grid-snake.svg github-contribution-grid-snake-dark.svg
+          git -C /tmp/profile-output add github-contribution-grid-snake*.svg
 
           if git -C /tmp/profile-output diff --cached --quiet; then
             echo "Snake already uses the selected palette."
@@ -95,7 +100,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md .github/profile-themes.json profile/views.svg profile/stats.svg profile/streak.svg profile/top-langs.svg
+          git add README.md .github/profile-themes.json profile/*.svg
 
           if git diff --cached --quiet; then
             echo "Profile already uses ${{ steps.theme.outputs.theme }}."

@@ -86,9 +86,12 @@ jobs:
               --to-theme "$TARGET_THEME" \
               --directory /tmp/profile-output
 
-            git -C /tmp/profile-output add \
-              github-contribution-grid-snake.svg \
-              github-contribution-grid-snake-dark.svg
+            cp /tmp/profile-output/github-contribution-grid-snake.svg \
+              "/tmp/profile-output/github-contribution-grid-snake-light-${TARGET_THEME}.svg"
+            cp /tmp/profile-output/github-contribution-grid-snake-dark.svg \
+              "/tmp/profile-output/github-contribution-grid-snake-dark-${TARGET_THEME}.svg"
+
+            git -C /tmp/profile-output add github-contribution-grid-snake*.svg
 
             if git -C /tmp/profile-output diff --cached --quiet; then
               return 1
@@ -137,7 +140,7 @@ jobs:
             python3 .github/scripts/sync_profile_views.py render
             python3 .github/scripts/sync_profile_views.py verify
             python3 .github/scripts/rotate_card_theme.py verify
-            git add README.md profile/views.svg profile/stats.svg profile/streak.svg profile/top-langs.svg
+            git add README.md profile/*.svg
           }
 
           stage_sync

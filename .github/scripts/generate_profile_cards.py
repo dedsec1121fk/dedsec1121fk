@@ -519,11 +519,21 @@ def render_languages(data: dict[str, Any], p: dict[str, str]) -> str:
 
 def render_all(data: dict[str, Any]) -> None:
     PROFILE_DIR.mkdir(parents=True, exist_ok=True)
-    _, theme = load_theme()
+    theme_name, theme = load_theme()
     p = palette(theme)
-    (PROFILE_DIR / "stats.svg").write_text(render_stats(data, p), encoding="utf-8")
-    (PROFILE_DIR / "streak.svg").write_text(render_streak(data, p), encoding="utf-8")
-    (PROFILE_DIR / "top-langs.svg").write_text(render_languages(data, p), encoding="utf-8")
+
+    rendered = {
+        "stats": render_stats(data, p),
+        "streak": render_streak(data, p),
+        "top-langs": render_languages(data, p),
+    }
+    for name, svg in rendered.items():
+        # Keep the stable filenames for compatibility and verification, while
+        # also publishing a theme-qualified path. GitHub can cache raw SVGs
+        # aggressively, so changing the pathname on every palette rotation
+        # prevents a newly recolored README from showing an older cached card.
+        (PROFILE_DIR / f"{name}.svg").write_text(svg, encoding="utf-8")
+        (PROFILE_DIR / f"{name}-{theme_name}.svg").write_text(svg, encoding="utf-8")
 
 
 def seed_data() -> dict[str, Any]:

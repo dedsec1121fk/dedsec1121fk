@@ -110,7 +110,7 @@ def esc(text: str) -> str:
 
 
 def render_badge(count: int | None) -> None:
-    _, theme = load_theme()
+    theme_name, theme = load_theme()
     accent = str(theme["accent"]).lstrip("#").lower()
     text_color = str(theme.get("text", "ffffff")).lstrip("#").lower()
     background = str(theme.get("background", "161921")).lstrip("#").lower()
@@ -140,7 +140,12 @@ def render_badge(count: int | None) -> None:
     ET.fromstring(svg)
     SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
     SVG_PATH.write_text(svg, encoding="utf-8")
-    print(f"Rendered {SVG_PATH.relative_to(ROOT)} with count {value}.")
+    themed_path = SVG_PATH.with_name(f"views-{theme_name}.svg")
+    themed_path.write_text(svg, encoding="utf-8")
+    print(
+        f"Rendered {SVG_PATH.relative_to(ROOT)} and "
+        f"{themed_path.relative_to(ROOT)} with count {value}."
+    )
 
 
 def command_refresh() -> int:
