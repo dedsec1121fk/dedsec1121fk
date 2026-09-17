@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generated_at_utc": "2026-09-17T18:44:28Z",
+  "generated_at_utc": "2026-09-17T18:45:21Z",
   "login": "dedsec1121fk",
   "name": "FK",
   "followers": 187,
@@ -89,7 +89,7 @@
   ],
   "rate_limit": {
     "cost": 1,
-    "remaining": 4997,
+    "remaining": 4995,
     "resetAt": "2026-09-17T19:33:47Z"
   }
 }
