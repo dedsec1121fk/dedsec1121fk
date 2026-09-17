@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats.svg?v=gruvbox-fabd2f-20260917T023914Z-e617299e9f" alt="dedsec1121fk's (Loukas Floros) GitHub Stats" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats.svg?v=gruvbox-fabd2f-20260917T023914Z-e617299e9f" alt="DedSec GitHub Stats" />
 </p>
 
 ---
