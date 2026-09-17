@@ -4,11 +4,11 @@
 
 <p align="center">
   <img width="1" height="1" src="https://komarev.com/ghpvc/?username=dedsec1121fk&amp;style=pixel" alt="" />
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/views-monokai.svg?v=monokai-f92672-20260917T023914Z-2a83b6b439" alt="Profile views" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/views-monokai.svg?v=monokai-f92672-20260917T023914Z-2f24161ddc" alt="Profile views" />
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats-monokai.svg?v=title-dedsec1121fk-loukas-floros-stats-20260917T2157" alt="DedSec GitHub Stats" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats-monokai.svg?v=monokai-f92672-20260917T023914Z-2f24161ddc" alt="DedSec GitHub Stats" />
 </p>
 
 ---
@@ -88,18 +88,18 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/streak-monokai.svg?v=monokai-f92672-20260917T023914Z-2a83b6b439" alt="GitHub Streak" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/streak-monokai.svg?v=monokai-f92672-20260917T023914Z-2f24161ddc" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/top-langs-monokai.svg?v=monokai-f92672-20260917T023914Z-2a83b6b439" alt="Top Languages" />
+  <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/top-langs-monokai.svg?v=monokai-f92672-20260917T023914Z-2f24161ddc" alt="Top Languages" />
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark-monokai.svg?v=monokai-f92672-20260917T023914Z-2a83b6b439" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-light-monokai.svg?v=monokai-f92672-20260917T023914Z-2a83b6b439" />
-    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark-monokai.svg?v=monokai-f92672-20260917T023914Z-2a83b6b439" alt="Animated GitHub contribution snake" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark-monokai.svg?v=monokai-f92672-20260917T023914Z-2f24161ddc" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-light-monokai.svg?v=monokai-f92672-20260917T023914Z-2f24161ddc" />
+    <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/output/github-contribution-grid-snake-dark-monokai.svg?v=monokai-f92672-20260917T023914Z-2f24161ddc" alt="Animated GitHub contribution snake" />
   </picture>
 </p>
 
@@ -110,7 +110,7 @@
 If you like what I build and want to support updates, tools, and new drops:
 
 <a href="https://github.com/sponsors/dedsec1121fk">
-  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-f92672?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=monokai-f92672-20260917T023914Z-2a83b6b439" alt="GitHub Sponsors" />
+  <img src="https://img.shields.io/badge/GitHub%20Sponsors-Support%20%E2%9D%A4-f92672?style=for-the-badge&logo=GitHub-Sponsors&logoColor=white&v=monokai-f92672-20260917T023914Z-2f24161ddc" alt="GitHub Sponsors" />
 </a>
 
 ---
