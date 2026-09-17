@@ -8,10 +8,6 @@
 </p>
 
 <p align="center">
-  <img width="100%" src="https://raw.githubusercontent.com/dedsec1121fk/DedSec/c1c55a3dd6f0d3a626a5af15e1bfb41385727818/Extra%20Content/Images/DedSec%20Project%20PC%20Wallpaper.png" alt="DedSec Project PC Wallpaper" />
-</p>
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/main/profile/stats.svg?v=gruvbox-fabd2f-20260917T023914Z-e617299e9f" alt="DedSec GitHub Stats" />
 </p>
 
