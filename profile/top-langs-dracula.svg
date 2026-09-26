@@ -4,23 +4,23 @@
   <rect x="20" y="43" width="46" height="2" rx="1" fill="#ff79c6" opacity="0.88"/>
   <text x="20" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#ff79c6">Most Used Languages</text>
   <circle cx="94" cy="125" r="45" fill="none" stroke="#363b45" stroke-width="13" opacity="0.62"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#ff79c6" stroke-width="13" stroke-dasharray="147.78 134.96" stroke-dashoffset="-0.00" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#8be9fd" stroke-width="13" stroke-dasharray="111.68 171.07" stroke-dashoffset="-147.78" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#ff79c6" stroke-width="13" stroke-dasharray="16.01 266.73" stroke-dashoffset="-259.45" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#bd93f9" stroke-width="13" stroke-dasharray="2.52 280.22" stroke-dashoffset="-275.47" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#fca7d6" stroke-width="13" stroke-dasharray="2.03 280.71" stroke-dashoffset="-277.99" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#74b5c9" stroke-width="13" stroke-dasharray="1.27 281.48" stroke-dashoffset="-280.02" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#ff79c6" stroke-width="13" stroke-dasharray="148.14 134.60" stroke-dashoffset="-0.00" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#8be9fd" stroke-width="13" stroke-dasharray="111.38 171.36" stroke-dashoffset="-148.14" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#ff79c6" stroke-width="13" stroke-dasharray="15.96 266.78" stroke-dashoffset="-259.52" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#bd93f9" stroke-width="13" stroke-dasharray="2.51 280.23" stroke-dashoffset="-275.49" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#fca7d6" stroke-width="13" stroke-dasharray="2.03 280.72" stroke-dashoffset="-278.00" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#74b5c9" stroke-width="13" stroke-dasharray="1.26 281.48" stroke-dashoffset="-280.03" transform="rotate(-90 94 125)"/>
   <text x="94" y="124" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#ff79c6" text-anchor="middle">52%</text>
   <text x="94" y="141" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="8" font-weight="550" fill="#f8f8f2" text-anchor="middle" opacity="0.56">Python</text>
   <circle cx="184" cy="68" r="4" fill="#ff79c6"/>
   <text x="196" y="72" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" opacity="0.76">Python</text>
-  <text x="416" y="72" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="end" opacity="0.76">52.3%</text>
+  <text x="416" y="72" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="end" opacity="0.76">52.4%</text>
   <circle cx="184" cy="89" r="4" fill="#8be9fd"/>
   <text x="196" y="93" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" opacity="0.76">HTML</text>
-  <text x="416" y="93" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="end" opacity="0.76">39.5%</text>
+  <text x="416" y="93" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="end" opacity="0.76">39.4%</text>
   <circle cx="184" cy="110" r="4" fill="#ff79c6"/>
   <text x="196" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" opacity="0.76">Befunge</text>
-  <text x="416" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="end" opacity="0.76">5.7%</text>
+  <text x="416" y="114" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="end" opacity="0.76">5.6%</text>
   <circle cx="184" cy="131" r="4" fill="#bd93f9"/>
   <text x="196" y="135" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" opacity="0.76">CSS</text>
   <text x="416" y="135" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="11" font-weight="450" fill="#f8f8f2" text-anchor="end" opacity="0.76">0.9%</text>
