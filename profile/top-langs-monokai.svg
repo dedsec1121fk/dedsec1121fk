@@ -4,8 +4,8 @@
   <rect x="20" y="43" width="46" height="2" rx="1" fill="#f92672" opacity="0.88"/>
   <text x="20" y="31" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#f92672">Most Used Languages</text>
   <circle cx="94" cy="125" r="45" fill="none" stroke="#34383a" stroke-width="13" opacity="0.62"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#f92672" stroke-width="13" stroke-dasharray="184.70 98.05" stroke-dashoffset="-0.00" transform="rotate(-90 94 125)"/>
-  <circle cx="94" cy="125" r="45" fill="none" stroke="#ae81ff" stroke-width="13" stroke-dasharray="68.95 213.80" stroke-dashoffset="-184.70" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#f92672" stroke-width="13" stroke-dasharray="184.72 98.03" stroke-dashoffset="-0.00" transform="rotate(-90 94 125)"/>
+  <circle cx="94" cy="125" r="45" fill="none" stroke="#ae81ff" stroke-width="13" stroke-dasharray="68.93 213.81" stroke-dashoffset="-184.72" transform="rotate(-90 94 125)"/>
   <circle cx="94" cy="125" r="45" fill="none" stroke="#66d9ef" stroke-width="13" stroke-dasharray="19.93 262.82" stroke-dashoffset="-253.65" transform="rotate(-90 94 125)"/>
   <circle cx="94" cy="125" r="45" fill="none" stroke="#a6e22e" stroke-width="13" stroke-dasharray="3.19 279.55" stroke-dashoffset="-273.57" transform="rotate(-90 94 125)"/>
   <circle cx="94" cy="125" r="45" fill="none" stroke="#f972a0" stroke-width="13" stroke-dasharray="2.53 280.22" stroke-dashoffset="-276.76" transform="rotate(-90 94 125)"/>
