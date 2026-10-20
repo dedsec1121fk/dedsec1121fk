@@ -1,30 +1,30 @@
 {
   "schema": 1,
-  "generated_at_utc": "2026-10-19T02:42:48Z",
+  "generated_at_utc": "2026-10-20T02:39:51Z",
   "login": "dedsec1121fk",
   "name": "FK",
   "followers": 192,
   "repositories": 10,
   "stars": 990,
   "forks": 381,
-  "contributions_1y": 5402,
-  "commits_1y": 3805,
+  "contributions_1y": 5371,
+  "commits_1y": 3767,
   "issues_1y": 4,
   "pull_requests_1y": 17,
   "reviews_1y": 0,
-  "private_contributions_1y": 1565,
+  "private_contributions_1y": 1572,
   "current_streak": 5,
   "longest_streak_1y": 18,
   "languages": [
     {
-      "name": "Python",
-      "size": 24035754,
-      "color": "#3572A5"
+      "name": "HTML",
+      "size": 36210618,
+      "color": "#e34c26"
     },
     {
-      "name": "HTML",
-      "size": 8799607,
-      "color": "#e34c26"
+      "name": "Python",
+      "size": 24433258,
+      "color": "#3572A5"
     },
     {
       "name": "Befunge",
@@ -33,17 +33,17 @@
     },
     {
       "name": "CSS",
-      "size": 428131,
+      "size": 1784699,
       "color": "#663399"
     },
     {
       "name": "JavaScript",
-      "size": 335675,
+      "size": 735860,
       "color": "#f1e05a"
     },
     {
       "name": "Shell",
-      "size": 218523,
+      "size": 221091,
       "color": "#89e051"
     },
     {
@@ -53,7 +53,7 @@
     },
     {
       "name": "C",
-      "size": 36004,
+      "size": 39904,
       "color": "#555555"
     },
     {
@@ -85,11 +85,31 @@
       "name": "Fortran",
       "size": 18736,
       "color": "#4d41b1"
+    },
+    {
+      "name": "Go",
+      "size": 3784,
+      "color": "#00ADD8"
+    },
+    {
+      "name": "C++",
+      "size": 3260,
+      "color": "#f34b7d"
+    },
+    {
+      "name": "Rust",
+      "size": 2736,
+      "color": "#dea584"
+    },
+    {
+      "name": "TypeScript",
+      "size": 2364,
+      "color": "#3178c6"
     }
   ],
   "rate_limit": {
     "cost": 1,
     "remaining": 4999,
-    "resetAt": "2026-10-19T03:42:48Z"
+    "resetAt": "2026-10-20T03:39:51Z"
   }
 }
