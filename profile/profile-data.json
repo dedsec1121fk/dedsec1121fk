@@ -1,30 +1,30 @@
 {
   "schema": 1,
-  "generated_at_utc": "2026-10-22T02:41:46Z",
+  "generated_at_utc": "2026-10-23T02:41:57Z",
   "login": "dedsec1121fk",
   "name": "FK",
   "followers": 192,
   "repositories": 10,
-  "stars": 993,
+  "stars": 984,
   "forks": 381,
-  "contributions_1y": 5380,
-  "commits_1y": 3745,
+  "contributions_1y": 5415,
+  "commits_1y": 3757,
   "issues_1y": 4,
   "pull_requests_1y": 17,
   "reviews_1y": 0,
-  "private_contributions_1y": 1603,
-  "current_streak": 7,
+  "private_contributions_1y": 1626,
+  "current_streak": 9,
   "longest_streak_1y": 18,
   "languages": [
     {
-      "name": "HTML",
-      "size": 36210618,
-      "color": "#e34c26"
+      "name": "Python",
+      "size": 24309004,
+      "color": "#3572A5"
     },
     {
-      "name": "Python",
-      "size": 24433258,
-      "color": "#3572A5"
+      "name": "HTML",
+      "size": 8827053,
+      "color": "#e34c26"
     },
     {
       "name": "Befunge",
@@ -32,18 +32,18 @@
       "color": "#8b949e"
     },
     {
-      "name": "CSS",
-      "size": 1784699,
-      "color": "#663399"
-    },
-    {
       "name": "JavaScript",
-      "size": 735860,
+      "size": 755347,
       "color": "#f1e05a"
     },
     {
+      "name": "CSS",
+      "size": 676698,
+      "color": "#663399"
+    },
+    {
       "name": "Shell",
-      "size": 221091,
+      "size": 219807,
       "color": "#89e051"
     },
     {
@@ -53,7 +53,7 @@
     },
     {
       "name": "C",
-      "size": 39904,
+      "size": 37954,
       "color": "#555555"
     },
     {
@@ -88,28 +88,28 @@
     },
     {
       "name": "Go",
-      "size": 3784,
+      "size": 1892,
       "color": "#00ADD8"
     },
     {
       "name": "C++",
-      "size": 3260,
+      "size": 1630,
       "color": "#f34b7d"
     },
     {
       "name": "Rust",
-      "size": 2736,
+      "size": 1368,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "size": 2364,
+      "size": 1182,
       "color": "#3178c6"
     }
   ],
   "rate_limit": {
     "cost": 1,
     "remaining": 4999,
-    "resetAt": "2026-10-22T03:41:46Z"
+    "resetAt": "2026-10-23T03:41:58Z"
   }
 }
